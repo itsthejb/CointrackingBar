@@ -7,13 +7,18 @@
 //
 
 import Cocoa
+import WebKit
 
-class ViewController: NSViewController {
+final class WebViewController: NSViewController {
+
+    @IBOutlet weak var webView: WKWebView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let url = URL(string: "https://news.bbc.co.uk")!
+        let request = URLRequest(url: url)
+        webView.load(request)
     }
 
     override var representedObject: Any? {
@@ -25,3 +30,10 @@ class ViewController: NSViewController {
 
 }
 
+extension WebViewController: WKUIDelegate {
+
+}
+
+extension WebViewController: WKNavigationDelegate {
+
+}

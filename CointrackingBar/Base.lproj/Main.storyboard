@@ -691,6 +691,12 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <toolbar key="toolbar" implicitIdentifier="990A7D88-9302-48EC-AF98-A52A83DB74C0" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="SRs-3n-Qif">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="8C73779D-0DBE-47E9-A679-E896D9660DF8" label="Toolbar Item" paletteLabel="Toolbar Item" tag="-1" image="NSCaution" id="4LU-wt-LoC"/>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems/>
+                        </toolbar>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -715,7 +721,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                                 <subviews>
                                     <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xfD-1N-ezQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="270"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                                         <wkWebViewConfiguration key="configuration">
                                             <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                             <wkPreferences key="preferences"/>
@@ -750,4 +756,7 @@
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSCaution" width="32" height="32"/>
+    </resources>
 </document>

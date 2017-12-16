@@ -687,14 +687,14 @@
             <objects>
                 <viewController storyboardIdentifier="WebViewController" id="XfG-lQ-9wD" customClass="WebViewController" customModule="CointrackingBar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="776"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hdu-G1-1Tb">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="776"/>
                                 <subviews>
                                     <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xfD-1N-ezQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="480" height="776"/>
                                         <wkWebViewConfiguration key="configuration">
                                             <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                             <wkPreferences key="preferences"/>

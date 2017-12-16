@@ -25,7 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let apperance = NSAppearance(appearanceNamed: .vibrantLight, bundle: nil)
         popOver.animates = true
         popOver.appearance = apperance
-        popOver.contentSize = CGSize(width: 480, height: 480 * 1.618)
+//        popOver.contentSize = CGSize(width: 480, height: 480 * 1.618)
         popOver.contentViewController = (controller as! NSViewController)
         return popOver
     }()

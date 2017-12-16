@@ -40,6 +40,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 extension AppDelegate: NSPopoverDelegate {
 
+    func popoverShouldClose(_ popover: NSPopover) -> Bool {
+        return true
+    }
+
     func popoverDidClose(_ notification: Notification) {
         popOver = nil
     }

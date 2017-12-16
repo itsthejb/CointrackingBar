@@ -16,7 +16,7 @@ final class WebViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let url = URL(string: "https://cointracking.info/?mobile=on")!
+        let url = URL(string: "https://cointracking.info/dashboard.php?mobile=on")!
         let request = URLRequest(url: url)
         webView.load(request)
     }

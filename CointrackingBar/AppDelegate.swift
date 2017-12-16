@@ -18,20 +18,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return item
     }()
 
-    var popOver: NSPopover?
+    let popOver: NSPopover = {
+        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
+        let controller = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("WebViewController"))
+        let popOver = NSPopover()
+        let apperance = NSAppearance(appearanceNamed: .vibrantLight, bundle: nil)
+        popOver.animates = true
+        popOver.appearance = apperance
+        popOver.contentSize = CGSize(width: 480, height: 480 * 1.618)
+        popOver.contentViewController = (controller as! NSViewController)
+        return popOver
+    }()
+
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        popOver.delegate = self
+    }
 
     @objc func menuItemClicked(item: NSStatusItem) {
-        if let popOver = popOver {
-            popOver.close()
-            self.popOver = nil
+        guard let button = statusItem.button else { return }
+
+        if popOver.isShown {
+            popOver.performClose(self)
         } else {
-            let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
-            let controller = storyboard.instantiateInitialController() as! WebViewController
-            let popOver = NSPopover()
-            popOver.delegate = self
-            popOver.animates = true
-            popOver.contentViewController = controller
-            self.popOver = popOver
+            popOver.show(relativeTo: button.frame, of: button, preferredEdge: .minY)
         }
     }
 
@@ -40,13 +49,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 extension AppDelegate: NSPopoverDelegate {
 
-    func popoverShouldClose(_ popover: NSPopover) -> Bool {
-        return true
-    }
-
-    func popoverDidClose(_ notification: Notification) {
-        popOver = nil
-    }
+//    func popoverShouldClose(_ popover: NSPopover) -> Bool {
+//        return true
+//    }
+//
+//    func popoverShouldDetach(_ popover: NSPopover) -> Bool {
+//        return true
+//    }
+//
+//    func popoverDidClose(_ notification: Notification) {
+////        popOver = nil
+//    }
 
 }
 

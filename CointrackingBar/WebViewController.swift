@@ -16,7 +16,7 @@ final class WebViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let url = URL(string: "https://news.bbc.co.uk")!
+        let url = URL(string: "https://google.com")!
         let request = URLRequest(url: url)
         webView.load(request)
     }

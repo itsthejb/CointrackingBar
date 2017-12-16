@@ -687,28 +687,134 @@
             <objects>
                 <viewController storyboardIdentifier="WebViewController" id="XfG-lQ-9wD" customClass="WebViewController" customModule="CointrackingBar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="776"/>
+                        <rect key="frame" x="0.0" y="0.0" width="553" height="1274"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hdu-G1-1Tb">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="776"/>
+                                <rect key="frame" x="0.0" y="0.0" width="553" height="1274"/>
                                 <subviews>
-                                    <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xfD-1N-ezQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="480" height="776"/>
-                                        <wkWebViewConfiguration key="configuration">
-                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                            <wkPreferences key="preferences"/>
-                                        </wkWebViewConfiguration>
-                                        <connections>
-                                            <outlet property="UIDelegate" destination="XfG-lQ-9wD" id="xrS-8I-QA5"/>
-                                            <outlet property="navigationDelegate" destination="XfG-lQ-9wD" id="Q3Q-ar-cbA"/>
-                                        </connections>
-                                    </wkWebView>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="IMj-Va-plH">
+                                        <rect key="frame" x="0.0" y="52" width="480" height="1222"/>
+                                        <subviews>
+                                            <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xfD-1N-ezQ">
+                                                <rect key="frame" x="4" y="4" width="472" height="1214"/>
+                                                <wkWebViewConfiguration key="configuration">
+                                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                                    <wkPreferences key="preferences"/>
+                                                </wkWebViewConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="UIDelegate" destination="XfG-lQ-9wD" id="xrS-8I-QA5"/>
+                                                    <outlet property="navigationDelegate" destination="XfG-lQ-9wD" id="Q3Q-ar-cbA"/>
+                                                </connections>
+                                            </wkWebView>
+                                            <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sZq-mG-QwI" customClass="LoadingView" customModule="CointrackingBar" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="480" height="1222"/>
+                                            </customView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="xfD-1N-ezQ" secondAttribute="trailing" constant="4" id="HC6-23-NAb"/>
+                                            <constraint firstAttribute="trailing" secondItem="sZq-mG-QwI" secondAttribute="trailing" id="J1c-G9-1HD"/>
+                                            <constraint firstItem="xfD-1N-ezQ" firstAttribute="leading" secondItem="IMj-Va-plH" secondAttribute="leading" constant="4" id="S6d-lT-Js6"/>
+                                            <constraint firstItem="sZq-mG-QwI" firstAttribute="leading" secondItem="IMj-Va-plH" secondAttribute="leading" id="Y1b-2G-c9a"/>
+                                            <constraint firstItem="sZq-mG-QwI" firstAttribute="top" secondItem="IMj-Va-plH" secondAttribute="top" id="czR-G4-DPp"/>
+                                            <constraint firstAttribute="bottom" secondItem="sZq-mG-QwI" secondAttribute="bottom" id="dxV-P1-fgY"/>
+                                            <constraint firstAttribute="bottom" secondItem="xfD-1N-ezQ" secondAttribute="bottom" constant="4" id="gVh-xe-ab3"/>
+                                            <constraint firstItem="xfD-1N-ezQ" firstAttribute="top" secondItem="IMj-Va-plH" secondAttribute="top" constant="4" id="zjX-ME-l2f"/>
+                                        </constraints>
+                                    </customView>
+                                    <customView hidden="YES" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ous-Tm-w9l">
+                                        <rect key="frame" x="0.0" y="1266" width="163" height="8"/>
+                                        <subviews>
+                                            <progressIndicator wantsLayer="YES" ambiguous="YES" maxValue="100" indeterminate="YES" controlSize="small" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="d8R-K6-Eaf">
+                                                <rect key="frame" x="20" y="0.0" width="123" height="8"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="8" id="eHz-00-es2"/>
+                                                </constraints>
+                                            </progressIndicator>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="d8R-K6-Eaf" firstAttribute="top" secondItem="Ous-Tm-w9l" secondAttribute="top" id="1fi-cM-7Qn"/>
+                                            <constraint firstItem="d8R-K6-Eaf" firstAttribute="leading" secondItem="Ous-Tm-w9l" secondAttribute="leading" constant="20" symbolic="YES" id="51f-eW-9pa"/>
+                                            <constraint firstAttribute="trailing" secondItem="d8R-K6-Eaf" secondAttribute="trailing" constant="20" symbolic="YES" id="Pr1-gl-P9b"/>
+                                            <constraint firstAttribute="bottom" secondItem="d8R-K6-Eaf" secondAttribute="bottom" id="cOs-uJ-fQO"/>
+                                        </constraints>
+                                    </customView>
+                                    <stackView distribution="equalSpacing" orientation="horizontal" alignment="centerY" spacing="4" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NcX-b6-u0I">
+                                        <rect key="frame" x="0.0" y="0.0" width="553" height="44"/>
+                                        <subviews>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eH9-UQ-F97">
+                                                <rect key="frame" x="14" y="5" width="70" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Back" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="taH-yh-hLA">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="backButtonPressed:" target="XfG-lQ-9wD" id="K1J-1K-YaQ"/>
+                                                </connections>
+                                            </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0od-r6-2oF">
+                                                <rect key="frame" x="81" y="5" width="90" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Forward" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="k6A-EU-YRp">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="forwardButtonPressed:" target="XfG-lQ-9wD" id="NoC-Ye-odj"/>
+                                                </connections>
+                                            </button>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="7Pl-qz-LHF">
+                                                <rect key="frame" x="174" y="0.0" width="296" height="44"/>
+                                            </customView>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8h4-28-8lh">
+                                                <rect key="frame" x="473" y="5" width="66" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Quit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DLl-VE-6Ce">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="quitButtonPressed:" target="XfG-lQ-9wD" id="54d-13-GZz"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <edgeInsets key="edgeInsets" left="20" right="20" top="0.0" bottom="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="5Jw-cj-G1o"/>
+                                        </constraints>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
                                 </subviews>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
@@ -721,6 +827,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="eH9-UQ-F97" id="DJ1-wW-ThK"/>
+                        <outlet property="forwardButton" destination="0od-r6-2oF" id="64w-Xx-u4z"/>
+                        <outlet property="loadingView" destination="sZq-mG-QwI" id="v3K-bG-f5o"/>
+                        <outlet property="progressContainer" destination="Ous-Tm-w9l" id="ohl-ea-LUE"/>
+                        <outlet property="progressView" destination="d8R-K6-Eaf" id="IHZ-uT-PiR"/>
+                        <outlet property="quitButton" destination="8h4-28-8lh" id="lAc-IY-6ol"/>
                         <outlet property="webView" destination="xfD-1N-ezQ" id="cjJ-KT-mcU"/>
                     </connections>
                 </viewController>

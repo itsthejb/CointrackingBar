@@ -22,19 +22,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
         let controller = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("WebViewController"))
         let popOver = NSPopover()
-        let apperance = NSAppearance(appearanceNamed: .vibrantLight, bundle: nil)
         popOver.animates = true
-        popOver.appearance = apperance
-//        popOver.contentSize = CGSize(width: 480, height: 480 * 1.618)
+//        let apperance = NSAppearance(appearanceNamed: .vibrantLight, bundle: nil)
+//        popOver.appearance = apperance
         popOver.contentViewController = (controller as! NSViewController)
         return popOver
     }()
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         popOver.delegate = self
+
+        [NSWindow.didResignKeyNotification : #selector(windowDidResignActive(notification:))].forEach {
+            NotificationCenter.default.addObserver(self, selector: $0.1, name: $0.0, object: nil)
+        }
     }
 
     @objc func menuItemClicked(item: NSStatusItem) {
+        togglePopOver()
+    }
+
+    private func togglePopOver() {
         guard let button = statusItem.button else { return }
 
         if popOver.isShown {
@@ -47,19 +54,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 }
 
+
+extension AppDelegate {
+
+    @objc func windowDidResignActive(notification: Notification) {
+        togglePopOver()
+    }
+
+}
+
+
 extension AppDelegate: NSPopoverDelegate {
-
-//    func popoverShouldClose(_ popover: NSPopover) -> Bool {
-//        return true
-//    }
-//
-//    func popoverShouldDetach(_ popover: NSPopover) -> Bool {
-//        return true
-//    }
-//
-//    func popoverDidClose(_ notification: Notification) {
-////        popOver = nil
-//    }
-
 }
 

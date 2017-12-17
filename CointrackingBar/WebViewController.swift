@@ -26,12 +26,6 @@ final class WebViewController: NSViewController {
         webView.load(URLRequest(url: url))
     }
 
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-
     @IBAction func backButtonPressed(_ sender: NSButton) {
         webView.goBack()
     }
@@ -56,6 +50,8 @@ extension WebViewController: WKUIDelegate {
         progressContainer.isHidden = true
         progressView.startAnimation(self)
         loadingView?.removeFromSuperview()
+        backButton.isEnabled = webView.backForwardList.backItem != nil
+        forwardButton.isEnabled = webView.backForwardList.forwardItem != nil
     }
 
 }

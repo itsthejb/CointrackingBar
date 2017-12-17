@@ -694,10 +694,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="553" height="1274"/>
                                 <subviews>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="IMj-Va-plH">
-                                        <rect key="frame" x="0.0" y="52" width="480" height="1222"/>
+                                        <rect key="frame" x="0.0" y="52" width="553" height="1222"/>
                                         <subviews>
                                             <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xfD-1N-ezQ">
-                                                <rect key="frame" x="4" y="4" width="472" height="1214"/>
+                                                <rect key="frame" x="4" y="4" width="545" height="1214"/>
                                                 <wkWebViewConfiguration key="configuration">
                                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                                     <wkPreferences key="preferences"/>
@@ -721,7 +721,7 @@
                                                 </connections>
                                             </wkWebView>
                                             <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sZq-mG-QwI" customClass="LoadingView" customModule="CointrackingBar" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="480" height="1222"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="553" height="1222"/>
                                             </customView>
                                         </subviews>
                                         <constraints>
@@ -757,7 +757,7 @@
                                         <subviews>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eH9-UQ-F97">
                                                 <rect key="frame" x="14" y="5" width="70" height="32"/>
-                                                <buttonCell key="cell" type="push" title="Back" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="taH-yh-hLA">
+                                                <buttonCell key="cell" type="push" title="Back" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="taH-yh-hLA">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
@@ -766,8 +766,8 @@
                                                 </connections>
                                             </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0od-r6-2oF">
-                                                <rect key="frame" x="81" y="5" width="90" height="32"/>
-                                                <buttonCell key="cell" type="push" title="Forward" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="k6A-EU-YRp">
+                                                <rect key="frame" x="76" y="5" width="90" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Forward" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="k6A-EU-YRp">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
@@ -776,7 +776,7 @@
                                                 </connections>
                                             </button>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="7Pl-qz-LHF">
-                                                <rect key="frame" x="174" y="0.0" width="296" height="44"/>
+                                                <rect key="frame" x="164" y="0.0" width="311" height="44"/>
                                             </customView>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8h4-28-8lh">
                                                 <rect key="frame" x="473" y="5" width="66" height="32"/>

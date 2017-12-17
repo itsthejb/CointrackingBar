@@ -21,9 +21,13 @@ final class WebViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         loadingView?.isHidden = false
         let url = URL(string: "https://cointracking.info/dashboard.php?mobile=on")!
         webView.load(URLRequest(url: url))
+
+        backButton.set(icon: .backwards)
+        forwardButton.set(icon: .forwards)
     }
 
     @IBAction func backButtonPressed(_ sender: NSButton) {

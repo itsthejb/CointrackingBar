@@ -30,6 +30,11 @@ final class WebViewController: NSViewController {
         forwardButton.set(icon: .forwards)
     }
 
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        webView.reload()
+    }
+
     @IBAction func backButtonPressed(_ sender: NSButton) {
         webView.goBack()
     }

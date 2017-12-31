@@ -32,9 +32,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         popOver.delegate = self
 
-        [NSWindow.didResignKeyNotification : #selector(windowDidResignActive(notification:))].forEach {
+        [NSWindow.didResignKeyNotification : #selector(windowDidResignActive(_:))].forEach {
             NotificationCenter.default.addObserver(self, selector: $0.1, name: $0.0, object: nil)
         }
+        NSWorkspace.shared.notificationCenter.addObserver(self,
+                                                          selector: #selector(appDidDeactivate(_:)),
+                                                          name: NSWorkspace.didActivateApplicationNotification,
+                                                          object: nil)
     }
 
     @objc func menuItemClicked(item: NSStatusItem) {
@@ -42,23 +46,30 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     private func togglePopOver() {
-        guard let button = statusItem.button else { return }
-
-        if popOver.isShown {
-            popOver.performClose(self)
-        } else {
-            popOver.show(relativeTo: button.frame, of: button, preferredEdge: .minY)
-        }
+        popOver.isShown ? hidePopver() : showPopover()
     }
 
+    private func showPopover() {
+        guard !popOver.isShown, let button = statusItem.button else { return }
+        popOver.show(relativeTo: button.frame, of: button, preferredEdge: .minY)
+    }
+
+    private func hidePopver() {
+        guard popOver.isShown else { return }
+        popOver.performClose(self)
+    }
 
 }
 
 
 extension AppDelegate {
 
-    @objc func windowDidResignActive(notification: Notification) {
+    @objc func windowDidResignActive(_ notification: Notification) {
         togglePopOver()
+    }
+
+    @objc func appDidDeactivate(_ notification: Notification) {
+        hidePopver()
     }
 
 }

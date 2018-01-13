@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.WebKit2IBPlugin" version="13771"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
+        <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -687,17 +688,35 @@
             <objects>
                 <viewController storyboardIdentifier="WebViewController" id="XfG-lQ-9wD" customClass="WebViewController" customModule="CointrackingBar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="553" height="1274"/>
+                        <rect key="frame" x="0.0" y="0.0" width="553" height="1576"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hdu-G1-1Tb">
-                                <rect key="frame" x="0.0" y="0.0" width="553" height="1274"/>
+                                <rect key="frame" x="0.0" y="0.0" width="553" height="1576"/>
                                 <subviews>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="IMj-Va-plH">
-                                        <rect key="frame" x="0.0" y="44" width="553" height="1230"/>
+                                    <customView focusRingType="none" translatesAutoresizingMaskIntoConstraints="NO" id="wvh-ys-hiD" userLabel="Title View" customClass="TitleView" customModule="CointrackingBar" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1532" width="163" height="44"/>
+                                        <subviews>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FAy-h3-w2N">
+                                                <rect key="frame" x="10" y="13" width="143" height="19"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" enabled="NO" sendsActionOnEndEditing="YES" alignment="center" title="Cointracking Bar" id="Akm-MI-X92">
+                                                    <font key="font" metaFont="systemHeavy" size="16"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="KNn-Zb-35x"/>
+                                            <constraint firstItem="FAy-h3-w2N" firstAttribute="centerY" secondItem="wvh-ys-hiD" secondAttribute="centerY" id="bl0-Zh-CKd"/>
+                                            <constraint firstItem="FAy-h3-w2N" firstAttribute="centerX" secondItem="wvh-ys-hiD" secondAttribute="centerX" id="mJa-mQ-Okc"/>
+                                        </constraints>
+                                    </customView>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="IMj-Va-plH" userLabel="Web Stack">
+                                        <rect key="frame" x="0.0" y="44" width="553" height="1488"/>
                                         <subviews>
                                             <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xfD-1N-ezQ">
-                                                <rect key="frame" x="4" y="0.0" width="545" height="1226"/>
+                                                <rect key="frame" x="4" y="0.0" width="545" height="1484"/>
                                                 <wkWebViewConfiguration key="configuration">
                                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                                     <wkPreferences key="preferences"/>
@@ -721,7 +740,7 @@
                                                 </connections>
                                             </wkWebView>
                                             <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sZq-mG-QwI" customClass="LoadingView" customModule="CointrackingBar" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="553" height="1230"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="553" height="1488"/>
                                             </customView>
                                         </subviews>
                                         <constraints>
@@ -736,7 +755,7 @@
                                         </constraints>
                                     </customView>
                                     <customView hidden="YES" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ous-Tm-w9l">
-                                        <rect key="frame" x="0.0" y="1266" width="163" height="8"/>
+                                        <rect key="frame" x="0.0" y="1568" width="163" height="8"/>
                                         <subviews>
                                             <progressIndicator wantsLayer="YES" ambiguous="YES" maxValue="100" indeterminate="YES" controlSize="small" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="d8R-K6-Eaf">
                                                 <rect key="frame" x="20" y="0.0" width="123" height="8"/>
@@ -769,7 +788,7 @@
                                                 </connections>
                                             </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0od-r6-2oF">
-                                                <rect key="frame" x="72" y="-1" width="90" height="43"/>
+                                                <rect key="frame" x="64" y="-1" width="90" height="43"/>
                                                 <buttonCell key="cell" type="push" title="Forward" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="k6A-EU-YRp">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
@@ -779,7 +798,7 @@
                                                 </connections>
                                             </button>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="7Pl-qz-LHF">
-                                                <rect key="frame" x="168" y="0.0" width="311" height="44"/>
+                                                <rect key="frame" x="152" y="0.0" width="335" height="44"/>
                                             </customView>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8h4-28-8lh">
                                                 <rect key="frame" x="485" y="-1" width="66" height="43"/>
@@ -816,8 +835,10 @@
                                     <integer value="1000"/>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
@@ -838,10 +859,16 @@
                         <outlet property="progressContainer" destination="Ous-Tm-w9l" id="ohl-ea-LUE"/>
                         <outlet property="progressView" destination="d8R-K6-Eaf" id="IHZ-uT-PiR"/>
                         <outlet property="quitButton" destination="8h4-28-8lh" id="lAc-IY-6ol"/>
+                        <outlet property="titleView" destination="wvh-ys-hiD" id="Pj1-YZ-Xu1"/>
                         <outlet property="webView" destination="xfD-1N-ezQ" id="cjJ-KT-mcU"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <textFieldCell scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Cointracking Bar" id="XK8-Gi-9jW">
+                    <font key="font" metaFont="system"/>
+                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                </textFieldCell>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
         </scene>

@@ -20,26 +20,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     let popOver: NSPopover = {
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
-        let controller = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("WebViewController"))
+        let identifier = String(describing: WebViewController.self)
+        let controller = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(identifier)) as! WebViewController
         let popOver = NSPopover()
         popOver.animates = true
+        popOver.behavior = .transient
 //        let apperance = NSAppearance(appearanceNamed: .vibrantLight, bundle: nil)
 //        popOver.appearance = apperance
-        popOver.contentViewController = (controller as! NSViewController)
+        popOver.contentViewController = controller
+        popOver.delegate = controller
         return popOver
     }()
-
-    func applicationDidFinishLaunching(_ notification: Notification) {
-        popOver.delegate = self
-
-        [NSWindow.didResignKeyNotification : #selector(windowDidResignActive(_:))].forEach {
-            NotificationCenter.default.addObserver(self, selector: $0.1, name: $0.0, object: nil)
-        }
-        NSWorkspace.shared.notificationCenter.addObserver(self,
-                                                          selector: #selector(appDidDeactivate(_:)),
-                                                          name: NSWorkspace.didActivateApplicationNotification,
-                                                          object: nil)
-    }
 
     @objc func menuItemClicked(item: NSStatusItem) {
         togglePopOver()
@@ -59,22 +50,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         popOver.performClose(self)
     }
 
-}
-
-
-extension AppDelegate {
-
-    @objc func windowDidResignActive(_ notification: Notification) {
-        togglePopOver()
-    }
-
-    @objc func appDidDeactivate(_ notification: Notification) {
-        hidePopver()
-    }
-
-}
-
-
-extension AppDelegate: NSPopoverDelegate {
 }
 

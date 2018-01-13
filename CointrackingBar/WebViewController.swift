@@ -48,6 +48,41 @@ final class WebViewController: NSViewController {
     }
 }
 
+extension WebViewController {
+
+    override func mouseDragged(with theEvent: NSEvent) {
+        var currentLocation = NSEvent.mouseLocation
+        print("Dragged at : \(currentLocation)")
+
+        /*
+
+        var newOrigin   = currentLocation
+        let screenFrame = NSScreen.main?.frame
+        var windowFrame = self.view.window?.frame
+
+        newOrigin.x     = screenFrame!.size.width - currentLocation.x
+        newOrigin.y     = screenFrame!.size.height - currentLocation.y
+
+        print("the New Origin Points : \(newOrigin)")
+
+        // Don't let window get dragged up under the menu bar
+        if newOrigin.x < 450 {
+            newOrigin.x = 450
+        }
+
+        if newOrigin.y < 650 {
+            newOrigin.y = 650
+        }
+
+        print("the New Origin Points : \(newOrigin)")
+
+        let appDelegate : AppDelegate = NSApplication.shared.delegate as! AppDelegate
+        appDelegate.popOver.contentSize = NSSize(width: newOrigin.x, height: newOrigin.y)
+*/
+    }
+
+}
+
 extension WebViewController: WKUIDelegate {
 
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {

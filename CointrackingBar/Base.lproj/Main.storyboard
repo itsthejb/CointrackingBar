@@ -693,11 +693,11 @@
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hdu-G1-1Tb">
                                 <rect key="frame" x="0.0" y="0.0" width="553" height="1584"/>
                                 <subviews>
-                                    <stackView distribution="equalSpacing" orientation="horizontal" alignment="centerY" spacing="4" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NcX-b6-u0I" userLabel="Controls Stack">
-                                        <rect key="frame" x="0.0" y="1540" width="553" height="44"/>
+                                    <stackView distribution="equalSpacing" orientation="horizontal" alignment="top" spacing="4" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NcX-b6-u0I" userLabel="Controls Stack">
+                                        <rect key="frame" x="0.0" y="1544" width="553" height="40"/>
                                         <subviews>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eH9-UQ-F97">
-                                                <rect key="frame" x="2" y="-1" width="70" height="43"/>
+                                                <rect key="frame" x="2" y="-5" width="70" height="43"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="BSG-Ai-Yao"/>
                                                 </constraints>
@@ -710,7 +710,7 @@
                                                 </connections>
                                             </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0od-r6-2oF">
-                                                <rect key="frame" x="64" y="-1" width="90" height="43"/>
+                                                <rect key="frame" x="64" y="-5" width="90" height="43"/>
                                                 <buttonCell key="cell" type="push" title="Forward" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="k6A-EU-YRp">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
@@ -720,10 +720,10 @@
                                                 </connections>
                                             </button>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="7Pl-qz-LHF">
-                                                <rect key="frame" x="152" y="0.0" width="335" height="44"/>
+                                                <rect key="frame" x="152" y="0.0" width="335" height="40"/>
                                             </customView>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8h4-28-8lh">
-                                                <rect key="frame" x="485" y="-1" width="66" height="43"/>
+                                                <rect key="frame" x="485" y="-5" width="66" height="43"/>
                                                 <buttonCell key="cell" type="push" title="Quit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DLl-VE-6Ce">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
@@ -733,9 +733,9 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <edgeInsets key="edgeInsets" left="8" right="8" top="0.0" bottom="0.0"/>
+                                        <edgeInsets key="edgeInsets" left="8" right="8" top="6" bottom="0.0"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="5Jw-cj-G1o"/>
+                                            <constraint firstAttribute="height" constant="40" id="5Jw-cj-G1o"/>
                                             <constraint firstItem="8h4-28-8lh" firstAttribute="height" secondItem="0od-r6-2oF" secondAttribute="height" id="991-I5-lJ8"/>
                                             <constraint firstItem="0od-r6-2oF" firstAttribute="height" secondItem="eH9-UQ-F97" secondAttribute="height" id="Xot-df-9V9"/>
                                         </constraints>
@@ -753,10 +753,10 @@
                                         </customSpacing>
                                     </stackView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="IMj-Va-plH" userLabel="Web Stack">
-                                        <rect key="frame" x="0.0" y="4" width="553" height="1536"/>
+                                        <rect key="frame" x="0.0" y="4" width="553" height="1540"/>
                                         <subviews>
                                             <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xfD-1N-ezQ">
-                                                <rect key="frame" x="4" y="0.0" width="545" height="1532"/>
+                                                <rect key="frame" x="4" y="0.0" width="545" height="1536"/>
                                                 <wkWebViewConfiguration key="configuration">
                                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                                     <wkPreferences key="preferences"/>
@@ -780,7 +780,7 @@
                                                 </connections>
                                             </wkWebView>
                                             <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sZq-mG-QwI" customClass="LoadingView" customModule="CointrackingBar" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="553" height="1536"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="553" height="1540"/>
                                             </customView>
                                         </subviews>
                                         <constraints>

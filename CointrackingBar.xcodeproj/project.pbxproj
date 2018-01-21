@@ -16,6 +16,7 @@
 		497BD06E1FE6CC9400589FDD /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 497BD06B1FE6CC9300589FDD /* Font Awesome 5 Free-Solid-900.otf */; };
 		497BD0701FE6CD1700589FDD /* NSButton+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497BD06F1FE6CD1700589FDD /* NSButton+Icons.swift */; };
 		4981568E2014BCBF004AE737 /* DettachedWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981568D2014BCBF004AE737 /* DettachedWindow.swift */; };
+		498156902014C210004AE737 /* Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981568F2014C210004AE737 /* Popover.swift */; };
 		49B36D32200AAA5D00C3E7CA /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B36D31200AAA5D00C3E7CA /* TitleView.swift */; };
 		49ECB19A1FE574FE00016382 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ECB1991FE574FE00016382 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
@@ -33,6 +34,7 @@
 		497BD06B1FE6CC9300589FDD /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
 		497BD06F1FE6CD1700589FDD /* NSButton+Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSButton+Icons.swift"; sourceTree = "<group>"; };
 		4981568D2014BCBF004AE737 /* DettachedWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DettachedWindow.swift; sourceTree = "<group>"; };
+		4981568F2014C210004AE737 /* Popover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popover.swift; sourceTree = "<group>"; };
 		49B36D31200AAA5D00C3E7CA /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		49ECB1991FE574FE00016382 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +80,7 @@
 				497BD06F1FE6CD1700589FDD /* NSButton+Icons.swift */,
 				49B36D31200AAA5D00C3E7CA /* TitleView.swift */,
 				4981568D2014BCBF004AE737 /* DettachedWindow.swift */,
+				4981568F2014C210004AE737 /* Popover.swift */,
 			);
 			path = CointrackingBar;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				49ECB19A1FE574FE00016382 /* LoadingView.swift in Sources */,
 				497BD0701FE6CD1700589FDD /* NSButton+Icons.swift in Sources */,
 				49B36D32200AAA5D00C3E7CA /* TitleView.swift in Sources */,
+				498156902014C210004AE737 /* Popover.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

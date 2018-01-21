@@ -18,7 +18,7 @@ final class WebViewController: NSViewController {
     @IBOutlet weak var forwardButton: NSButton!
     @IBOutlet weak var quitButton: NSButton!
     @IBOutlet weak var loadingView: LoadingView?
-    private weak var popOver: NSPopover?
+    private weak var popover: NSPopover?
 
     @IBOutlet weak var titleView: TitleView!
 
@@ -33,11 +33,11 @@ final class WebViewController: NSViewController {
         forwardButton.set(icon: .forwards)
 
         titleView.onDrag = { [unowned self] event in
-            guard let popOver = self.popOver else { return }
+            guard let popover = self.popover else { return }
             let transform = CGAffineTransform(translationX: event.deltaX, y: event.deltaY)
-            let rect = popOver.positioningRect.applying(transform)
-            popOver.show(relativeTo: rect, of: self.view, preferredEdge: .minX)
-            print(popOver.positioningRect)
+            let rect = popover.positioningRect.applying(transform)
+            popover.show(relativeTo: rect, of: self.view, preferredEdge: .minX)
+            print(popover.positioningRect)
 //            print(event.deltaY)
         }
 //        view.addTrackingArea(titleView.trackingArea)
@@ -64,8 +64,8 @@ final class WebViewController: NSViewController {
 extension WebViewController: NSPopoverDelegate {
 
     func popoverWillShow(_ notification: Notification) {
-        guard let popOver = notification.object as? NSPopover else { return }
-        self.popOver = popOver
+        guard let popover = notification.object as? NSPopover else { return }
+        self.popover = popover
     }
 
     func detachableWindow(for popover: NSPopover) -> NSWindow? {

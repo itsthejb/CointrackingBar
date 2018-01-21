@@ -18,36 +18,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return item
     }()
 
-    let popOver: NSPopover = {
-        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
-        let identifier = String(describing: WebViewController.self)
-        let controller = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(identifier)) as! WebViewController
-        let popOver = NSPopover()
-        popOver.animates = true
-        popOver.behavior = .transient
-//        let apperance = NSAppearance(appearanceNamed: .vibrantLight, bundle: nil)
-//        popOver.appearance = apperance
-        popOver.contentViewController = controller
-        popOver.delegate = controller
-        return popOver
-    }()
+    let popover = Popover()
 
     @objc func menuItemClicked(item: NSStatusItem) {
         togglePopOver()
     }
 
     private func togglePopOver() {
-        popOver.isShown ? hidePopver() : showPopover()
+        popover.isShown ? hidePopver() : showPopover()
     }
 
     private func showPopover() {
-        guard !popOver.isShown, let button = statusItem.button else { return }
-        popOver.show(relativeTo: button.frame, of: button, preferredEdge: .minY)
+        guard !popover.isShown, let button = statusItem.button else { return }
+        popover.show(relativeTo: button.frame, of: button, preferredEdge: .minY)
     }
 
     private func hidePopver() {
-        guard popOver.isShown else { return }
-        popOver.performClose(self)
+        guard popover.isShown else { return }
+        popover.performClose(self)
     }
 
 }

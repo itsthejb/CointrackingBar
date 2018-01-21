@@ -11,7 +11,7 @@ import Cocoa
 extension NSButton {
 
     enum Icon {
-        case forwards, backwards
+        case forwards, backwards, info
     }
 
     func set(icon: Icon) {
@@ -29,6 +29,8 @@ private extension NSButton.Icon {
             return "\u{f0da}"
         case .backwards:
             return "\u{f0d9}"
+        case .info:
+            return "\u{f05a}"
         }
     }
 

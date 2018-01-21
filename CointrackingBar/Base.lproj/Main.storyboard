@@ -694,15 +694,16 @@
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hdu-G1-1Tb" customClass="TransparentStackView" customModule="CointrackingBar" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="740" height="1584"/>
                                 <subviews>
-                                    <stackView distribution="equalSpacing" orientation="horizontal" alignment="top" spacing="4" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NcX-b6-u0I" userLabel="Controls Stack">
+                                    <stackView distribution="equalSpacing" orientation="horizontal" alignment="top" spacing="6" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NcX-b6-u0I" userLabel="Controls Stack">
                                         <rect key="frame" x="0.0" y="1544" width="740" height="40"/>
                                         <subviews>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eH9-UQ-F97">
-                                                <rect key="frame" x="2" y="-5" width="70" height="43"/>
+                                                <rect key="frame" x="8" y="0.0" width="40" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="32" id="BSG-Ai-Yao"/>
+                                                    <constraint firstAttribute="width" secondItem="eH9-UQ-F97" secondAttribute="height" id="63A-c7-lZ5"/>
+                                                    <constraint firstAttribute="height" constant="40" id="BSG-Ai-Yao"/>
                                                 </constraints>
-                                                <buttonCell key="cell" type="push" title="Back" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="taH-yh-hLA">
+                                                <buttonCell key="cell" type="bevel" title="Back" bezelStyle="rounded" alignment="center" enabled="NO" imageScaling="proportionallyDown" inset="2" id="taH-yh-hLA">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
@@ -711,8 +712,11 @@
                                                 </connections>
                                             </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0od-r6-2oF">
-                                                <rect key="frame" x="100" y="-5" width="90" height="43"/>
-                                                <buttonCell key="cell" type="push" title="Forward" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="k6A-EU-YRp">
+                                                <rect key="frame" x="83" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="0od-r6-2oF" secondAttribute="height" id="gGm-xZ-wrQ"/>
+                                                </constraints>
+                                                <buttonCell key="cell" type="bevel" title="Forward" bezelStyle="rounded" alignment="center" enabled="NO" imageScaling="proportionallyDown" inset="2" id="k6A-EU-YRp">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
@@ -721,10 +725,10 @@
                                                 </connections>
                                             </button>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="7Pl-qz-LHF" userLabel="Spacer">
-                                                <rect key="frame" x="224" y="0.0" width="335" height="40"/>
+                                                <rect key="frame" x="158" y="0.0" width="335" height="40"/>
                                             </customView>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="VNL-LO-ZoJ" userLabel="Loading Container" customClass="LoadingView" customModule="CointrackingBar" customModuleProvider="target">
-                                                <rect key="frame" x="598" y="0.0" width="40" height="40"/>
+                                                <rect key="frame" x="529" y="0.0" width="40" height="40"/>
                                                 <subviews>
                                                     <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="JQg-iL-gSQ">
                                                         <rect key="frame" x="12" y="12" width="16" height="16"/>
@@ -739,8 +743,24 @@
                                                     <outlet property="progressIndicator" destination="JQg-iL-gSQ" id="CAW-nL-76N"/>
                                                 </connections>
                                             </customView>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fN7-I5-QNT" userLabel="Info Button">
+                                                <rect key="frame" x="598" y="-5" width="51" height="43"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="fN7-I5-QNT" secondAttribute="height" multiplier="1.2" id="VNa-Q6-GEg"/>
+                                                </constraints>
+                                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zBO-ts-2us">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="infoButtonPressed:" target="XfG-lQ-9wD" id="FPa-XX-D0e"/>
+                                                </connections>
+                                            </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8h4-28-8lh">
                                                 <rect key="frame" x="672" y="-5" width="66" height="43"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="oHj-dW-Tc0"/>
+                                                </constraints>
                                                 <buttonCell key="cell" type="push" title="Quit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DLl-VE-6Ce">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
@@ -753,7 +773,7 @@
                                         <edgeInsets key="edgeInsets" left="8" right="8" top="6" bottom="0.0"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="5Jw-cj-G1o"/>
-                                            <constraint firstItem="8h4-28-8lh" firstAttribute="height" secondItem="0od-r6-2oF" secondAttribute="height" id="991-I5-lJ8"/>
+                                            <constraint firstItem="8h4-28-8lh" firstAttribute="height" secondItem="fN7-I5-QNT" secondAttribute="height" id="7vI-Ba-D4v"/>
                                             <constraint firstItem="0od-r6-2oF" firstAttribute="height" secondItem="eH9-UQ-F97" secondAttribute="height" id="Xot-df-9V9"/>
                                         </constraints>
                                         <visibilityPriorities>
@@ -762,8 +782,10 @@
                                             <integer value="1000"/>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
+                                            <integer value="1000"/>
                                         </visibilityPriorities>
                                         <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
@@ -830,6 +852,7 @@
                     <connections>
                         <outlet property="backButton" destination="eH9-UQ-F97" id="DJ1-wW-ThK"/>
                         <outlet property="forwardButton" destination="0od-r6-2oF" id="64w-Xx-u4z"/>
+                        <outlet property="infoButton" destination="fN7-I5-QNT" id="Cl8-zc-S37"/>
                         <outlet property="loadingView" destination="VNL-LO-ZoJ" id="bX6-Q2-YkJ"/>
                         <outlet property="quitButton" destination="8h4-28-8lh" id="lAc-IY-6ol"/>
                         <outlet property="webView" destination="xfD-1N-ezQ" id="cjJ-KT-mcU"/>

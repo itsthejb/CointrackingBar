@@ -12,10 +12,12 @@ import WebKit
 final class WebViewController: NSViewController {
 
     @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var loadingView: LoadingView!
+
     @IBOutlet weak var backButton: NSButton!
     @IBOutlet weak var forwardButton: NSButton!
+    @IBOutlet weak var infoButton: NSButton!
     @IBOutlet weak var quitButton: NSButton!
-    @IBOutlet weak var loadingView: LoadingView!
 
     private weak var popover: NSPopover?
     private var dettachedWindow: NSWindow?
@@ -28,6 +30,7 @@ final class WebViewController: NSViewController {
 
         backButton.set(icon: .backwards)
         forwardButton.set(icon: .forwards)
+        infoButton.set(icon: .info)
     }
 
     override func viewDidAppear() {
@@ -47,6 +50,9 @@ final class WebViewController: NSViewController {
         NSApplication.shared.terminate(self)
     }
 
+    @IBAction func infoButtonPressed(_ sender: NSButton) {
+    }
+    
     override var representedObject: Any? {
         get { return webView.url }
         set {

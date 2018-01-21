@@ -46,9 +46,7 @@ final class WebViewController: NSViewController {
     }
 
     override var representedObject: Any? {
-        get {
-            return webView.url
-        }
+        get { return webView.url }
         set {
             if let url = newValue as? URL {
                 webView.load(URLRequest(url: url))
@@ -78,16 +76,10 @@ extension WebViewController: WKUIDelegate {
 
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         loadingView.startLoading()
-//        progressContainer.isHidden = false
-//        progressView.startAnimation(self)
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         loadingView.stopLoading()
-//        progressContainer.isHidden = true
-//        progressView.startAnimation(self)
-//        loadingView?.removeFromSuperview()
-
         backButton.isEnabled = webView.backForwardList.backItem != nil
         forwardButton.isEnabled = webView.backForwardList.forwardItem != nil
 

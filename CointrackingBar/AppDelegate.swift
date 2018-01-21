@@ -15,7 +15,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     let popover = Popover()
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        statusItem = NSStatusItem.statusItem(target: self, action: #selector(menuItemClicked(item:)))
+        statusItem = NSStatusItem.statusItem(target: self,
+                                             action: #selector(menuItemClicked(item:)))
     }
 
     @objc func menuItemClicked(item: NSStatusItem) {

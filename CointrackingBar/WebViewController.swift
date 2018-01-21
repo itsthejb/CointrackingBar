@@ -24,8 +24,8 @@ final class WebViewController: NSViewController {
         super.viewDidLoad()
 
         loadingView?.isHidden = false
-        let url = URL(string: "https://cointracking.info/dashboard.php?mobile=on")!
-        webView.load(URLRequest(url: url))
+        representedObject = URL(string: "https://cointracking.info/dashboard.php?mobile=on")
+//        webView.load(URLRequest(url: url))
 
         backButton.set(icon: .backwards)
         forwardButton.set(icon: .forwards)
@@ -46,6 +46,17 @@ final class WebViewController: NSViewController {
 
     @IBAction func quitButtonPressed(_ sender: NSButton) {
         NSApplication.shared.terminate(self)
+    }
+
+    override var representedObject: Any? {
+        get {
+            return webView.url
+        }
+        set {
+            if let url = newValue as? URL {
+                webView.load(URLRequest(url: url))
+            }
+        }
     }
 }
 

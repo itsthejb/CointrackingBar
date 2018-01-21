@@ -14,7 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem: NSStatusItem = {
         let item = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
         item.action = #selector(menuItemClicked(item:))
-        item.image = #imageLiteral(resourceName: "btc-black")
+        item.image = #imageLiteral(resourceName: "btc-black").barItemImage()
         return item
     }()
 

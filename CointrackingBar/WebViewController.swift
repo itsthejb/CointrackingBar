@@ -36,7 +36,7 @@ final class WebViewController: NSViewController {
             guard let popover = self.popover else { return }
             let transform = CGAffineTransform(translationX: event.deltaX, y: event.deltaY)
             let rect = popover.positioningRect.applying(transform)
-            popover.show(relativeTo: rect, of: self.view, preferredEdge: .minX)
+            popover.show(relativeTo: rect, of: self.view, preferredEdge: .maxY)
             print(popover.positioningRect)
 //            print(event.deltaY)
         }

@@ -16,7 +16,7 @@ final class Popover: NSPopover {
         let identifier = String(describing: WebViewController.self)
         let scene = NSStoryboard.SceneIdentifier(identifier)
         let controller = storyboard.instantiateController(withIdentifier: scene) as! WebViewController
-        appearance = NSAppearance(named: .vibrantDark)
+        appearance = NSAppearance.style
         contentViewController = controller
         animates = true
         behavior = .transient

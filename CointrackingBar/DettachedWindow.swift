@@ -10,11 +10,13 @@ import Cocoa
 
 final class DettachedWindow: NSWindow {
 
-    init(size: NSSize) {
+    init(size: NSSize, contentViewController: NSViewController) {
         super.init(contentRect: NSRect(origin: .zero, size: size),
-                   styleMask: [.resizable, .titled, .fullSizeContentView],
+                   styleMask: [.resizable],//, .titled, .fullSizeContentView],
                    backing: .buffered,
                    defer: false)
+        contentViewController.removeFromParentViewController()
+        self.contentViewController = contentViewController
     }
 
 }

@@ -11,6 +11,8 @@ import WebKit
 
 final class WebViewController: NSViewController {
 
+    private let url = URL(string: "https://cointracking.info/dashboard.php?mobile=on")
+
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var loadingView: LoadingView!
 
@@ -25,7 +27,7 @@ final class WebViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        representedObject = URL(string: "https://cointracking.info/dashboard.php?mobile=on")
+        representedObject = url
         webView.isHidden = true
 
         backButton.set(icon: .backwards)

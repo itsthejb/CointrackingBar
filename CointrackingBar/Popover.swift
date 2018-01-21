@@ -22,7 +22,7 @@ final class Popover: NSPopover {
         contentViewController = controller
         contentSize = NSSize(width: contentWidth, height: contentWidth * 1.61803398875)
         animates = true
-        behavior = .transient
+        behavior = .semitransient
         delegate = controller
     }
 

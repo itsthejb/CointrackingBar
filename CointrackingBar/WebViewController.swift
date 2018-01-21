@@ -15,8 +15,10 @@ final class WebViewController: NSViewController {
     @IBOutlet weak var backButton: NSButton!
     @IBOutlet weak var forwardButton: NSButton!
     @IBOutlet weak var quitButton: NSButton!
-    private weak var popover: NSPopover?
     @IBOutlet weak var loadingView: LoadingView!
+
+    private weak var popover: NSPopover?
+    private var dettachedWindow: NSWindow?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +65,8 @@ extension WebViewController: NSPopoverDelegate {
     }
 
     func detachableWindow(for popover: NSPopover) -> NSWindow? {
-        return DettachedWindow(popover: popover)
+        dettachedWindow = DettachedWindow(popover: popover)
+        return dettachedWindow
     }
 
     func popoverShouldDetach(_ popover: NSPopover) -> Bool {

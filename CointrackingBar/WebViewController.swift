@@ -69,7 +69,7 @@ extension WebViewController: NSPopoverDelegate {
     }
 
     func detachableWindow(for popover: NSPopover) -> NSWindow? {
-        return DettachedWindow(size: popover.contentSize, contentViewController: self)
+        return DettachedWindow(popover: popover)
     }
 
     func popoverShouldDetach(_ popover: NSPopover) -> Bool {

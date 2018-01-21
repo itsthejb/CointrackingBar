@@ -15,10 +15,15 @@ final class DettachedWindow: NSWindow {
                    styleMask: [.resizable],//, .titled, .fullSizeContentView],
                    backing: .buffered,
                    defer: false)
-        appearance = popover.appearance
+<<<<<<< Updated upstream
         let content = popover.contentViewController
         content?.removeFromParentViewController()
         self.contentViewController = content
+=======
+        appearance = popover.appearance
+        popover.contentViewController?.removeFromParentViewController()
+        self.contentViewController = contentViewController
+>>>>>>> Stashed changes
     }
 
 }

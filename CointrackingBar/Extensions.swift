@@ -9,13 +9,20 @@
 import Cocoa
 
 extension NSAppearance {
-
     static let style = NSAppearance(named: .vibrantLight)
+}
 
+extension NSStatusItem {
+    static func statusItem(target: NSObject, action: Selector) -> NSStatusItem {
+        let item = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
+        item.image = #imageLiteral(resourceName: "btc-black").barItemImage()
+        item.action = action
+        item.target = target
+        return item
+    }
 }
 
 extension NSImage {
-
     func barItemImage() -> NSImage {
         let newSize = NSSize(width: 16, height: 16)
         let img = NSImage(size: newSize)

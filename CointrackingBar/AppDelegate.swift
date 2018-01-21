@@ -9,16 +9,14 @@
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+final class AppDelegate: NSObject, NSApplicationDelegate {
 
-    let statusItem: NSStatusItem = {
-        let item = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
-        item.action = #selector(menuItemClicked(item:))
-        item.image = #imageLiteral(resourceName: "btc-black").barItemImage()
-        return item
-    }()
-
+    var statusItem: NSStatusItem?
     let popover = Popover()
+
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        statusItem = NSStatusItem.statusItem(target: self, action: #selector(menuItemClicked(item:)))
+    }
 
     @objc func menuItemClicked(item: NSStatusItem) {
         togglePopOver()
@@ -29,7 +27,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     private func showPopover() {
-        guard !popover.isShown, let button = statusItem.button else { return }
+        guard !popover.isShown, let button = statusItem?.button else { return }
         popover.show(relativeTo: button.frame, of: button, preferredEdge: .minY)
     }
 

@@ -23,9 +23,9 @@ final class WebViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        loadingView?.isHidden = false
+//        loadingView?.isHidden = false
         representedObject = URL(string: "https://cointracking.info/dashboard.php?mobile=on")
-//        webView.load(URLRequest(url: url))
+        webView.isHidden = true
 
         backButton.set(icon: .backwards)
         forwardButton.set(icon: .forwards)
@@ -88,8 +88,12 @@ extension WebViewController: WKUIDelegate {
         progressContainer.isHidden = true
         progressView.startAnimation(self)
         loadingView?.removeFromSuperview()
+
         backButton.isEnabled = webView.backForwardList.backItem != nil
         forwardButton.isEnabled = webView.backForwardList.forwardItem != nil
+
+        guard webView.isHidden else { return }
+        webView.animator().isHidden = false
     }
 
 }

@@ -8,22 +8,23 @@
 
 import Cocoa
 
-final class TransparentView: NSView {
-
-    override func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
+extension NSView {
+    func drawTransparentFill(_ dirtyRect: NSRect) {
         NSColor.clear.set()
         NSRect.fill(dirtyRect)(using: .copy)
     }
-    
+}
+
+final class TransparentView: NSView {
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
+        drawTransparentFill(dirtyRect)
+    }
 }
 
 final class TransparentStackView: NSStackView {
-
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-        NSColor.clear.set()
-        NSRect.fill(dirtyRect)(using: .copy)
+        drawTransparentFill(dirtyRect)
     }
-
 }

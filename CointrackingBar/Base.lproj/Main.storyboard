@@ -755,7 +755,7 @@
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="IMj-Va-plH" userLabel="Web Stack" customClass="TransparentView" customModule="CointrackingBar" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="4" width="553" height="1540"/>
                                         <subviews>
-                                            <wkWebView hidden="YES" wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xfD-1N-ezQ" customClass="WebView" customModule="CointrackingBar" customModuleProvider="target">
+                                            <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xfD-1N-ezQ" customClass="WebView" customModule="CointrackingBar" customModuleProvider="target">
                                                 <rect key="frame" x="4" y="0.0" width="545" height="1536"/>
                                                 <wkWebViewConfiguration key="configuration">
                                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>

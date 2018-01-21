@@ -20,6 +20,7 @@
 		498156922014C501004AE737 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498156912014C501004AE737 /* Extensions.swift */; };
 		498156952014C879004AE737 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 498156942014C879004AE737 /* README.md */; };
 		49B36D32200AAA5D00C3E7CA /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B36D31200AAA5D00C3E7CA /* TitleView.swift */; };
+		49C0D5982014D44100CC3EB7 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0D5972014D44100CC3EB7 /* WebView.swift */; };
 		49ECB19A1FE574FE00016382 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ECB1991FE574FE00016382 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		498156912014C501004AE737 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		498156942014C879004AE737 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		49B36D31200AAA5D00C3E7CA /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		49C0D5972014D44100CC3EB7 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		49ECB1991FE574FE00016382 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +85,7 @@
 				4981568D2014BCBF004AE737 /* DettachedWindow.swift */,
 				4981568F2014C210004AE737 /* Popover.swift */,
 				498156912014C501004AE737 /* Extensions.swift */,
+				49C0D5972014D44100CC3EB7 /* WebView.swift */,
 			);
 			path = CointrackingBar;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				49ECB19A1FE574FE00016382 /* LoadingView.swift in Sources */,
 				497BD0701FE6CD1700589FDD /* NSButton+Icons.swift in Sources */,
 				49B36D32200AAA5D00C3E7CA /* TitleView.swift in Sources */,
+				49C0D5982014D44100CC3EB7 /* WebView.swift in Sources */,
 				498156922014C501004AE737 /* Extensions.swift in Sources */,
 				498156902014C210004AE737 /* Popover.swift in Sources */,
 			);

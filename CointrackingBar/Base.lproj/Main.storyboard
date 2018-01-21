@@ -755,7 +755,7 @@
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="IMj-Va-plH" userLabel="Web Stack">
                                         <rect key="frame" x="0.0" y="4" width="553" height="1540"/>
                                         <subviews>
-                                            <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xfD-1N-ezQ">
+                                            <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xfD-1N-ezQ" customClass="WebView" customModule="CointrackingBar" customModuleProvider="target">
                                                 <rect key="frame" x="4" y="0.0" width="545" height="1536"/>
                                                 <wkWebViewConfiguration key="configuration">
                                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -773,6 +773,8 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
                                                         <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="drawsBackground" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.isOpaque" value="NO"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <outlet property="UIDelegate" destination="XfG-lQ-9wD" id="xrS-8I-QA5"/>

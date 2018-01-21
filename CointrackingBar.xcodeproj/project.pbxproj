@@ -22,7 +22,7 @@
 		49B36D32200AAA5D00C3E7CA /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B36D31200AAA5D00C3E7CA /* TitleView.swift */; };
 		49C0D5982014D44100CC3EB7 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0D5972014D44100CC3EB7 /* WebView.swift */; };
 		49C0D59A2014D51000CC3EB7 /* TransparentViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0D5992014D51000CC3EB7 /* TransparentViews.swift */; };
-		49ECB19A1FE574FE00016382 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ECB1991FE574FE00016382 /* LoadingView.swift */; };
+		49C0D59C2014D84E00CC3EB7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0D59B2014D84E00CC3EB7 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +44,7 @@
 		49B36D31200AAA5D00C3E7CA /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		49C0D5972014D44100CC3EB7 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		49C0D5992014D51000CC3EB7 /* TransparentViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentViews.swift; sourceTree = "<group>"; };
-		49ECB1991FE574FE00016382 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		49C0D59B2014D84E00CC3EB7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +81,6 @@
 				49C0D5952014CF6C00CC3EB7 /* Assets */,
 				492BF29E1FE53E0400CAB5C5 /* AppDelegate.swift */,
 				492BF2A01FE53E0400CAB5C5 /* WebViewController.swift */,
-				49ECB1991FE574FE00016382 /* LoadingView.swift */,
 				497BD06F1FE6CD1700589FDD /* NSButton+Icons.swift */,
 				49B36D31200AAA5D00C3E7CA /* TitleView.swift */,
 				4981568D2014BCBF004AE737 /* DettachedWindow.swift */,
@@ -89,6 +88,7 @@
 				498156912014C501004AE737 /* Extensions.swift */,
 				49C0D5972014D44100CC3EB7 /* WebView.swift */,
 				49C0D5992014D51000CC3EB7 /* TransparentViews.swift */,
+				49C0D59B2014D84E00CC3EB7 /* LoadingView.swift */,
 			);
 			path = CointrackingBar;
 			sourceTree = "<group>";
@@ -214,7 +214,7 @@
 				4981568E2014BCBF004AE737 /* DettachedWindow.swift in Sources */,
 				492BF2A11FE53E0400CAB5C5 /* WebViewController.swift in Sources */,
 				492BF29F1FE53E0400CAB5C5 /* AppDelegate.swift in Sources */,
-				49ECB19A1FE574FE00016382 /* LoadingView.swift in Sources */,
+				49C0D59C2014D84E00CC3EB7 /* LoadingView.swift in Sources */,
 				497BD0701FE6CD1700589FDD /* NSButton+Icons.swift in Sources */,
 				49C0D59A2014D51000CC3EB7 /* TransparentViews.swift in Sources */,
 				49B36D32200AAA5D00C3E7CA /* TitleView.swift in Sources */,

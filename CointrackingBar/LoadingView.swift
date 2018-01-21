@@ -2,37 +2,37 @@
 //  LoadingView.swift
 //  CointrackingBar
 //
-//  Created by Jonathan Crooke on 16/12/2017.
-//  Copyright © 2017 Jonathan Crooke. All rights reserved.
+//  Created by Jonathan Crooke on 21/01/2018.
+//  Copyright © 2018 Jonathan Crooke. All rights reserved.
 //
 
 import Cocoa
 
-final class LoadingView: NSView {
+final class LoadingView: TransparentView {
 
-    lazy var progressView: NSProgressIndicator = {
-        let view = NSProgressIndicator()
-        view.isIndeterminate = true
-        return view
-    }()
+    @IBOutlet var progressIndicator: NSProgressIndicator?
 
     override func awakeFromNib() {
         super.awakeFromNib()
-//        translatesAutoresizingMaskIntoConstraints = false
-//        wantsLayer = true
-//        addSubview(progressView)
-//        NSLayoutConstraint.activate([
-//            progressView.centerXAnchor.constraint(equalTo: centerXAnchor),
-//            progressView.centerYAnchor.constraint(equalTo: centerYAnchor)
-//            ])
+        isHidden = true
+        wantsLayer = true
+        progressIndicator?.startAnimation(self)
     }
 
-    override var wantsUpdateLayer: Bool {
-        return true
+    func startLoading() {
+        isHidden = false
     }
 
-    override func updateLayer() {
-        layer?.backgroundColor = NSColor.white.cgColor
+    override var isHidden: Bool {
+        didSet {
+            progressIndicator?.isHidden = isHidden
+        }
+    }
+
+    func stopLoading() {
+        NSAnimationContext.runAnimationGroup({ _ in
+            self.isHidden = true
+        }, completionHandler: nil)
     }
 
 }

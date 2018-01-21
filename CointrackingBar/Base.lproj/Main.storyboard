@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
         <plugIn identifier="com.apple.WebKit2IBPlugin" version="13771"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
@@ -687,14 +688,14 @@
             <objects>
                 <viewController storyboardIdentifier="WebViewController" id="XfG-lQ-9wD" customClass="WebViewController" customModule="CointrackingBar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl" customClass="TransparentView" customModule="CointrackingBar" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="553" height="1584"/>
+                        <rect key="frame" x="0.0" y="0.0" width="740" height="1584"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hdu-G1-1Tb" customClass="TransparentStackView" customModule="CointrackingBar" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="553" height="1584"/>
+                                <rect key="frame" x="0.0" y="0.0" width="740" height="1584"/>
                                 <subviews>
                                     <stackView distribution="equalSpacing" orientation="horizontal" alignment="top" spacing="4" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NcX-b6-u0I" userLabel="Controls Stack">
-                                        <rect key="frame" x="0.0" y="1544" width="553" height="40"/>
+                                        <rect key="frame" x="0.0" y="1544" width="740" height="40"/>
                                         <subviews>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eH9-UQ-F97">
                                                 <rect key="frame" x="2" y="-5" width="70" height="43"/>
@@ -710,7 +711,7 @@
                                                 </connections>
                                             </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0od-r6-2oF">
-                                                <rect key="frame" x="64" y="-5" width="90" height="43"/>
+                                                <rect key="frame" x="100" y="-5" width="90" height="43"/>
                                                 <buttonCell key="cell" type="push" title="Forward" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="k6A-EU-YRp">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
@@ -719,11 +720,27 @@
                                                     <action selector="forwardButtonPressed:" target="XfG-lQ-9wD" id="NoC-Ye-odj"/>
                                                 </connections>
                                             </button>
-                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="7Pl-qz-LHF">
-                                                <rect key="frame" x="152" y="0.0" width="335" height="40"/>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="7Pl-qz-LHF" userLabel="Spacer">
+                                                <rect key="frame" x="224" y="0.0" width="335" height="40"/>
+                                            </customView>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="VNL-LO-ZoJ" userLabel="Loading Container" customClass="LoadingView" customModule="CointrackingBar" customModuleProvider="target">
+                                                <rect key="frame" x="598" y="0.0" width="40" height="40"/>
+                                                <subviews>
+                                                    <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="JQg-iL-gSQ">
+                                                        <rect key="frame" x="12" y="12" width="16" height="16"/>
+                                                    </progressIndicator>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="JQg-iL-gSQ" firstAttribute="centerX" secondItem="VNL-LO-ZoJ" secondAttribute="centerX" id="479-IV-Hpy"/>
+                                                    <constraint firstAttribute="width" secondItem="VNL-LO-ZoJ" secondAttribute="height" id="neI-1P-3BR"/>
+                                                    <constraint firstItem="JQg-iL-gSQ" firstAttribute="centerY" secondItem="VNL-LO-ZoJ" secondAttribute="centerY" id="tN5-F6-uei"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="progressIndicator" destination="JQg-iL-gSQ" id="CAW-nL-76N"/>
+                                                </connections>
                                             </customView>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8h4-28-8lh">
-                                                <rect key="frame" x="485" y="-5" width="66" height="43"/>
+                                                <rect key="frame" x="672" y="-5" width="66" height="43"/>
                                                 <buttonCell key="cell" type="push" title="Quit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DLl-VE-6Ce">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
@@ -744,8 +761,10 @@
                                             <integer value="1000"/>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
+                                            <integer value="1000"/>
                                         </visibilityPriorities>
                                         <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
@@ -789,32 +808,13 @@
                                             <constraint firstItem="xfD-1N-ezQ" firstAttribute="top" secondItem="IMj-Va-plH" secondAttribute="top" constant="4" id="zjX-ME-l2f"/>
                                         </constraints>
                                     </customView>
-                                    <customView hidden="YES" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ous-Tm-w9l">
-                                        <rect key="frame" x="0.0" y="1576" width="163" height="8"/>
-                                        <subviews>
-                                            <progressIndicator wantsLayer="YES" ambiguous="YES" maxValue="100" indeterminate="YES" controlSize="small" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="d8R-K6-Eaf">
-                                                <rect key="frame" x="20" y="0.0" width="123" height="8"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="8" id="eHz-00-es2"/>
-                                                </constraints>
-                                            </progressIndicator>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="d8R-K6-Eaf" firstAttribute="top" secondItem="Ous-Tm-w9l" secondAttribute="top" id="1fi-cM-7Qn"/>
-                                            <constraint firstItem="d8R-K6-Eaf" firstAttribute="leading" secondItem="Ous-Tm-w9l" secondAttribute="leading" constant="20" symbolic="YES" id="51f-eW-9pa"/>
-                                            <constraint firstAttribute="trailing" secondItem="d8R-K6-Eaf" secondAttribute="trailing" constant="20" symbolic="YES" id="Pr1-gl-P9b"/>
-                                            <constraint firstAttribute="bottom" secondItem="d8R-K6-Eaf" secondAttribute="bottom" id="cOs-uJ-fQO"/>
-                                        </constraints>
-                                    </customView>
                                 </subviews>
                                 <edgeInsets key="edgeInsets" left="0.0" right="0.0" top="0.0" bottom="4"/>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
-                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
-                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
@@ -830,8 +830,7 @@
                     <connections>
                         <outlet property="backButton" destination="eH9-UQ-F97" id="DJ1-wW-ThK"/>
                         <outlet property="forwardButton" destination="0od-r6-2oF" id="64w-Xx-u4z"/>
-                        <outlet property="progressContainer" destination="Ous-Tm-w9l" id="ohl-ea-LUE"/>
-                        <outlet property="progressView" destination="d8R-K6-Eaf" id="IHZ-uT-PiR"/>
+                        <outlet property="loadingView" destination="VNL-LO-ZoJ" id="bX6-Q2-YkJ"/>
                         <outlet property="quitButton" destination="8h4-28-8lh" id="lAc-IY-6ol"/>
                         <outlet property="webView" destination="xfD-1N-ezQ" id="cjJ-KT-mcU"/>
                     </connections>

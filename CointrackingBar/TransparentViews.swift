@@ -15,7 +15,7 @@ extension NSView {
     }
 }
 
-final class TransparentView: NSView {
+class TransparentView: NSView {
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         drawTransparentFill(dirtyRect)

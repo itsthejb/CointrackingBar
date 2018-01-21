@@ -12,18 +12,15 @@ import WebKit
 final class WebViewController: NSViewController {
 
     @IBOutlet weak var webView: WKWebView!
-    @IBOutlet weak var progressContainer: NSView!
-    @IBOutlet weak var progressView: NSProgressIndicator!
     @IBOutlet weak var backButton: NSButton!
     @IBOutlet weak var forwardButton: NSButton!
     @IBOutlet weak var quitButton: NSButton!
-    @IBOutlet weak var loadingView: LoadingView?
     private weak var popover: NSPopover?
+    @IBOutlet weak var loadingView: LoadingView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        loadingView?.isHidden = false
         representedObject = URL(string: "https://cointracking.info/dashboard.php?mobile=on")
         webView.isHidden = true
 
@@ -80,14 +77,16 @@ extension WebViewController: NSPopoverDelegate {
 extension WebViewController: WKUIDelegate {
 
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
-        progressContainer.isHidden = false
-        progressView.startAnimation(self)
+        loadingView.startLoading()
+//        progressContainer.isHidden = false
+//        progressView.startAnimation(self)
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        progressContainer.isHidden = true
-        progressView.startAnimation(self)
-        loadingView?.removeFromSuperview()
+        loadingView.stopLoading()
+//        progressContainer.isHidden = true
+//        progressView.startAnimation(self)
+//        loadingView?.removeFromSuperview()
 
         backButton.isEnabled = webView.backForwardList.backItem != nil
         forwardButton.isEnabled = webView.backForwardList.forwardItem != nil

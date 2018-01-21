@@ -686,11 +686,11 @@
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController storyboardIdentifier="WebViewController" id="XfG-lQ-9wD" customClass="WebViewController" customModule="CointrackingBar" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
+                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl" customClass="TransparentView" customModule="CointrackingBar" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="553" height="1584"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hdu-G1-1Tb">
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hdu-G1-1Tb" customClass="TransparentStackView" customModule="CointrackingBar" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="553" height="1584"/>
                                 <subviews>
                                     <stackView distribution="equalSpacing" orientation="horizontal" alignment="top" spacing="4" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NcX-b6-u0I" userLabel="Controls Stack">
@@ -752,10 +752,10 @@
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
                                     </stackView>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="IMj-Va-plH" userLabel="Web Stack">
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="IMj-Va-plH" userLabel="Web Stack" customClass="TransparentView" customModule="CointrackingBar" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="4" width="553" height="1540"/>
                                         <subviews>
-                                            <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xfD-1N-ezQ" customClass="WebView" customModule="CointrackingBar" customModuleProvider="target">
+                                            <wkWebView hidden="YES" wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xfD-1N-ezQ" customClass="WebView" customModule="CointrackingBar" customModuleProvider="target">
                                                 <rect key="frame" x="4" y="0.0" width="545" height="1536"/>
                                                 <wkWebViewConfiguration key="configuration">
                                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -781,17 +781,10 @@
                                                     <outlet property="navigationDelegate" destination="XfG-lQ-9wD" id="Q3Q-ar-cbA"/>
                                                 </connections>
                                             </wkWebView>
-                                            <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sZq-mG-QwI" customClass="LoadingView" customModule="CointrackingBar" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="553" height="1540"/>
-                                            </customView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="xfD-1N-ezQ" secondAttribute="trailing" constant="4" id="HC6-23-NAb"/>
-                                            <constraint firstAttribute="trailing" secondItem="sZq-mG-QwI" secondAttribute="trailing" id="J1c-G9-1HD"/>
                                             <constraint firstItem="xfD-1N-ezQ" firstAttribute="leading" secondItem="IMj-Va-plH" secondAttribute="leading" constant="4" id="S6d-lT-Js6"/>
-                                            <constraint firstItem="sZq-mG-QwI" firstAttribute="leading" secondItem="IMj-Va-plH" secondAttribute="leading" id="Y1b-2G-c9a"/>
-                                            <constraint firstItem="sZq-mG-QwI" firstAttribute="top" secondItem="IMj-Va-plH" secondAttribute="top" id="czR-G4-DPp"/>
-                                            <constraint firstAttribute="bottom" secondItem="sZq-mG-QwI" secondAttribute="bottom" id="dxV-P1-fgY"/>
                                             <constraint firstAttribute="bottom" secondItem="xfD-1N-ezQ" secondAttribute="bottom" id="gVh-xe-ab3"/>
                                             <constraint firstItem="xfD-1N-ezQ" firstAttribute="top" secondItem="IMj-Va-plH" secondAttribute="top" constant="4" id="zjX-ME-l2f"/>
                                         </constraints>
@@ -837,7 +830,6 @@
                     <connections>
                         <outlet property="backButton" destination="eH9-UQ-F97" id="DJ1-wW-ThK"/>
                         <outlet property="forwardButton" destination="0od-r6-2oF" id="64w-Xx-u4z"/>
-                        <outlet property="loadingView" destination="sZq-mG-QwI" id="v3K-bG-f5o"/>
                         <outlet property="progressContainer" destination="Ous-Tm-w9l" id="ohl-ea-LUE"/>
                         <outlet property="progressView" destination="d8R-K6-Eaf" id="IHZ-uT-PiR"/>
                         <outlet property="quitButton" destination="8h4-28-8lh" id="lAc-IY-6ol"/>

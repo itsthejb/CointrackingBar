@@ -20,8 +20,6 @@ final class WebViewController: NSViewController {
     @IBOutlet weak var loadingView: LoadingView?
     private weak var popover: NSPopover?
 
-    @IBOutlet weak var titleView: TitleView!
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,16 +29,6 @@ final class WebViewController: NSViewController {
 
         backButton.set(icon: .backwards)
         forwardButton.set(icon: .forwards)
-
-        titleView.onDrag = { [unowned self] event in
-            guard let popover = self.popover else { return }
-            let transform = CGAffineTransform(translationX: event.deltaX, y: event.deltaY)
-            let rect = popover.positioningRect.applying(transform)
-            popover.show(relativeTo: rect, of: self.view, preferredEdge: .maxY)
-            print(popover.positioningRect)
-//            print(event.deltaY)
-        }
-//        view.addTrackingArea(titleView.trackingArea)
     }
 
     override func viewDidAppear() {

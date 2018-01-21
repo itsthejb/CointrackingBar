@@ -12,7 +12,7 @@ final class DettachedWindow: NSWindow {
 
     init(popover: NSPopover) {
         super.init(contentRect: NSRect(origin: .zero, size: popover.contentSize),
-                   styleMask: [.borderless, .titled, .resizable],//, .titled, .fullSizeContentView],
+                   styleMask: [.borderless, .titled, .resizable],
                    backing: .buffered,
                    defer: false)
         appearance = popover.appearance

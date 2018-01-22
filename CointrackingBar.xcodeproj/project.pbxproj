@@ -14,13 +14,9 @@
 		497BD06C1FE6CC9400589FDD /* Font Awesome 5 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 497BD0691FE6CC9300589FDD /* Font Awesome 5 Brands-Regular-400.otf */; };
 		497BD06D1FE6CC9400589FDD /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 497BD06A1FE6CC9300589FDD /* Font Awesome 5 Free-Regular-400.otf */; };
 		497BD06E1FE6CC9400589FDD /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 497BD06B1FE6CC9300589FDD /* Font Awesome 5 Free-Solid-900.otf */; };
-		497BD0701FE6CD1700589FDD /* NSButton+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497BD06F1FE6CD1700589FDD /* NSButton+Icons.swift */; };
-		4981568E2014BCBF004AE737 /* DettachedWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981568D2014BCBF004AE737 /* DettachedWindow.swift */; };
-		498156902014C210004AE737 /* Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981568F2014C210004AE737 /* Popover.swift */; };
+		4981568E2014BCBF004AE737 /* CustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981568D2014BCBF004AE737 /* CustomViews.swift */; };
 		498156922014C501004AE737 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498156912014C501004AE737 /* Extensions.swift */; };
 		498156952014C879004AE737 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 498156942014C879004AE737 /* README.md */; };
-		49C0D59A2014D51000CC3EB7 /* TransparentViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0D5992014D51000CC3EB7 /* TransparentViews.swift */; };
-		49C0D59C2014D84E00CC3EB7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0D59B2014D84E00CC3EB7 /* LoadingView.swift */; };
 		49C0D59E20165E1800CC3EB7 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0D59D20165E1800CC3EB7 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,13 +31,9 @@
 		497BD0691FE6CC9300589FDD /* Font Awesome 5 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Brands-Regular-400.otf"; sourceTree = "<group>"; };
 		497BD06A1FE6CC9300589FDD /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
 		497BD06B1FE6CC9300589FDD /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
-		497BD06F1FE6CD1700589FDD /* NSButton+Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSButton+Icons.swift"; sourceTree = "<group>"; };
-		4981568D2014BCBF004AE737 /* DettachedWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DettachedWindow.swift; sourceTree = "<group>"; };
-		4981568F2014C210004AE737 /* Popover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popover.swift; sourceTree = "<group>"; };
+		4981568D2014BCBF004AE737 /* CustomViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViews.swift; sourceTree = "<group>"; };
 		498156912014C501004AE737 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		498156942014C879004AE737 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		49C0D5992014D51000CC3EB7 /* TransparentViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentViews.swift; sourceTree = "<group>"; };
-		49C0D59B2014D84E00CC3EB7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		49C0D59D20165E1800CC3EB7 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,12 +72,8 @@
 				492BF29E1FE53E0400CAB5C5 /* AppDelegate.swift */,
 				492BF2A01FE53E0400CAB5C5 /* MainViewController.swift */,
 				49C0D59D20165E1800CC3EB7 /* WebViewController.swift */,
-				497BD06F1FE6CD1700589FDD /* NSButton+Icons.swift */,
-				4981568D2014BCBF004AE737 /* DettachedWindow.swift */,
-				4981568F2014C210004AE737 /* Popover.swift */,
+				4981568D2014BCBF004AE737 /* CustomViews.swift */,
 				498156912014C501004AE737 /* Extensions.swift */,
-				49C0D5992014D51000CC3EB7 /* TransparentViews.swift */,
-				49C0D59B2014D84E00CC3EB7 /* LoadingView.swift */,
 			);
 			path = CointrackingBar;
 			sourceTree = "<group>";
@@ -208,15 +196,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4981568E2014BCBF004AE737 /* DettachedWindow.swift in Sources */,
+				4981568E2014BCBF004AE737 /* CustomViews.swift in Sources */,
 				49C0D59E20165E1800CC3EB7 /* WebViewController.swift in Sources */,
 				492BF2A11FE53E0400CAB5C5 /* MainViewController.swift in Sources */,
 				492BF29F1FE53E0400CAB5C5 /* AppDelegate.swift in Sources */,
-				49C0D59C2014D84E00CC3EB7 /* LoadingView.swift in Sources */,
-				497BD0701FE6CD1700589FDD /* NSButton+Icons.swift in Sources */,
-				49C0D59A2014D51000CC3EB7 /* TransparentViews.swift in Sources */,
 				498156922014C501004AE737 /* Extensions.swift in Sources */,
-				498156902014C210004AE737 /* Popover.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

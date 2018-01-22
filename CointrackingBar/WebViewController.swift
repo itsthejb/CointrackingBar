@@ -19,7 +19,7 @@ final class WebViewController: NSViewController {
 
     override func viewDidAppear() {
         super.viewDidAppear()
-        webView?.reload()
+//        webView?.reload()
     }
 
     override var representedObject: Any? {

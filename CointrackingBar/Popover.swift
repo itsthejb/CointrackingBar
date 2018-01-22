@@ -15,9 +15,9 @@ final class Popover: NSPopover {
     override init() {
         super.init()
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
-        let identifier = String(describing: WebViewController.self)
+        let identifier = String(describing: MainViewController.self)
         let scene = NSStoryboard.SceneIdentifier(identifier)
-        let controller = storyboard.instantiateController(withIdentifier: scene) as! WebViewController
+        let controller = storyboard.instantiateController(withIdentifier: scene) as! MainViewController
         appearance = NSAppearance.style
         contentViewController = controller
         contentSize = NSSize(width: contentWidth, height: contentWidth * 1.61803398875)

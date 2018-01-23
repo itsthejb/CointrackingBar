@@ -18,6 +18,7 @@
 		498156922014C501004AE737 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498156912014C501004AE737 /* Extensions.swift */; };
 		498156952014C879004AE737 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 498156942014C879004AE737 /* README.md */; };
 		49C0D59E20165E1800CC3EB7 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0D59D20165E1800CC3EB7 /* WebViewController.swift */; };
+		49C0D5A02017D21C00CC3EB7 /* DetachedWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0D59F2017D21C00CC3EB7 /* DetachedWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		498156912014C501004AE737 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		498156942014C879004AE737 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		49C0D59D20165E1800CC3EB7 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		49C0D59F2017D21C00CC3EB7 /* DetachedWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetachedWindow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				492BF29E1FE53E0400CAB5C5 /* AppDelegate.swift */,
 				492BF2A01FE53E0400CAB5C5 /* MainViewController.swift */,
 				49C0D59D20165E1800CC3EB7 /* WebViewController.swift */,
+				49C0D59F2017D21C00CC3EB7 /* DetachedWindow.swift */,
 				4981568D2014BCBF004AE737 /* CustomViews.swift */,
 				498156912014C501004AE737 /* Extensions.swift */,
 			);
@@ -200,6 +203,7 @@
 				49C0D59E20165E1800CC3EB7 /* WebViewController.swift in Sources */,
 				492BF2A11FE53E0400CAB5C5 /* MainViewController.swift in Sources */,
 				492BF29F1FE53E0400CAB5C5 /* AppDelegate.swift in Sources */,
+				49C0D5A02017D21C00CC3EB7 /* DetachedWindow.swift in Sources */,
 				498156922014C501004AE737 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

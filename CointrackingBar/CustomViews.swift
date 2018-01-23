@@ -14,10 +14,7 @@ final class Popover: NSPopover {
 
     override init() {
         super.init()
-        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
-        let identifier = String(describing: MainViewController.self)
-        let scene = NSStoryboard.SceneIdentifier(identifier)
-        let controller = storyboard.instantiateController(withIdentifier: scene) as! MainViewController
+        let controller = NSStoryboard.with(class: MainViewController.self)
         appearance = NSAppearance.style
         contentViewController = controller
         contentSize = NSSize(width: contentWidth, height: contentWidth * 1.61803398875)
@@ -28,21 +25,6 @@ final class Popover: NSPopover {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-}
-
-final class DettachedWindow: NSWindow {
-
-    init(popover: NSPopover) {
-        super.init(contentRect: NSRect(origin: .zero, size: popover.contentSize),
-                   styleMask: [.borderless, .titled, .resizable, .closable],
-                   backing: .buffered,
-                   defer: false)
-        appearance = popover.appearance
-        let content = popover.contentViewController
-        content?.removeFromParentViewController()
-        self.contentViewController = content
     }
 
 }

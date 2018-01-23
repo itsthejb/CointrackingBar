@@ -51,7 +51,22 @@ extension NSButton {
         title = icon.iconString
     }
 
-    private var iconString: String {
+}
+
+extension NSStoryboard {
+    static func with<T>(`class`: T.Type) -> T {
+        let scene = NSStoryboard.SceneIdentifier(String(describing: T.self))
+        return storyboard.instantiateController(withIdentifier: scene) as! T
+    }
+
+    static private var storyboard: NSStoryboard {
+        return NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
+    }
+}
+
+private extension NSButton.Icon {
+
+    var iconString: String {
         switch self {
         case .forwards:
             return "\u{f0da}"

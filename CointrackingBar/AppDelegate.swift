@@ -10,23 +10,18 @@ import Cocoa
 
 @NSApplicationMain
 final class AppDelegate: NSObject, NSApplicationDelegate {
-
     var statusItem: NSStatusItem?
     let popover = Popover()
-
 }
 
 extension AppDelegate {
-
     func applicationDidFinishLaunching(_ notification: Notification) {
         statusItem = NSStatusItem.statusItem(target: self,
                                              action: #selector(menuItemClicked(item:)))
     }
-
 }
 
 extension AppDelegate {
-
     @objc func menuItemClicked(item: NSStatusItem) {
         togglePopOver()
     }
@@ -44,6 +39,5 @@ extension AppDelegate {
         guard popover.isShown else { return }
         popover.performClose(self)
     }
-
 }
 

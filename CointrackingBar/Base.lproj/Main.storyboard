@@ -794,10 +794,10 @@
                                         </customSpacing>
                                     </stackView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="ldh-1s-RWl" userLabel="Content Frame" customClass="TransparentView" customModule="CointrackingBar" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="4" width="163" height="1786"/>
+                                        <rect key="frame" x="0.0" y="4" width="750" height="1786"/>
                                         <subviews>
                                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="Y57-2B-L1O" customClass="TransparentView" customModule="CointrackingBar" customModuleProvider="target">
-                                                <rect key="frame" x="4" y="0.0" width="155" height="1786"/>
+                                                <rect key="frame" x="4" y="0.0" width="742" height="1786"/>
                                                 <connections>
                                                     <segue destination="mX4-iK-qkW" kind="embed" id="vbY-B6-ijE"/>
                                                 </connections>
@@ -881,6 +881,24 @@
                 <customObject id="0fC-cd-CmO" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="856" y="655"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="XlO-aa-ITC">
+            <objects>
+                <windowController storyboardIdentifier="DettachedWindowController" id="rkP-vP-axs" customClass="DetachedWindowController" customModule="CointrackingBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="QWk-3e-MiP">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="294" y="313" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+                        <connections>
+                            <outlet property="delegate" destination="rkP-vP-axs" id="Ojz-Ou-cAi"/>
+                        </connections>
+                    </window>
+                </windowController>
+                <customObject id="dbZ-V8-Kte" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-67" y="1957"/>
         </scene>
     </scenes>
 </document>

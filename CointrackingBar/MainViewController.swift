@@ -34,23 +34,25 @@ final class MainViewController: NSViewController {
 
     private weak var popover: NSPopover?
 
-    lazy var detachedWindowController: DetachedWindowController = {
+    func detachedWindowController(contentController: NSViewController) -> DetachedWindowController {
         let controller = NSStoryboard.with(class: DetachedWindowController.self)
-//        let detachedWindowController = DetachedWindowController(windowNibName: NSNib.Name(rawValue: ""))
-//        detachedWindowController.contentViewController = ContentViewController()
-
-//        self.detachedWindowControllerLoaded = true
-//        NotificationCenter.default.addObserver(self, selector: #selector(detachedWindowWillClose(notification:)), name: NSWindow.willCloseNotification, object: detachedWindowController.window)
-
+        controller.contentViewController = contentController
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(detachedWindowWillClose(_:)),
+                                               name: NSWindow.willCloseNotification,
+                                               object: controller.window)
         return controller
-    }()
-    //private var dettachedWindow: NSWindow?
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         backButton.set(icon: .backwards)
         forwardButton.set(icon: .forwards)
         infoButton.set(icon: .info)
+    }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
 
     @IBAction func backButtonPressed(_ sender: NSButton) {
@@ -89,11 +91,7 @@ extension MainViewController: NSPopoverDelegate {
     }
 
     func detachableWindow(for popover: NSPopover) -> NSWindow? {
-        let dettachedWindow = DettachedWindow(popover: popover)
-//        defer {  }
-        dettachedWindow.delegate = self
-//        self.dettachedWindow = dettachedWindow
-        return dettachedWindow
+        return detachedWindowController(contentController: self).window
     }
 
     func popoverShouldDetach(_ popover: NSPopover) -> Bool {
@@ -104,12 +102,8 @@ extension MainViewController: NSPopoverDelegate {
 
 extension MainViewController: NSWindowDelegate {
 
-    func windowWillClose(_ notification: Notification) {
-        guard let window = notification.object as? DettachedWindow else { return }
-        popover?.contentViewController = window.contentViewController
-//        guard notification.object as? NSWindow == dettachedWindow else { return }
-//
-////        dettachedWindow = nil
+    @objc func detachedWindowWillClose(_ notification: Notification) {
+        // TODO pass back?
     }
 
 }

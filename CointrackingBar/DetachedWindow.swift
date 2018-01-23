@@ -9,34 +9,9 @@
 import Cocoa
 
 final class DetachedWindowController: NSWindowController {
-
-//    static var controller: DetachedWindowController {
-//        
-//    }
-
-    override func windowDidLoad() {
-        super.windowDidLoad()
-    
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    func set(contentViewController: NSViewController, popover: NSPopover) {
+        guard let window = window else { return }
+        self.contentViewController = contentViewController
+        window.appearance = popover.appearance
     }
-
-}
-
-final class DettachedWindow: NSWindow {
-
-    init(popover: NSPopover) {
-        super.init(contentRect: NSRect(origin: .zero, size: popover.contentSize),
-                   styleMask: [.borderless, .titled, .resizable, .closable],
-                   backing: .buffered,
-                   defer: false)
-        appearance = popover.appearance
-        let content = popover.contentViewController
-        content?.removeFromParentViewController()
-        self.contentViewController = content
-    }
-
-    deinit {
-        return
-    }
-
 }

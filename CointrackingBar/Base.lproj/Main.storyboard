@@ -810,7 +810,6 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
                                                         <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="drawsBackground" value="NO"/>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.isOpaque" value="NO"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -874,21 +873,6 @@
                             <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                             <wkPreferences key="preferences"/>
                         </wkWebViewConfiguration>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="YES"/>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="4"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
-                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                <integer key="value" value="10"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="drawsBackground" value="NO"/>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.isOpaque" value="NO"/>
-                        </userDefinedRuntimeAttributes>
                     </wkWebView>
                     <connections>
                         <outlet property="webView" destination="xfD-1N-ezQ" id="waV-GO-mpI"/>

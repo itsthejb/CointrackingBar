@@ -35,13 +35,9 @@ final class MainViewController: NSViewController {
 
     private weak var popover: NSPopover?
 
-    func detachedWindowController(contentController: NSViewController) -> DetachedWindowController {
+    func detachedWindowController(contentController: NSViewController, popover: NSPopover) -> DetachedWindowController {
         let controller = NSStoryboard.with(class: DetachedWindowController.self)
-        controller.contentViewController = contentController
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(detachedWindowWillClose(_:)),
-                                               name: NSWindow.willCloseNotification,
-                                               object: controller.window)
+        controller.set(contentViewController: contentController, popover: popover)
         return controller
     }
 
@@ -121,7 +117,7 @@ extension MainViewController: NSPopoverDelegate {
     }
 
     func detachableWindow(for popover: NSPopover) -> NSWindow? {
-        return detachedWindowController(contentController: self).window
+        return detachedWindowController(contentController: self, popover: popover).window
     }
 
     func popoverShouldDetach(_ popover: NSPopover) -> Bool {

@@ -21,17 +21,18 @@ final class ContentViewController: NSViewController {
     }
 
     private func showInfoViewController(animated: Bool) {
-//        guard let webController = webViewController else { return }
-//        let controller = NSStoryboard.with(class: InfoViewController.self)
-//        insertChildViewController(controller, at: 0)
-//        transition(from: webController, to: controller)
+        let infoViewController = InfoViewController.controller()
+        addChildViewController(infoViewController)
+        transition(from: webViewController, to: infoViewController, options: .slideUp) {
+//            controller.removeFromParentViewController()
+        }
     }
 
     private func hideInfoViewController(animated: Bool) {
-//        guard let webController = webViewController, let infoController = infoViewController else { return }
-//        transition(from: infoController, to: webController, options: .crossfade) {
-//            infoController.removeFromParentViewController()
-//        }
+        guard let infoController = infoViewController else { return }
+        transition(from: infoController, to: webViewController, options: .slideUp) {
+            infoController.removeFromParentViewController()
+        }
     }
 
     private var infoViewController: InfoViewController? {
@@ -46,8 +47,6 @@ final class ContentViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        hideInfoViewController()
-        webViewController.view.translatesAutoresizingMaskIntoConstraints = false
         addChildViewController(webViewController)
         view.addSubview(webViewController.view)
         NSLayoutConstraint.activate([

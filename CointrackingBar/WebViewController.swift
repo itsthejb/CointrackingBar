@@ -47,6 +47,9 @@ final class WebView: WKWebView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        translatesAutoresizingMaskIntoConstraints = false
+
         if NSAppKitVersion.current.rawValue > 1500 {
             setValue(false, forKey: "drawsBackground")
         }

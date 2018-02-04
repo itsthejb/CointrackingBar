@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class InfoViewController: NSViewController {
+final class InfoViewController: NSViewController, StoryboardViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -22,6 +22,21 @@ extension NSStatusItem {
     }
 }
 
+extension NSView {
+    @IBInspectable var borderWidth: CGFloat {
+        set { layer?.borderWidth = newValue }
+        get { return layer!.borderWidth }
+    }
+
+    @IBInspectable var borderColor: NSColor? {
+        set { layer?.borderColor = newValue?.cgColor }
+        get {
+            if let color = layer?.borderColor { return NSColor(cgColor: color) }
+            return nil
+        }
+    }
+}
+
 extension NSImage {
     func barItemImage() -> NSImage {
         let newSize = NSSize(width: 16, height: 16)

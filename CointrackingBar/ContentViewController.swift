@@ -30,7 +30,9 @@ final class ContentViewController: NSViewController {
 
     private func hideInfoViewController(animated: Bool) {
         guard let infoController = infoViewController else { return }
-        transition(from: infoController, to: webViewController, options: .slideUp) {
+//        addChildViewController(webViewController)
+        transition(from: infoController, to: webViewController, options: .slideDown) {
+            print(self.childViewControllers)
             infoController.removeFromParentViewController()
         }
     }

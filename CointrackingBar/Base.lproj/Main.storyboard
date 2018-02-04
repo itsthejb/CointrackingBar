@@ -681,57 +681,72 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="58" y="-269"/>
+            <point key="canvasLocation" x="68" y="-419"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="XfG-lQ-9wD" customClass="MainViewController" customModule="CointrackingBar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl" customClass="TransparentView" customModule="CointrackingBar" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="750" height="1930"/>
+                        <rect key="frame" x="0.0" y="0.0" width="906" height="2066"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hdu-G1-1Tb" customClass="TransparentStackView" customModule="CointrackingBar" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="750" height="1930"/>
+                                <rect key="frame" x="0.0" y="0.0" width="906" height="2066"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="6" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NcX-b6-u0I" userLabel="Controls Stack">
-                                        <rect key="frame" x="0.0" y="1886" width="425" height="44"/>
+                                        <rect key="frame" x="0.0" y="2022" width="750" height="44"/>
                                         <subviews>
-                                            <button horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="eH9-UQ-F97">
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Rth-Qe-zFl" userLabel="Back Container">
                                                 <rect key="frame" x="8" y="2" width="40" height="40"/>
+                                                <subviews>
+                                                    <button horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="eH9-UQ-F97">
+                                                        <rect key="frame" x="3" y="6" width="34" height="32"/>
+                                                        <buttonCell key="cell" type="bevel" title="Back" bezelStyle="rounded" alignment="center" enabled="NO" imageScaling="proportionallyDown" inset="2" id="taH-yh-hLA">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="backButtonPressed:" target="XfG-lQ-9wD" id="K1J-1K-YaQ"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="eH9-UQ-F97" secondAttribute="height" id="63A-c7-lZ5"/>
-                                                    <constraint firstAttribute="height" constant="40" id="BSG-Ai-Yao"/>
+                                                    <constraint firstItem="eH9-UQ-F97" firstAttribute="centerX" secondItem="Rth-Qe-zFl" secondAttribute="centerX" id="eBG-Ng-nJt"/>
+                                                    <constraint firstAttribute="height" constant="40" id="fPi-md-h8j"/>
+                                                    <constraint firstItem="eH9-UQ-F97" firstAttribute="centerY" secondItem="Rth-Qe-zFl" secondAttribute="centerY" constant="-2" id="hOo-Tv-IoG"/>
+                                                    <constraint firstAttribute="width" secondItem="Rth-Qe-zFl" secondAttribute="height" id="oJ8-7q-LJG"/>
                                                 </constraints>
-                                                <buttonCell key="cell" type="bevel" title="Back" bezelStyle="rounded" alignment="center" enabled="NO" imageScaling="proportionallyDown" inset="2" id="taH-yh-hLA">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                </buttonCell>
-                                                <connections>
-                                                    <action selector="backButtonPressed:" target="XfG-lQ-9wD" id="K1J-1K-YaQ"/>
-                                                </connections>
-                                            </button>
-                                            <button horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="0od-r6-2oF">
+                                            </customView>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Oa5-tN-Avc" userLabel="Forward Container">
                                                 <rect key="frame" x="54" y="2" width="40" height="40"/>
+                                                <subviews>
+                                                    <button horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="0od-r6-2oF">
+                                                        <rect key="frame" x="-7" y="6" width="54" height="32"/>
+                                                        <buttonCell key="cell" type="bevel" title="Forward" bezelStyle="rounded" alignment="center" enabled="NO" imageScaling="proportionallyDown" inset="2" id="k6A-EU-YRp">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="forwardButtonPressed:" target="XfG-lQ-9wD" id="NoC-Ye-odj"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="0od-r6-2oF" secondAttribute="height" id="gGm-xZ-wrQ"/>
+                                                    <constraint firstAttribute="width" secondItem="Oa5-tN-Avc" secondAttribute="height" id="3Ya-gs-LrH"/>
+                                                    <constraint firstItem="0od-r6-2oF" firstAttribute="centerX" secondItem="Oa5-tN-Avc" secondAttribute="centerX" id="Ifj-Ls-wIm"/>
+                                                    <constraint firstItem="0od-r6-2oF" firstAttribute="centerY" secondItem="Oa5-tN-Avc" secondAttribute="centerY" constant="-2" id="LzX-hO-7qr"/>
+                                                    <constraint firstAttribute="height" constant="40" id="Q0c-CP-mWi"/>
                                                 </constraints>
-                                                <buttonCell key="cell" type="bevel" title="Forward" bezelStyle="rounded" alignment="center" enabled="NO" imageScaling="proportionallyDown" inset="2" id="k6A-EU-YRp">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                </buttonCell>
-                                                <connections>
-                                                    <action selector="forwardButtonPressed:" target="XfG-lQ-9wD" id="NoC-Ye-odj"/>
-                                                </connections>
-                                            </button>
+                                            </customView>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="C52-ja-K1e" userLabel="Spacer" customClass="TransparentView" customModule="CointrackingBar" customModuleProvider="target">
-                                                <rect key="frame" x="100" y="0.0" width="163" height="44"/>
+                                                <rect key="frame" x="100" y="0.0" width="488" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" id="wKY-dg-2bZ"/>
                                                 </constraints>
                                             </customView>
                                             <customView horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="VNL-LO-ZoJ" userLabel="Loading Container" customClass="LoadingView" customModule="CointrackingBar" customModuleProvider="target">
-                                                <rect key="frame" x="269" y="0.0" width="44" height="44"/>
+                                                <rect key="frame" x="594" y="0.0" width="44" height="44"/>
                                                 <subviews>
                                                     <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="JQg-iL-gSQ">
                                                         <rect key="frame" x="14" y="14" width="16" height="16"/>
@@ -747,7 +762,7 @@
                                                 </connections>
                                             </customView>
                                             <button horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="fN7-I5-QNT" userLabel="Info Button">
-                                                <rect key="frame" x="313" y="-1" width="50" height="43"/>
+                                                <rect key="frame" x="638" y="-1" width="50" height="43"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="fN7-I5-QNT" secondAttribute="height" multiplier="1.2" id="VNa-Q6-GEg"/>
                                                 </constraints>
@@ -760,7 +775,7 @@
                                                 </connections>
                                             </button>
                                             <button horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="8h4-28-8lh">
-                                                <rect key="frame" x="357" y="-1" width="66" height="43"/>
+                                                <rect key="frame" x="682" y="-1" width="66" height="43"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="oHj-dW-Tc0"/>
                                                 </constraints>
@@ -780,8 +795,6 @@
                                             <constraint firstAttribute="height" constant="44" id="5Jw-cj-G1o"/>
                                             <constraint firstItem="8h4-28-8lh" firstAttribute="height" secondItem="fN7-I5-QNT" secondAttribute="height" id="7vI-Ba-D4v"/>
                                             <constraint firstItem="VNL-LO-ZoJ" firstAttribute="top" secondItem="NcX-b6-u0I" secondAttribute="top" id="LZY-U6-J3I"/>
-                                            <constraint firstItem="0od-r6-2oF" firstAttribute="height" secondItem="eH9-UQ-F97" secondAttribute="height" id="Xot-df-9V9"/>
-                                            <constraint firstItem="VNL-LO-ZoJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0od-r6-2oF" secondAttribute="trailing" id="Y9r-zv-O9G"/>
                                         </constraints>
                                         <visibilityPriorities>
                                             <integer value="1000"/>
@@ -801,10 +814,10 @@
                                         </customSpacing>
                                     </stackView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="ldh-1s-RWl" userLabel="Content Frame" customClass="TransparentView" customModule="CointrackingBar" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="4" width="750" height="1882"/>
+                                        <rect key="frame" x="0.0" y="4" width="750" height="2018"/>
                                         <subviews>
                                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="Y57-2B-L1O" customClass="TransparentView" customModule="CointrackingBar" customModuleProvider="target">
-                                                <rect key="frame" x="4" y="0.0" width="742" height="1882"/>
+                                                <rect key="frame" x="4" y="0.0" width="742" height="2018"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="YES"/>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>

@@ -9,34 +9,28 @@
 import Cocoa
 import WebKit
 
-final class MainViewController: NSViewController {
-
-    private let url = URL(string: "https://cointracking.info/dashboard.php?mobile=on")
+final class MainViewController: NSViewController, StoryboardViewController {
 
     weak var webView: WKWebView? { return webViewController?.webView }
-    weak var webViewController: WebViewController? {
+    weak var webViewController: WebViewController? { return contentViewController?.webViewController }
+
+    weak var contentViewController: ContentViewController? {
         didSet {
             guard let controller = webViewController else { return }
-            controller.loadView()
-            guard let webView = webView else { return }
-            webView.uiDelegate = self
-            webView.navigationDelegate = self
-            controller.representedObject = url
+            controller.load(with: self)
         }
     }
-
-    @IBOutlet weak var loadingView: LoadingView!
-    @IBOutlet weak var contentContainer: NSView!
 
     @IBOutlet weak var backButton: NSButton!
     @IBOutlet weak var forwardButton: NSButton!
     @IBOutlet weak var infoButton: NSButton!
     @IBOutlet weak var quitButton: NSButton!
 
+    @IBOutlet weak var loadingView: LoadingView!
     private weak var popover: NSPopover?
 
     func detachedWindowController(contentController: NSViewController, popover: NSPopover) -> DetachedWindowController {
-        let controller = NSStoryboard.with(class: DetachedWindowController.self)
+        let controller = DetachedWindowController.controller()
         controller.set(contentViewController: contentController, popover: popover)
         return controller
     }
@@ -68,8 +62,8 @@ final class MainViewController: NSViewController {
         super.prepare(for: segue, sender: sender)
 
         switch segue.destinationController {
-        case let web as WebViewController:
-            webViewController = web
+        case let controller as ContentViewController:
+            contentViewController = controller
         default:
             break
         }
@@ -80,31 +74,7 @@ final class MainViewController: NSViewController {
 extension MainViewController {
 
     @IBAction func infoButtonPressed(_ sender: NSButton) {
-        isInfoViewControllerVisible ? hideInfoViewController() : showInfoViewController()
-    }
-
-    private func showInfoViewController() {
-        guard let webController = webViewController else { return }
-        let controller = NSStoryboard.with(class: InfoViewController.self)
-        insertChildViewController(controller, at: 0)
-        transition(from: webController, to: controller)
-    }
-
-    private func hideInfoViewController() {
-        guard let webController = webViewController, let infoController = infoViewController else { return }
-        transition(from: infoController, to: webController, options: .crossfade) {
-            infoController.removeFromParentViewController()
-        }
-    }
-
-    private var infoViewController: InfoViewController? {
-        let controllers = childViewControllers.flatMap { $0 as? InfoViewController }
-        assert(controllers.count <= 1, "More than 1 info controller \(controllers)")
-        return controllers.first
-    }
-
-    private var isInfoViewControllerVisible: Bool {
-        return infoViewController != nil
+        contentViewController?.toggleInfo(animated: true)
     }
 
 }

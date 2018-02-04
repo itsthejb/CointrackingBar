@@ -14,7 +14,7 @@ final class Popover: NSPopover {
 
     override init() {
         super.init()
-        let controller = NSStoryboard.with(class: MainViewController.self)
+        let controller = MainViewController.controller()
         appearance = NSAppearance.style
         contentViewController = controller
         contentSize = NSSize(width: contentWidth, height: contentWidth * 1.61803398875)

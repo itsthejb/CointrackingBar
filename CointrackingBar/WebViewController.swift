@@ -8,13 +8,23 @@
 
 import WebKit
 
-final class WebViewController: NSViewController {
+final class WebViewController: NSViewController, StoryboardViewController {
+
+    private let url = URL(string: "https://cointracking.info/dashboard.php?mobile=on")
 
     @IBOutlet var webView: WKWebView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         webView?.isHidden = true
+    }
+
+    func load(with delegate: WKUIDelegate & WKNavigationDelegate) {
+        loadView()
+        guard let webView = webView else { return }
+        webView.uiDelegate = delegate
+        webView.navigationDelegate = delegate
+        representedObject = url
     }
 
     override func viewDidAppear() {

@@ -8,7 +8,7 @@
 
 import Cocoa
 
-final class DetachedWindowController: NSWindowController {
+final class DetachedWindowController: NSWindowController, StoryboardViewController {
     func set(contentViewController: NSViewController, popover: NSPopover) {
         guard let window = window else { return }
         self.contentViewController = contentViewController

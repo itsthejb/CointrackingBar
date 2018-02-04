@@ -53,7 +53,17 @@ extension NSButton {
 
 }
 
-extension NSStoryboard {
+protocol StoryboardViewController {
+    static func controller() -> Self
+}
+
+extension StoryboardViewController {
+    static func controller() -> Self {
+        return NSStoryboard.with(class: self)
+    }
+}
+
+private extension NSStoryboard {
     static func with<T>(`class`: T.Type) -> T {
         let scene = NSStoryboard.SceneIdentifier(String(describing: T.self))
         return storyboard.instantiateController(withIdentifier: scene) as! T

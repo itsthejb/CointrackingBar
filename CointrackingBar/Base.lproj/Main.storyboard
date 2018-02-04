@@ -695,7 +695,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="906" height="2066"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="6" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NcX-b6-u0I" userLabel="Controls Stack">
-                                        <rect key="frame" x="0.0" y="2022" width="750" height="44"/>
+                                        <rect key="frame" x="0.0" y="2022" width="906" height="44"/>
                                         <subviews>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="Rth-Qe-zFl" userLabel="Back Container">
                                                 <rect key="frame" x="8" y="2" width="40" height="40"/>
@@ -740,13 +740,13 @@
                                                 </constraints>
                                             </customView>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="C52-ja-K1e" userLabel="Spacer" customClass="TransparentView" customModule="CointrackingBar" customModuleProvider="target">
-                                                <rect key="frame" x="100" y="0.0" width="488" height="44"/>
+                                                <rect key="frame" x="100" y="0.0" width="644" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" id="wKY-dg-2bZ"/>
                                                 </constraints>
                                             </customView>
                                             <customView horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="VNL-LO-ZoJ" userLabel="Loading Container" customClass="LoadingView" customModule="CointrackingBar" customModuleProvider="target">
-                                                <rect key="frame" x="594" y="0.0" width="44" height="44"/>
+                                                <rect key="frame" x="750" y="0.0" width="44" height="44"/>
                                                 <subviews>
                                                     <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="JQg-iL-gSQ">
                                                         <rect key="frame" x="14" y="14" width="16" height="16"/>
@@ -762,7 +762,7 @@
                                                 </connections>
                                             </customView>
                                             <button horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="fN7-I5-QNT" userLabel="Info Button">
-                                                <rect key="frame" x="638" y="-1" width="50" height="43"/>
+                                                <rect key="frame" x="794" y="-1" width="50" height="43"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="fN7-I5-QNT" secondAttribute="height" multiplier="1.2" id="VNa-Q6-GEg"/>
                                                 </constraints>
@@ -775,7 +775,7 @@
                                                 </connections>
                                             </button>
                                             <button horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="8h4-28-8lh">
-                                                <rect key="frame" x="682" y="-1" width="66" height="43"/>
+                                                <rect key="frame" x="838" y="-1" width="66" height="43"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="oHj-dW-Tc0"/>
                                                 </constraints>
@@ -814,10 +814,10 @@
                                         </customSpacing>
                                     </stackView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="ldh-1s-RWl" userLabel="Content Frame" customClass="TransparentView" customModule="CointrackingBar" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="4" width="750" height="2018"/>
+                                        <rect key="frame" x="0.0" y="4" width="906" height="2018"/>
                                         <subviews>
                                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="Y57-2B-L1O" customClass="TransparentView" customModule="CointrackingBar" customModuleProvider="target">
-                                                <rect key="frame" x="4" y="0.0" width="742" height="2018"/>
+                                                <rect key="frame" x="4" y="0.0" width="898" height="2018"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="YES"/>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -833,7 +833,7 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.isOpaque" value="NO"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <segue destination="mX4-iK-qkW" kind="embed" id="vbY-B6-ijE"/>
+                                                    <segue destination="ti5-aM-WfP" kind="embed" identifier="ContentViewController" id="X7y-n2-zek"/>
                                                 </connections>
                                             </containerView>
                                         </subviews>
@@ -865,12 +865,10 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="eH9-UQ-F97" id="DJ1-wW-ThK"/>
-                        <outlet property="contentContainer" destination="Y57-2B-L1O" id="Zqf-3B-bAW"/>
                         <outlet property="forwardButton" destination="0od-r6-2oF" id="64w-Xx-u4z"/>
                         <outlet property="infoButton" destination="fN7-I5-QNT" id="Cl8-zc-S37"/>
                         <outlet property="loadingView" destination="VNL-LO-ZoJ" id="bX6-Q2-YkJ"/>
                         <outlet property="quitButton" destination="8h4-28-8lh" id="lAc-IY-6ol"/>
-                        <outlet property="webView" destination="xfD-1N-ezQ" id="cjJ-KT-mcU"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -885,7 +883,8 @@
         <!--Web View Controller-->
         <scene sceneID="go1-ER-V2O">
             <objects>
-                <viewController id="mX4-iK-qkW" customClass="WebViewController" customModule="CointrackingBar" customModuleProvider="target" sceneMemberID="viewController">
+                <customObject id="0fC-cd-CmO" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="WebViewController" id="mX4-iK-qkW" customClass="WebViewController" customModule="CointrackingBar" customModuleProvider="target" sceneMemberID="viewController">
                     <wkWebView key="view" wantsLayer="YES" id="xfD-1N-ezQ" customClass="WebView" customModule="CointrackingBar" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -898,9 +897,21 @@
                         <outlet property="webView" destination="xfD-1N-ezQ" id="waV-GO-mpI"/>
                     </connections>
                 </viewController>
-                <customObject id="0fC-cd-CmO" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="856" y="655"/>
+        </scene>
+        <!--ContentViewController-->
+        <scene sceneID="13S-S6-hkB">
+            <objects>
+                <viewController title="ContentViewController" id="ti5-aM-WfP" customClass="ContentViewController" customModule="CointrackingBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="bs9-74-wUj">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="ugc-bF-vUC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="875" y="1118"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="XlO-aa-ITC">

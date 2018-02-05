@@ -11,6 +11,7 @@
 		492BF2A11FE53E0400CAB5C5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492BF2A01FE53E0400CAB5C5 /* MainViewController.swift */; };
 		492BF2A31FE53E0400CAB5C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 492BF2A21FE53E0400CAB5C5 /* Assets.xcassets */; };
 		492BF2A61FE53E0400CAB5C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 492BF2A41FE53E0400CAB5C5 /* Main.storyboard */; };
+		4968C2202028EF4100ECD1E7 /* QR Codes in Resources */ = {isa = PBXBuildFile; fileRef = 4968C21F2028EF4000ECD1E7 /* QR Codes */; };
 		497BD06C1FE6CC9400589FDD /* Font Awesome 5 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 497BD0691FE6CC9300589FDD /* Font Awesome 5 Brands-Regular-400.otf */; };
 		497BD06D1FE6CC9400589FDD /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 497BD06A1FE6CC9300589FDD /* Font Awesome 5 Free-Regular-400.otf */; };
 		497BD06E1FE6CC9400589FDD /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 497BD06B1FE6CC9300589FDD /* Font Awesome 5 Free-Solid-900.otf */; };
@@ -31,6 +32,7 @@
 		492BF2A51FE53E0400CAB5C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		492BF2A71FE53E0400CAB5C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		492BF2A81FE53E0400CAB5C5 /* CointrackingBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CointrackingBar.entitlements; sourceTree = "<group>"; };
+		4968C21F2028EF4000ECD1E7 /* QR Codes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "QR Codes"; sourceTree = "<group>"; };
 		497BD0691FE6CC9300589FDD /* Font Awesome 5 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Brands-Regular-400.otf"; sourceTree = "<group>"; };
 		497BD06A1FE6CC9300589FDD /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
 		497BD06B1FE6CC9300589FDD /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		49C0D5952014CF6C00CC3EB7 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				4968C21F2028EF4000ECD1E7 /* QR Codes */,
 				498156932014C86C004AE737 /* Notes */,
 				497BD0681FE6CC8A00589FDD /* Fonts */,
 				492BF2A21FE53E0400CAB5C5 /* Assets.xcassets */,
@@ -202,6 +205,7 @@
 				497BD06D1FE6CC9400589FDD /* Font Awesome 5 Free-Regular-400.otf in Resources */,
 				497BD06C1FE6CC9400589FDD /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
 				492BF2A61FE53E0400CAB5C5 /* Main.storyboard in Resources */,
+				4968C2202028EF4100ECD1E7 /* QR Codes in Resources */,
 				497BD06E1FE6CC9400589FDD /* Font Awesome 5 Free-Solid-900.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

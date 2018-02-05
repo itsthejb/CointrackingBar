@@ -78,6 +78,12 @@ extension StoryboardViewController {
     }
 }
 
+extension NSTextCheckingResult {
+    func string(at range: Int) {
+        return 
+    }
+}
+
 private extension NSStoryboard {
     static func with<T>(`class`: T.Type) -> T {
         let scene = NSStoryboard.SceneIdentifier(String(describing: T.self))

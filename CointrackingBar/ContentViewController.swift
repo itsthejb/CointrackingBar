@@ -11,6 +11,7 @@ import Cocoa
 final class ContentViewController: NSViewController {
 
     let webViewController = WebViewController.controller()
+    let infoViewController = InfoViewController.controller()
 
     enum Content {
         case webView, info
@@ -21,42 +22,32 @@ final class ContentViewController: NSViewController {
     }
 
     private func showInfoViewController(animated: Bool) {
-        let infoViewController = InfoViewController.controller()
         addChildViewController(infoViewController)
-        transition(from: webViewController, to: infoViewController, options: .slideUp) {
-//            controller.removeFromParentViewController()
-        }
+        transition(from: webViewController, to: infoViewController, options: .slideUp)
     }
 
     private func hideInfoViewController(animated: Bool) {
-        guard let infoController = infoViewController else { return }
-//        addChildViewController(webViewController)
-        transition(from: infoController, to: webViewController, options: .slideDown) {
-            print(self.childViewControllers)
-            infoController.removeFromParentViewController()
+        transition(from: infoViewController, to: webViewController, options: .slideDown) {
+            self.infoViewController.removeFromParentViewController()
         }
     }
 
-    private var infoViewController: InfoViewController? {
-        let controllers = childViewControllers.flatMap { $0 as? InfoViewController }
-        assert(controllers.count <= 1, "More than 1 info controller \(controllers)")
-        return controllers.first
+    private var isInfoViewControllerVisible: Bool {
+        return infoViewController.view.superview != nil
     }
 
-    private var isInfoViewControllerVisible: Bool {
-        return infoViewController != nil
+    override func viewDidLayout() {
+        super.viewDidLayout()
+
+        [webViewController, infoViewController]
+            .filter { $0.view.superview != nil}
+            .forEach { $0.view.frame = view.bounds }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         addChildViewController(webViewController)
         view.addSubview(webViewController.view)
-        NSLayoutConstraint.activate([
-            webViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
-            webViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            webViewController.view.leftAnchor.constraint(equalTo: view.leftAnchor),
-            webViewController.view.rightAnchor.constraint(equalTo: view.rightAnchor)
-            ])
     }
     
 }

@@ -11,10 +11,14 @@ import Cocoa
 final class ContentViewController: NSViewController {
 
     let webViewController = WebViewController.controller()
-    let infoViewController = InfoViewController.controller()
+//    let infoViewController = InfoViewController.controller()
 
-    enum Content {
-        case webView, info
+//    enum Content {
+//        case webView, info
+//    }
+
+    struct Segues {
+        static let infoViewController = NSStoryboardSegue.Identifier(class: InfoViewController.self)
     }
 
     func toggleInfo(animated: Bool) {
@@ -22,24 +26,26 @@ final class ContentViewController: NSViewController {
     }
 
     private func showInfoViewController(animated: Bool) {
-        addChildViewController(infoViewController)
-        transition(from: webViewController, to: infoViewController, options: .slideUp)
+        performSegue(withIdentifier: Segues.infoViewController, sender: self)
+//        addChildViewController(infoViewController)
+//        transition(from: webViewController, to: infoViewController, options: .slideUp)
     }
 
     private func hideInfoViewController(animated: Bool) {
-        transition(from: infoViewController, to: webViewController, options: .slideDown) {
-            self.infoViewController.removeFromParentViewController()
-        }
+//        transition(from: infoViewController, to: webViewController, options: .slideDown) {
+//            self.infoViewController.removeFromParentViewController()
+//        }
     }
 
     private var isInfoViewControllerVisible: Bool {
-        return infoViewController.view.superview != nil
+        return false
+//        return infoViewController.view.superview != nil
     }
 
     override func viewDidLayout() {
         super.viewDidLayout()
 
-        [webViewController, infoViewController]
+        [webViewController]
             .filter { $0.view.superview != nil}
             .forEach { $0.view.frame = view.bounds }
     }

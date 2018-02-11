@@ -688,7 +688,7 @@
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="XfG-lQ-9wD" customClass="MainViewController" customModule="CointrackingBar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl" customClass="TransparentView" customModule="CointrackingBar" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="906" height="2066"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="500"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hdu-G1-1Tb" customClass="TransparentStackView" customModule="CointrackingBar" customModuleProvider="target">
@@ -884,7 +884,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="856" y="655"/>
+            <point key="canvasLocation" x="547" y="692"/>
         </scene>
         <!--ContentViewController-->
         <scene sceneID="13S-S6-hkB">
@@ -908,10 +908,13 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <segue destination="xhG-0J-jk1" kind="custom" identifier="InfoViewController" customClass="InfoViewControllerSegue" customModule="CointrackingBar" customModuleProvider="target" id="C89-dn-qhZ"/>
+                    </connections>
                 </viewController>
                 <customObject id="ugc-bF-vUC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="875" y="1118"/>
+            <point key="canvasLocation" x="339" y="1260"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="XlO-aa-ITC">
@@ -935,56 +938,46 @@
         <scene sceneID="PTg-yS-xfi">
             <objects>
                 <viewController storyboardIdentifier="InfoViewController" id="xhG-0J-jk1" customClass="InfoViewController" customModule="CointrackingBar" customModuleProvider="target" sceneMemberID="viewController">
-                    <customView key="view" id="PYA-xv-hLq" userLabel="View">
+                    <scrollView key="view" wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="Qnx-ft-9vP">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <subviews>
-                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qnx-ft-9vP">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                                <clipView key="contentView" drawsBackground="NO" id="T1N-Mt-hiu">
-                                    <rect key="frame" x="1" y="1" width="448" height="298"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <collectionView id="dD2-va-Wsx">
-                                            <rect key="frame" x="0.0" y="0.0" width="448" height="158"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                            <collectionViewGridLayout key="collectionViewLayout" id="VxZ-Sr-bGF">
-                                                <size key="minimumItemSize" width="200" height="300"/>
-                                                <size key="maximumItemSize" width="200" height="300"/>
-                                            </collectionViewGridLayout>
-                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <connections>
-                                                <outlet property="dataSource" destination="xhG-0J-jk1" id="omU-N9-ddP"/>
-                                                <outlet property="delegate" destination="xhG-0J-jk1" id="ZJe-9I-s5E"/>
-                                            </connections>
-                                        </collectionView>
-                                    </subviews>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="CCR-Lg-Z2U">
-                                    <rect key="frame" x="1" y="144" width="233" height="15"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="s9S-DH-S3z">
-                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                            </scrollView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Qnx-ft-9vP" secondAttribute="trailing" id="MMg-cz-NXA"/>
-                            <constraint firstItem="Qnx-ft-9vP" firstAttribute="leading" secondItem="PYA-xv-hLq" secondAttribute="leading" id="Rny-v6-jfa"/>
-                            <constraint firstItem="Qnx-ft-9vP" firstAttribute="top" secondItem="PYA-xv-hLq" secondAttribute="top" id="pzz-BQ-T1E"/>
-                            <constraint firstAttribute="bottom" secondItem="Qnx-ft-9vP" secondAttribute="bottom" id="sDu-id-qsk"/>
-                        </constraints>
-                    </customView>
+                        <clipView key="contentView" drawsBackground="NO" id="T1N-Mt-hiu">
+                            <rect key="frame" x="1" y="1" width="448" height="298"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <collectionView id="dD2-va-Wsx">
+                                    <rect key="frame" x="0.0" y="0.0" width="448" height="158"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                    <collectionViewGridLayout key="collectionViewLayout" id="VxZ-Sr-bGF">
+                                        <size key="minimumItemSize" width="200" height="300"/>
+                                        <size key="maximumItemSize" width="200" height="300"/>
+                                    </collectionViewGridLayout>
+                                    <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="xhG-0J-jk1" id="omU-N9-ddP"/>
+                                        <outlet property="delegate" destination="xhG-0J-jk1" id="ZJe-9I-s5E"/>
+                                    </connections>
+                                </collectionView>
+                            </subviews>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="CCR-Lg-Z2U">
+                            <rect key="frame" x="1" y="144" width="233" height="15"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="s9S-DH-S3z">
+                            <rect key="frame" x="234" y="1" width="15" height="143"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
                     <connections>
+                        <outlet property="clipView" destination="T1N-Mt-hiu" id="go4-no-zeN"/>
                         <outlet property="collectionView" destination="dD2-va-Wsx" id="H2g-ls-24w"/>
                     </connections>
                 </viewController>
                 <customObject id="LzF-5b-TEg" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="492" y="1957"/>
+            <point key="canvasLocation" x="894" y="1260"/>
         </scene>
     </scenes>
 </document>

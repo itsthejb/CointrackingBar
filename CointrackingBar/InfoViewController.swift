@@ -11,6 +11,7 @@ import Cocoa
 final class InfoViewController: NSViewController, StoryboardViewController {
 
     @IBOutlet weak var collectionView: NSCollectionView!
+    @IBOutlet weak var clipView: NSClipView!
 
     lazy var qrCodes = (Bundle.main.urls(forResourcesWithExtension: "png", subdirectory: "QR Codes") ?? [])
         .flatMap { QRCode(with: $0) }
@@ -19,7 +20,22 @@ final class InfoViewController: NSViewController, StoryboardViewController {
         super.viewDidLoad()
         let nib = NSNib(nibNamed: NSNib.Name(String(describing: QRCodeCollectionViewItem.self)), bundle: nil)
         collectionView.register(nib, forItemWithIdentifier: QRCodeCollectionViewItem.identifier)
-        UserDefaults.standard.set(false, forKey: "NSConstraintBasedLayoutVisualizeMutuallyExclusiveConstraints")
+//        NSLayoutConstraint.activate([
+//            collectionView.topAnchor.constraint(equalTo: clipView.topAnchor),
+//            collectionView.bottomAnchor.constraint(equalTo: clipView.bottomAnchor),
+//            collectionView.leftAnchor.constraint(equalTo: clipView.leftAnchor),
+//            collectionView.rightAnchor.constraint(equalTo: clipView.rightAnchor),
+//            ])
+//        UserDefaults.standard.set(false, forKey: "NSConstraintBasedLayoutVisualizeMutuallyExclusiveConstraints")
+    }
+
+    override func viewWillLayout() {
+        super.viewWillLayout()
+//        collectionView.frame = clipView.bounds
+    }
+
+    override func viewDidLayout() {
+        super.viewDidLayout()
     }
 
 }

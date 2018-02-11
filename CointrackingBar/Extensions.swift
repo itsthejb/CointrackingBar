@@ -84,6 +84,12 @@ extension NSTextCheckingResult {
     }
 }
 
+extension NSStoryboardSegue.Identifier {
+    init<T>(`class`: T.Type) where T: NSResponder {
+        self.init(String(describing: T.self))
+    }
+}
+
 private extension NSStoryboard {
     static func with<T>(`class`: T.Type) -> T {
         let scene = NSStoryboard.SceneIdentifier(String(describing: T.self))

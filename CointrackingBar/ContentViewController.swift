@@ -22,8 +22,12 @@ final class ContentViewController: NSViewController {
     }
 
     private func showInfoViewController(animated: Bool) {
-        presentViewController(<#T##viewController: NSViewController##NSViewController#>, animator: <#T##NSViewControllerPresentationAnimator#>)
-        performSegue(withIdentifier: Segues.infoViewController, sender: self)
+        guard infoViewController == nil else { return }
+        let controller = InfoViewController.controller()
+        defer { infoViewController = controller }
+//        presentView
+        presentViewController(controller, animator: InfoViewControllerPresentation())
+//        performSegue(withIdentifier: Segues.infoViewController, sender: self)
     }
 
     private func hideInfoViewController(animated: Bool) {
@@ -70,18 +74,17 @@ extension ContentViewController {
 
 }
 
-
-final class InfoViewControllerSegue: NSStoryboardSegue {
-
-    override func perform() {
-        guard
-            let source = sourceController as? ContentViewController,
-            let destination = destinationController as? NSViewController
-            else { return }
-        source.addChildViewController(destination)
-        source.transition(from: source.webViewController,
-                          to: destination, options: [.slideUp],
-                          completionHandler: nil)
+final class InfoViewControllerPresentation: NSObject, NSViewControllerPresentationAnimator {
+    func animatePresentation(of viewController: NSViewController, from fromViewController: NSViewController) {
+        guard let from = fromViewController as? ContentViewController else { return }
+        from.addChildViewController(viewController)
+        from.transition(from: from.webViewController, to: viewController, options: [.slideUp])
     }
 
+    func animateDismissal(of viewController: NSViewController, from fromViewController: NSViewController) {
+        guard let from = fromViewController as? ContentViewController else { return }
+        from.transition(from: viewController, to: from.webViewController, options: [.crossfade]) {
+            viewController.removeFromParentViewController()
+        }
+    }
 }

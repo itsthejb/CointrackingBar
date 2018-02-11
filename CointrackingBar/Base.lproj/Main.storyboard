@@ -688,14 +688,14 @@
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="XfG-lQ-9wD" customClass="MainViewController" customModule="CointrackingBar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl" customClass="TransparentView" customModule="CointrackingBar" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="312" height="500"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hdu-G1-1Tb" customClass="TransparentStackView" customModule="CointrackingBar" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="906" height="2066"/>
+                                <rect key="frame" x="0.0" y="0.0" width="312" height="500"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="6" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NcX-b6-u0I" userLabel="Controls Stack">
-                                        <rect key="frame" x="0.0" y="2022" width="906" height="44"/>
+                                        <rect key="frame" x="0.0" y="456" width="312" height="44"/>
                                         <subviews>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="Rth-Qe-zFl" userLabel="Back Container">
                                                 <rect key="frame" x="8" y="2" width="40" height="40"/>
@@ -740,13 +740,13 @@
                                                 </constraints>
                                             </customView>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="C52-ja-K1e" userLabel="Spacer" customClass="TransparentView" customModule="CointrackingBar" customModuleProvider="target">
-                                                <rect key="frame" x="100" y="0.0" width="644" height="44"/>
+                                                <rect key="frame" x="100" y="0.0" width="50" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" id="wKY-dg-2bZ"/>
                                                 </constraints>
                                             </customView>
                                             <customView horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="VNL-LO-ZoJ" userLabel="Loading Container" customClass="LoadingView" customModule="CointrackingBar" customModuleProvider="target">
-                                                <rect key="frame" x="750" y="0.0" width="44" height="44"/>
+                                                <rect key="frame" x="156" y="0.0" width="44" height="44"/>
                                                 <subviews>
                                                     <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="JQg-iL-gSQ">
                                                         <rect key="frame" x="14" y="14" width="16" height="16"/>
@@ -762,7 +762,7 @@
                                                 </connections>
                                             </customView>
                                             <button horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="fN7-I5-QNT" userLabel="Info Button">
-                                                <rect key="frame" x="794" y="-1" width="50" height="43"/>
+                                                <rect key="frame" x="200" y="-1" width="50" height="43"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="fN7-I5-QNT" secondAttribute="height" multiplier="1.2" id="VNa-Q6-GEg"/>
                                                 </constraints>
@@ -775,7 +775,7 @@
                                                 </connections>
                                             </button>
                                             <button horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="8h4-28-8lh">
-                                                <rect key="frame" x="838" y="-1" width="66" height="43"/>
+                                                <rect key="frame" x="244" y="-1" width="66" height="43"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="oHj-dW-Tc0"/>
                                                 </constraints>
@@ -814,10 +814,10 @@
                                         </customSpacing>
                                     </stackView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="ldh-1s-RWl" userLabel="Content Frame" customClass="TransparentView" customModule="CointrackingBar" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="4" width="906" height="2018"/>
+                                        <rect key="frame" x="0.0" y="4" width="300" height="452"/>
                                         <subviews>
                                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="Y57-2B-L1O" customClass="TransparentView" customModule="CointrackingBar" customModuleProvider="target">
-                                                <rect key="frame" x="4" y="0.0" width="898" height="2018"/>
+                                                <rect key="frame" x="4" y="0.0" width="292" height="452"/>
                                                 <connections>
                                                     <segue destination="ti5-aM-WfP" kind="embed" identifier="ContentViewController" id="X7y-n2-zek"/>
                                                 </connections>
@@ -908,9 +908,6 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <connections>
-                        <segue destination="xhG-0J-jk1" kind="custom" identifier="InfoViewController" customClass="InfoViewControllerSegue" customModule="CointrackingBar" customModuleProvider="target" id="C89-dn-qhZ"/>
-                    </connections>
                 </viewController>
                 <customObject id="ugc-bF-vUC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

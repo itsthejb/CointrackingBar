@@ -14,13 +14,17 @@ final class Popover: NSPopover {
 
     override init() {
         super.init()
-        let controller = MainViewController.controller()
         appearance = NSAppearance.style
-        contentViewController = controller
         contentSize = NSSize(width: contentWidth, height: contentWidth * 1.61803398875)
         animates = true
         behavior = .semitransient
+    }
+
+    override func show(relativeTo positioningRect: NSRect, of positioningView: NSView, preferredEdge: NSRectEdge) {
+        let controller = MainViewController.controller()
+        contentViewController = controller
         delegate = controller
+        super.show(relativeTo: positioningRect, of: positioningView, preferredEdge: preferredEdge)
     }
 
     required init?(coder: NSCoder) {

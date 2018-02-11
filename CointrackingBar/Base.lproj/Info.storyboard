@@ -24,73 +24,17 @@
                                         <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mso-cV-bM9">
                                             <rect key="frame" x="0.0" y="0.0" width="448" height="1358"/>
                                             <subviews>
-                                                <box boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="Dij-0a-iDa">
-                                                    <rect key="frame" x="117" y="1236" width="215" height="114"/>
-                                                    <view key="contentView" id="Uaf-1H-AGK">
-                                                        <rect key="frame" x="1" y="1" width="213" height="112"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                        <subviews>
-                                                            <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="znH-Si-B3e">
-                                                                <rect key="frame" x="20" y="20" width="173" height="72"/>
-                                                                <subviews>
-                                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mCM-To-MRO" userLabel="Icon">
-                                                                        <rect key="frame" x="18" y="28" width="58" height="17"/>
-                                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Bar Icon:" id="Us7-8x-ocq">
-                                                                            <font key="font" metaFont="system"/>
-                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                                        </textFieldCell>
-                                                                    </textField>
-                                                                    <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vN1-ZD-xRE" userLabel="Icon Dropdown">
-                                                                        <rect key="frame" x="80" y="23" width="76" height="26"/>
-                                                                        <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="qiu-4W-5z5" id="IyH-hh-HHs">
-                                                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                                            <font key="font" metaFont="menu"/>
-                                                                            <menu key="menu" id="PY4-Mg-nmH">
-                                                                                <items>
-                                                                                    <menuItem title="Item 1" state="on" id="qiu-4W-5z5"/>
-                                                                                    <menuItem title="Item 2" id="CPz-c4-kwP"/>
-                                                                                    <menuItem title="Item 3" id="Ccx-ml-eWl"/>
-                                                                                </items>
-                                                                            </menu>
-                                                                        </popUpButtonCell>
-                                                                    </popUpButton>
-                                                                </subviews>
-                                                                <edgeInsets key="edgeInsets" left="20" right="20" top="20" bottom="20"/>
-                                                                <constraints>
-                                                                    <constraint firstItem="mCM-To-MRO" firstAttribute="centerY" secondItem="vN1-ZD-xRE" secondAttribute="centerY" id="8Ic-lC-SOB"/>
-                                                                    <constraint firstItem="vN1-ZD-xRE" firstAttribute="top" secondItem="znH-Si-B3e" secondAttribute="top" constant="25" id="YsV-0D-3qO"/>
-                                                                    <constraint firstItem="mCM-To-MRO" firstAttribute="centerY" secondItem="znH-Si-B3e" secondAttribute="centerY" id="ZAt-f4-cZj"/>
-                                                                </constraints>
-                                                                <visibilityPriorities>
-                                                                    <integer value="1000"/>
-                                                                    <integer value="1000"/>
-                                                                </visibilityPriorities>
-                                                                <customSpacing>
-                                                                    <real value="3.4028234663852886e+38"/>
-                                                                    <real value="3.4028234663852886e+38"/>
-                                                                </customSpacing>
-                                                            </stackView>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="znH-Si-B3e" secondAttribute="bottom" constant="20" symbolic="YES" id="Axj-Vg-6lK"/>
-                                                            <constraint firstItem="znH-Si-B3e" firstAttribute="leading" secondItem="Uaf-1H-AGK" secondAttribute="leading" constant="20" symbolic="YES" id="M5h-8o-yYP"/>
-                                                            <constraint firstItem="znH-Si-B3e" firstAttribute="top" secondItem="Uaf-1H-AGK" secondAttribute="top" constant="20" symbolic="YES" id="lfl-TM-8ws"/>
-                                                            <constraint firstAttribute="trailing" secondItem="znH-Si-B3e" secondAttribute="trailing" constant="20" symbolic="YES" id="zJC-56-fRF"/>
-                                                        </constraints>
-                                                    </view>
-                                                </box>
                                                 <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xwl-NY-91l" userLabel="BCH, ETH">
-                                                    <rect key="frame" x="0.0" y="929" width="448" height="299"/>
+                                                    <rect key="frame" x="0.0" y="929" width="448" height="421"/>
                                                     <subviews>
                                                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="Zqv-RT-ZWB" userLabel="BCH" customClass="QRCodeView" customModule="CointrackingBar" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="220" height="299"/>
+                                                            <rect key="frame" x="0.0" y="122" width="220" height="299"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="filename" value="BCH-QR-Code-bitcoin-1QFp5qEzYoqsM9bWo1mGHaf6n3NDxuEBL2.png"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </customView>
                                                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="wSV-fv-pA4" userLabel="ETH" customClass="QRCodeView" customModule="CointrackingBar" customModuleProvider="target">
-                                                            <rect key="frame" x="228" y="0.0" width="220" height="299"/>
+                                                            <rect key="frame" x="228" y="122" width="220" height="299"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="filename" value="ETH-QR-Code-0x244CA053df5aAB65932B306c87317BBcFa7fA37e.png"/>
                                                             </userDefinedRuntimeAttributes>
@@ -200,7 +144,6 @@
                                                 <constraint firstItem="kaR-Ak-RpH" firstAttribute="height" secondItem="Zqv-RT-ZWB" secondAttribute="height" id="YDl-90-ogy"/>
                                                 <constraint firstItem="tea-TA-Im4" firstAttribute="width" secondItem="Zqv-RT-ZWB" secondAttribute="width" id="cf6-ps-eWH"/>
                                                 <constraint firstItem="Xwl-NY-91l" firstAttribute="leading" secondItem="Mso-cV-bM9" secondAttribute="leading" id="sQc-t1-bWi"/>
-                                                <constraint firstItem="Dij-0a-iDa" firstAttribute="centerX" secondItem="Xwl-NY-91l" secondAttribute="centerX" id="vFs-FQ-pEt"/>
                                                 <constraint firstItem="tea-TA-Im4" firstAttribute="height" secondItem="Zqv-RT-ZWB" secondAttribute="height" id="viB-Vl-Hop"/>
                                             </constraints>
                                             <visibilityPriorities>
@@ -208,10 +151,8 @@
                                                 <integer value="1000"/>
                                                 <integer value="1000"/>
                                                 <integer value="1000"/>
-                                                <integer value="1000"/>
                                             </visibilityPriorities>
                                             <customSpacing>
-                                                <real value="3.4028234663852886e+38"/>
                                                 <real value="3.4028234663852886e+38"/>
                                                 <real value="3.4028234663852886e+38"/>
                                                 <real value="3.4028234663852886e+38"/>
@@ -250,6 +191,63 @@
                     </connections>
                 </viewController>
                 <customObject id="4la-76-BdH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <box hidden="YES" boxType="custom" cornerRadius="4" title="Box" id="Dij-0a-iDa" userLabel="Icon Selector">
+                    <rect key="frame" x="0.0" y="0.0" width="215" height="114"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <view key="contentView" id="Uaf-1H-AGK">
+                        <rect key="frame" x="1" y="1" width="213" height="112"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="znH-Si-B3e">
+                                <rect key="frame" x="20" y="20" width="173" height="72"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mCM-To-MRO" userLabel="Icon">
+                                        <rect key="frame" x="18" y="28" width="58" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Bar Icon:" id="Us7-8x-ocq">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vN1-ZD-xRE" userLabel="Icon Dropdown">
+                                        <rect key="frame" x="80" y="23" width="76" height="26"/>
+                                        <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="qiu-4W-5z5" id="IyH-hh-HHs">
+                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="menu"/>
+                                            <menu key="menu" id="PY4-Mg-nmH">
+                                                <items>
+                                                    <menuItem title="Item 1" state="on" id="qiu-4W-5z5"/>
+                                                    <menuItem title="Item 2" id="CPz-c4-kwP"/>
+                                                    <menuItem title="Item 3" id="Ccx-ml-eWl"/>
+                                                </items>
+                                            </menu>
+                                        </popUpButtonCell>
+                                    </popUpButton>
+                                </subviews>
+                                <edgeInsets key="edgeInsets" left="20" right="20" top="20" bottom="20"/>
+                                <constraints>
+                                    <constraint firstItem="mCM-To-MRO" firstAttribute="centerY" secondItem="vN1-ZD-xRE" secondAttribute="centerY" id="8Ic-lC-SOB"/>
+                                    <constraint firstItem="vN1-ZD-xRE" firstAttribute="top" secondItem="znH-Si-B3e" secondAttribute="top" constant="25" id="YsV-0D-3qO"/>
+                                    <constraint firstItem="mCM-To-MRO" firstAttribute="centerY" secondItem="znH-Si-B3e" secondAttribute="centerY" id="ZAt-f4-cZj"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="znH-Si-B3e" secondAttribute="bottom" constant="20" symbolic="YES" id="Axj-Vg-6lK"/>
+                            <constraint firstItem="znH-Si-B3e" firstAttribute="leading" secondItem="Uaf-1H-AGK" secondAttribute="leading" constant="20" symbolic="YES" id="M5h-8o-yYP"/>
+                            <constraint firstItem="znH-Si-B3e" firstAttribute="top" secondItem="Uaf-1H-AGK" secondAttribute="top" constant="20" symbolic="YES" id="lfl-TM-8ws"/>
+                            <constraint firstAttribute="trailing" secondItem="znH-Si-B3e" secondAttribute="trailing" constant="20" symbolic="YES" id="zJC-56-fRF"/>
+                        </constraints>
+                    </view>
+                </box>
             </objects>
             <point key="canvasLocation" x="765" y="1280"/>
         </scene>

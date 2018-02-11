@@ -39,10 +39,6 @@ final class MainViewController: NSViewController, StoryboardViewController {
         infoButton.set(icon: .info)
     }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
     @IBAction func backButtonPressed(_ sender: NSButton) {
         webView?.goBack()
     }

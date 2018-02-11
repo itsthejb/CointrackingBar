@@ -11,7 +11,6 @@ import WebKit
 final class WebViewController: NSViewController, StoryboardViewController {
 
     private let url = URL(string: "https://cointracking.info/dashboard.php?mobile=on")
-
     @IBOutlet var webView: WKWebView?
 
     override func viewDidLoad() {
@@ -27,11 +26,6 @@ final class WebViewController: NSViewController, StoryboardViewController {
         representedObject = url
     }
 
-    override func viewDidAppear() {
-        super.viewDidAppear()
-//        webView?.reload()
-    }
-
     override var representedObject: Any? {
         get { return webView?.url }
         set {
@@ -44,11 +38,8 @@ final class WebViewController: NSViewController, StoryboardViewController {
 }
 
 final class WebView: WKWebView {
-
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-//        translatesAutoresizingMaskIntoConstraints = false
 
         if NSAppKitVersion.current.rawValue > 1500 {
             setValue(false, forKey: "drawsBackground")
@@ -56,5 +47,4 @@ final class WebView: WKWebView {
             setValue(true, forKey: "drawsTransparentBackground")
         }
     }
-
 }

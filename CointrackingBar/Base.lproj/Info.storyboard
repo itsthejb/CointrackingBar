@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
+    </dependencies>
+    <scenes>
+        <!--Info View Controller-->
+        <scene sceneID="ujO-XC-FS5">
+            <objects>
+                <viewController storyboardIdentifier="InfoViewController" id="cvj-N4-F7P" customClass="InfoViewController" customModule="CointrackingBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <scrollView key="view" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="YCC-Kx-vYs">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <clipView key="contentView" id="LT7-Sd-xVz">
+                            <rect key="frame" x="1" y="1" width="448" height="298"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <view translatesAutoresizingMaskIntoConstraints="NO" id="bAa-wm-rvu">
+                                    <rect key="frame" x="0.0" y="0.0" width="448" height="298"/>
+                                    <subviews>
+                                        <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mso-cV-bM9">
+                                            <rect key="frame" x="0.0" y="0.0" width="448" height="298"/>
+                                            <subviews>
+                                                <customView translatesAutoresizingMaskIntoConstraints="NO" id="RjB-v8-Mun" customClass="QRCodeView" customModule="CointrackingBar" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="163" height="298"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="filename" value="BCH-QR-Code-bitcoin-1QFp5qEzYoqsM9bWo1mGHaf6n3NDxuEBL2.png"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </customView>
+                                            </subviews>
+                                            <visibilityPriorities>
+                                                <integer value="1000"/>
+                                            </visibilityPriorities>
+                                            <customSpacing>
+                                                <real value="3.4028234663852886e+38"/>
+                                            </customSpacing>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Mso-cV-bM9" firstAttribute="leading" secondItem="bAa-wm-rvu" secondAttribute="leading" id="RMM-o3-f2c"/>
+                                        <constraint firstItem="Mso-cV-bM9" firstAttribute="top" secondItem="bAa-wm-rvu" secondAttribute="top" id="igQ-71-xkn"/>
+                                        <constraint firstAttribute="bottom" secondItem="Mso-cV-bM9" secondAttribute="bottom" id="nSk-aP-bkD"/>
+                                        <constraint firstAttribute="trailing" secondItem="Mso-cV-bM9" secondAttribute="trailing" id="wAN-e5-vSs"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="bAa-wm-rvu" secondAttribute="bottom" id="0tb-wF-E2d"/>
+                                <constraint firstItem="bAa-wm-rvu" firstAttribute="leading" secondItem="LT7-Sd-xVz" secondAttribute="leading" id="iLE-wF-Zg9"/>
+                                <constraint firstItem="bAa-wm-rvu" firstAttribute="top" secondItem="LT7-Sd-xVz" secondAttribute="top" id="ia5-0k-UIZ"/>
+                                <constraint firstAttribute="trailing" secondItem="bAa-wm-rvu" secondAttribute="trailing" id="ty8-cY-dxh"/>
+                            </constraints>
+                        </clipView>
+                        <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="4jR-Tj-3Lq">
+                            <rect key="frame" x="1" y="283" width="448" height="16"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="fJN-XV-L8w">
+                            <rect key="frame" x="433" y="1" width="16" height="298"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                </viewController>
+                <customObject id="4la-76-BdH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="765" y="1280"/>
+        </scene>
+    </scenes>
+</document>

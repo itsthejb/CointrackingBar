@@ -84,6 +84,12 @@ extension NSTextCheckingResult {
     }
 }
 
+extension Bundle {
+    static var appBundle: Bundle? {
+        return Bundle(identifier: "com.jonathancrooke.CointrackingBar")
+    }
+}
+
 extension NSStoryboardSegue.Identifier {
     init<T>(`class`: T.Type) where T: NSResponder {
         self.init(String(describing: T.self))

@@ -814,10 +814,10 @@
                                         </customSpacing>
                                     </stackView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="ldh-1s-RWl" userLabel="Content Frame" customClass="TransparentView" customModule="CointrackingBar" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="4" width="300" height="452"/>
+                                        <rect key="frame" x="0.0" y="4" width="312" height="452"/>
                                         <subviews>
                                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="Y57-2B-L1O" customClass="TransparentView" customModule="CointrackingBar" customModuleProvider="target">
-                                                <rect key="frame" x="4" y="0.0" width="292" height="452"/>
+                                                <rect key="frame" x="4" y="0.0" width="304" height="452"/>
                                                 <connections>
                                                     <segue destination="ti5-aM-WfP" kind="embed" identifier="ContentViewController" id="X7y-n2-zek"/>
                                                 </connections>
@@ -911,7 +911,7 @@
                 </viewController>
                 <customObject id="ugc-bF-vUC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="339" y="1260"/>
+            <point key="canvasLocation" x="83" y="1307"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="XlO-aa-ITC">

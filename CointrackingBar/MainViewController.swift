@@ -30,9 +30,7 @@ final class MainViewController: NSViewController, StoryboardViewController {
     private weak var popover: NSPopover?
 
     func detachedWindowController(contentController: NSViewController, popover: NSPopover) -> DetachedWindowController {
-        let controller = DetachedWindowController.controller()
-        controller.set(contentViewController: contentController, popover: popover)
-        return controller
+        return DetachedWindowController(contentViewController: contentController, popover: popover)
     }
 
     override func viewDidLoad() {

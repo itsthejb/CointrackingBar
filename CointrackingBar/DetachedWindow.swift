@@ -9,9 +9,20 @@
 import Cocoa
 
 final class DetachedWindowController: NSWindowController, StoryboardViewController {
-    func set(contentViewController: NSViewController, popover: NSPopover) {
-        guard let window = window else { return }
-        self.contentViewController = contentViewController
+
+    init(contentViewController: NSViewController, popover: NSPopover) {
+        let rect = NSRect(x: 0, y: 0, width: popover.contentSize.width, height: popover.contentSize.height)
+        let window = NSWindow(contentRect: rect,
+                              styleMask: [.closable, .titled, .unifiedTitleAndToolbar, .resizable, .borderless],
+                              backing: .buffered,
+                              defer: false)
         window.appearance = popover.appearance
+        super.init(window: window)
+        self.contentViewController = contentViewController
     }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
 }

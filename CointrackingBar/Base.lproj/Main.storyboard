@@ -913,24 +913,6 @@
             </objects>
             <point key="canvasLocation" x="83" y="1307"/>
         </scene>
-        <!--Window Controller-->
-        <scene sceneID="XlO-aa-ITC">
-            <objects>
-                <windowController storyboardIdentifier="DetachedWindowController" id="rkP-vP-axs" customClass="DetachedWindowController" customModule="CointrackingBar" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="QWk-3e-MiP">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="294" y="313" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
-                        <connections>
-                            <outlet property="delegate" destination="rkP-vP-axs" id="Ojz-Ou-cAi"/>
-                        </connections>
-                    </window>
-                </windowController>
-                <customObject id="dbZ-V8-Kte" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-67" y="1957"/>
-        </scene>
         <!--Info View Controller-->
         <scene sceneID="PTg-yS-xfi">
             <objects>

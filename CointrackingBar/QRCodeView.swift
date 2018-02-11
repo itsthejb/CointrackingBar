@@ -27,6 +27,7 @@ final class QRCodeView: TransparentView {
         let view = NSStackView(views: [
             self.imageView, self.currencyLabel, self.addressLabel
             ])
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.edgeInsets = NSEdgeInsets(top: 4, left: 8, bottom: 4, right: 8)
         view.orientation = .vertical
         view.alignment = .centerX
@@ -36,9 +37,13 @@ final class QRCodeView: TransparentView {
 
     private lazy var imageView: NSImageView = {
         let view = NSImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.imageAlignment = .alignCenter
         view.imageScaling = .scaleProportionallyUpOrDown
         view.imageFrameStyle = .none
+        NSLayoutConstraint.activate([
+            view.widthAnchor.constraint(greaterThanOrEqualToConstant: 150)
+            ])
         return view
     }()
 
@@ -105,6 +110,7 @@ final class QRCodeView: TransparentView {
     private final class QRCodeLabel: NSTextField {
         init(font: NSFont, textColor color: NSColor, bordered: Bool, selectable: Bool) {
             super.init(frame: .zero)
+            translatesAutoresizingMaskIntoConstraints = false
             setContentCompressionResistancePriority(.required, for: .vertical)
             setContentCompressionResistancePriority(.required, for: .horizontal)
             setContentHuggingPriority(.required, for: .vertical)

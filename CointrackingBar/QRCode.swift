@@ -33,7 +33,7 @@ struct QRCode {
     private static let expression = try! NSRegularExpression(pattern: "^(.*)-QR-Code-(.*-?.*).png$", options: [])
 
     private static let codes: [String: URL] = {
-        let qrCodes = (Bundle.appBundle?.urls(forResourcesWithExtension: "png", subdirectory: "QR Codes") ?? [])
+        let qrCodes = Bundle.resources(with: "png", type: "QR Codes")
         return qrCodes.reduce([String: URL]()) {
             var result = $0
             result[$1.lastPathComponent] = $1

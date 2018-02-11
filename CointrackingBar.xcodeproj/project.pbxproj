@@ -22,6 +22,7 @@
 		49995B99203086C2007088D1 /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49995B97203086C2007088D1 /* Info.storyboard */; };
 		49995B9C203089D7007088D1 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49995B9B203089D7007088D1 /* QRCode.swift */; };
 		49AAA27D20309D49005CAED3 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = 49AAA27C20309D49005CAED3 /* Resources */; };
+		49AAA27F20309D65005CAED3 /* BarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AAA27E20309D65005CAED3 /* BarIcon.swift */; };
 		49C0D59E20165E1800CC3EB7 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0D59D20165E1800CC3EB7 /* WebViewController.swift */; };
 		49C0D5A02017D21C00CC3EB7 /* DetachedWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0D59F2017D21C00CC3EB7 /* DetachedWindow.swift */; };
 		49C0D5A22017D7BB00CC3EB7 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0D5A12017D7BB00CC3EB7 /* InfoViewController.swift */; };
@@ -46,6 +47,7 @@
 		49995B98203086C2007088D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Info.storyboard; sourceTree = "<group>"; };
 		49995B9B203089D7007088D1 /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
 		49AAA27C20309D49005CAED3 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+		49AAA27E20309D65005CAED3 /* BarIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarIcon.swift; sourceTree = "<group>"; };
 		49C0D59D20165E1800CC3EB7 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		49C0D59F2017D21C00CC3EB7 /* DetachedWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetachedWindow.swift; sourceTree = "<group>"; };
 		49C0D5A12017D7BB00CC3EB7 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				49995B9B203089D7007088D1 /* QRCode.swift */,
+				49AAA27E20309D65005CAED3 /* BarIcon.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			files = (
 				499396A1202721D70020EF27 /* ContentViewController.swift in Sources */,
 				49995B9620308655007088D1 /* QRCodeView.swift in Sources */,
+				49AAA27F20309D65005CAED3 /* BarIcon.swift in Sources */,
 				4981568E2014BCBF004AE737 /* CustomViews.swift in Sources */,
 				49C0D59E20165E1800CC3EB7 /* WebViewController.swift in Sources */,
 				49995B9C203089D7007088D1 /* QRCode.swift in Sources */,

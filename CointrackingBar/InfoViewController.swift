@@ -18,6 +18,12 @@ final class InfoViewController: NSViewController, StoryboardViewController {
         return NSStoryboard.with(class: self, storyboardNamed: "Info")
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        iconPopUpButton.removeAllItems()
+        iconPopUpButton.addItems(withTitles: BarIcon.icons.map { $0.name })
+    }
+
     override func viewWillLayout() {
         super.viewWillLayout()
         clipView.frame = view.bounds

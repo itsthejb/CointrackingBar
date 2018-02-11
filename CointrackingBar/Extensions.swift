@@ -15,7 +15,7 @@ extension NSAppearance {
 extension NSStatusItem {
     static func statusItem(target: NSObject, action: Selector) -> NSStatusItem {
         let item = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
-        item.image = #imageLiteral(resourceName: "btc-black").barItemImage()
+        item.image = BarIcon.icons[0].image?.barItemImage()
         item.action = action
         item.target = target
         return item
@@ -56,7 +56,6 @@ extension NSImage {
 }
 
 extension NSButton {
-
     enum Icon {
         case forwards, backwards, info
     }
@@ -65,7 +64,6 @@ extension NSButton {
         font = NSFont(name: "FontAwesome5FreeSolid", size: 20)
         title = icon.iconString
     }
-
 }
 
 protocol StoryboardViewController {
@@ -85,7 +83,11 @@ extension NSTextCheckingResult {
 }
 
 extension Bundle {
-    static var appBundle: Bundle? {
+    static func resources(with extension: String, type: String) -> [URL] {
+        return (appBundle?.urls(forResourcesWithExtension: "png", subdirectory: "Resources/\(type)") ?? [])
+    }
+
+    private static var appBundle: Bundle? {
         return Bundle(identifier: "com.jonathancrooke.CointrackingBar")
     }
 }

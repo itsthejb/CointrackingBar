@@ -24,7 +24,10 @@ final class QRCodeView: TransparentView {
     }
 
     private lazy var stackView: NSStackView = {
-        let view = NSStackView(views: [self.imageView, self.currencyLabel, self.addressLabel])
+        let view = NSStackView(views: [
+            self.imageView, self.currencyLabel, self.addressLabel
+            ])
+        view.edgeInsets = NSEdgeInsets(top: 4, left: 8, bottom: 4, right: 8)
         view.orientation = .vertical
         view.alignment = .centerX
         view.distribution = .fill
@@ -53,6 +56,10 @@ final class QRCodeView: TransparentView {
 
     required init?(coder decoder: NSCoder) {
         super.init(coder: decoder)
+        wantsLayer = true
+        borderColor = .controlLightHighlightColor
+        borderWidth = 1
+        layer?.cornerRadius = 4
     }
 
     override func awakeFromNib() {
@@ -66,8 +73,10 @@ final class QRCodeView: TransparentView {
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: topAnchor),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            stackView.leftAnchor.constraint(equalTo: leftAnchor),
-            stackView.rightAnchor.constraint(equalTo: rightAnchor)
+            stackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 8),
+            stackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -8),
+            //
+            addressLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor)
             ])
     }
 
@@ -75,6 +84,11 @@ final class QRCodeView: TransparentView {
         guard let filename = filename else { code = nil; return }
         loadViews()
         code = QRCode(filename: filename)
+    }
+
+    override func draw(_ dirtyRect: NSRect) {
+        NSColor.white.set()
+        NSRect.fill(dirtyRect)(using: .copy)
     }
 
     override func prepareForInterfaceBuilder() {

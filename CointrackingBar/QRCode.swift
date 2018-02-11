@@ -9,7 +9,6 @@
 import AppKit
 
 struct QRCode {
-
     let imageUrl: URL
     var image: NSImage? { return NSImage(contentsOf: imageUrl) }
     let currency: String

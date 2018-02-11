@@ -18,6 +18,7 @@ extension AppDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         statusItem = NSStatusItem.statusItem(target: self,
                                              action: #selector(menuItemClicked(item:)))
+        UserDefaults.standard.set(false, forKey: "NSConstraintBasedLayoutVisualizeMutuallyExclusiveConstraints")
     }
 }
 

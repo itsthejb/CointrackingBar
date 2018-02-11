@@ -27,7 +27,7 @@ final class QRCodeView: TransparentView {
         let view = NSStackView(views: [self.imageView, self.currencyLabel, self.addressLabel])
         view.orientation = .vertical
         view.alignment = .centerX
-        view.distribution = .fillProportionally
+        view.distribution = .fill
         return view
     }()
 
@@ -36,15 +36,16 @@ final class QRCodeView: TransparentView {
         view.imageAlignment = .alignCenter
         view.imageScaling = .scaleProportionallyUpOrDown
         view.imageFrameStyle = .none
-//        NSLayoutConstraint.activate([
-//            view.widthAnchor.constraint(equalToConstant: 200),
-//            view.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1.0)
-//            ])
         return view
     }()
 
-    private lazy var currencyLabel: NSTextField = { return QRCodeLabel() }()
-    private lazy var addressLabel: NSTextField = { return QRCodeLabel() }()
+    private lazy var currencyLabel: NSTextField = {
+        return QRCodeLabel(font: NSFont.boldSystemFont(ofSize: 16), textColor: .black)
+    }()
+
+    private lazy var addressLabel: NSTextField = {
+        return QRCodeLabel(font: NSFont.systemFont(ofSize: 12), textColor: .gray)
+    }()
 
     override init(frame frameRect: NSRect) {
         fatalError("init(frame:) has not been implemented")
@@ -83,15 +84,15 @@ final class QRCodeView: TransparentView {
 
     private final class QRCodeLabel: NSTextField {
 
-        override init(frame frameRect: NSRect) {
-            super.init(frame: frameRect)
+        init(font: NSFont, textColor color: NSColor) {
+            super.init(frame: .zero)
             setContentCompressionResistancePriority(.required, for: .vertical)
             setContentCompressionResistancePriority(.required, for: .horizontal)
-            font = NSFont.boldSystemFont(ofSize: 16)
-            textColor = .black
+            setContentHuggingPriority(.required, for: .vertical)
+            setContentHuggingPriority(.defaultLow, for: .horizontal)
+            textColor = color
             alignment = .center
             isEditable = false
-//            isEnabled = false
         }
 
         required init?(coder: NSCoder) {

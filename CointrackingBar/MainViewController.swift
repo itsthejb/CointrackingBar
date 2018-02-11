@@ -72,7 +72,6 @@ final class MainViewController: NSViewController, StoryboardViewController {
 }
 
 extension MainViewController: ContentViewControllerDelegate {
-    
     func infoViewControllerWillPresent() {
         NSAnimationContext.runAnimationGroup({ _ in
             controlButtons.forEach { $0.isHidden = true }
@@ -87,15 +86,12 @@ extension MainViewController: ContentViewControllerDelegate {
 
     func infoViewControllerWillDismiss() {}
     func infoViewControllerDidPresent() {}
-
 }
 
 extension MainViewController {
-
     @IBAction func infoButtonPressed(_ sender: NSButton) {
         contentViewController?.toggleInfo(animated: true)
     }
-
 }
 
 extension MainViewController: NSPopoverDelegate {

@@ -52,12 +52,6 @@ final class ContentViewController: NSViewController {
         addChildViewController(webViewController)
         view.addSubview(webViewController.view)
     }
-
-//    override func viewWillTransition(to newSize: NSSize) {
-//        super.viewWillTransition(to: newSize)
-//        infoViewController?.view.frame = NSRect(origin: .zero, size: newSize)
-//    }
-
 }
 
 final class InfoViewControllerPresentation: NSObject, NSViewControllerPresentationAnimator {

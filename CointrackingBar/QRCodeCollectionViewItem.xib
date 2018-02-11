@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
@@ -17,29 +16,16 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="466" height="401"/>
+            <rect key="frame" x="0.0" y="0.0" width="466" height="491"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MbP-8Y-HV2">
-                    <rect key="frame" x="0.0" y="0.0" width="466" height="401"/>
+                    <rect key="frame" x="0.0" y="0.0" width="466" height="491"/>
                     <subviews>
-                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="HMS-ew-g3K">
-                            <rect key="frame" x="0.0" y="25" width="163" height="376"/>
-                            <subviews>
-                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jYN-QC-WeK" userLabel="Code View">
-                                    <rect key="frame" x="-107" y="0.0" width="376" height="376"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="jYN-QC-WeK" secondAttribute="height" id="UJ8-0f-mLG"/>
-                                    </constraints>
-                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="Xzj-YO-JMI"/>
-                                </imageView>
-                            </subviews>
-                            <constraints>
-                                <constraint firstItem="jYN-QC-WeK" firstAttribute="centerX" secondItem="HMS-ew-g3K" secondAttribute="centerX" id="SF7-yf-KUY"/>
-                                <constraint firstAttribute="bottom" secondItem="jYN-QC-WeK" secondAttribute="bottom" id="WZ3-I3-q4T"/>
-                                <constraint firstItem="jYN-QC-WeK" firstAttribute="top" secondItem="HMS-ew-g3K" secondAttribute="top" id="lZ1-Wp-dMH"/>
-                            </constraints>
-                        </customView>
+                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jYN-QC-WeK" userLabel="Code View">
+                            <rect key="frame" x="0.0" y="25" width="466" height="466"/>
+                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="Xzj-YO-JMI"/>
+                        </imageView>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qpN-ON-gQJ">
                             <rect key="frame" x="-2" y="0.0" width="41" height="17"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="nus-Km-W20">

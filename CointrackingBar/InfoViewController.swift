@@ -39,7 +39,7 @@ extension InfoViewController: NSCollectionViewDataSource {
 }
 
 extension InfoViewController: NSCollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {
-        return NSSize(width: 200, height: 300)
-    }
+//    func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {
+//        return NSSize(width: 200, height: 300)
+//    }
 }

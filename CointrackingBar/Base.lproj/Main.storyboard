@@ -945,9 +945,10 @@
                                 <collectionView id="wgr-QJ-QGH">
                                     <rect key="frame" x="0.0" y="0.0" width="448" height="158"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                    <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" scrollDirection="horizontal" id="Yc7-6d-2Po">
-                                        <size key="itemSize" width="150" height="150"/>
-                                    </collectionViewFlowLayout>
+                                    <collectionViewGridLayout key="collectionViewLayout" maximumNumberOfColumns="2" id="OI7-2E-aHl">
+                                        <size key="minimumItemSize" width="100" height="100"/>
+                                        <size key="maximumItemSize" width="200" height="200"/>
+                                    </collectionViewGridLayout>
                                     <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <connections>
                                         <outlet property="dataSource" destination="xhG-0J-jk1" id="Ihk-PB-HVb"/>

@@ -12,6 +12,11 @@ final class ContentViewController: NSViewController {
 
     let webViewController = WebViewController.controller()
     weak var infoViewController: InfoViewController?
+
+    var visibleControllers: [NSViewController] {
+        return ([webViewController, infoViewController] as [NSViewController?]).flatMap { $0 }
+    }
+
     weak var delegate: ContentViewControllerDelegate?
 
     struct Segues {
@@ -26,9 +31,7 @@ final class ContentViewController: NSViewController {
 
     private func showInfoViewController(animated: Bool) {
         guard infoViewController == nil else { return }
-        let controller = InfoViewController.controller()
-        defer { infoViewController = controller }
-        presentViewController(controller, animator: InfoViewControllerPresentation())
+        presentViewController(InfoViewController.controller(), animator: InfoViewControllerPresentation())
     }
 
     private func hideInfoViewController(animated: Bool) {
@@ -40,11 +43,9 @@ final class ContentViewController: NSViewController {
         return infoViewController != nil
     }
 
-    override func viewDidLayout() {
-        super.viewDidLayout()
-        [webViewController]
-            .filter { $0.view.superview != nil}
-            .forEach { $0.view.frame = view.bounds }
+    override func viewWillLayout() {
+        super.viewWillLayout()
+        visibleControllers.forEach { $0.view.frame = view.bounds }
     }
 
     override func viewDidLoad() {
@@ -56,10 +57,15 @@ final class ContentViewController: NSViewController {
 
 final class InfoViewControllerPresentation: NSObject, NSViewControllerPresentationAnimator {
     func animatePresentation(of viewController: NSViewController, from fromViewController: NSViewController) {
-        guard let from = fromViewController as? ContentViewController else { return }
+        guard
+            let from = fromViewController as? ContentViewController,
+            let to = viewController as? InfoViewController
+            else { return }
+
         from.delegate?.infoViewControllerWillPresent()
         from.addChildViewController(viewController)
         from.transition(from: from.webViewController, to: viewController, options: [.slideUp]) {
+            from.infoViewController = to
             from.delegate?.infoViewControllerDidPresent()
         }
     }

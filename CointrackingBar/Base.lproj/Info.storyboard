@@ -20,22 +20,19 @@
                                 <view translatesAutoresizingMaskIntoConstraints="NO" id="bAa-wm-rvu">
                                     <rect key="frame" x="0.0" y="0.0" width="448" height="1218"/>
                                     <subviews>
-                                        <stackView distribution="fillProportionally" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mso-cV-bM9">
+                                        <stackView distribution="fillProportionally" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" ambiguous="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mso-cV-bM9">
                                             <rect key="frame" x="70" y="0.0" width="308" height="1218"/>
                                             <subviews>
-                                                <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xwl-NY-91l" userLabel="BCH, ETH">
+                                                <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" ambiguous="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xwl-NY-91l" userLabel="BCH, ETH">
                                                     <rect key="frame" x="0.0" y="774" width="308" height="444"/>
                                                     <subviews>
-                                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="Zqv-RT-ZWB" userLabel="BCH" customClass="QRCodeView" customModule="CointrackingBar" customModuleProvider="target">
+                                                        <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zqv-RT-ZWB" userLabel="BCH" customClass="QRCodeView" customModule="CointrackingBar" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="194" width="150" height="250"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="150" id="bzT-Ac-70m"/>
-                                                            </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="filename" value="BCH-QR-Code-bitcoin-1QFp5qEzYoqsM9bWo1mGHaf6n3NDxuEBL2.png"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </customView>
-                                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="wSV-fv-pA4" userLabel="ETH" customClass="QRCodeView" customModule="CointrackingBar" customModuleProvider="target">
+                                                        <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wSV-fv-pA4" userLabel="ETH" customClass="QRCodeView" customModule="CointrackingBar" customModuleProvider="target">
                                                             <rect key="frame" x="158" y="194" width="150" height="250"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="filename" value="ETH-QR-Code-0x244CA053df5aAB65932B306c87317BBcFa7fA37e.png"/>
@@ -55,16 +52,16 @@
                                                         <real value="3.4028234663852886e+38"/>
                                                     </customSpacing>
                                                 </stackView>
-                                                <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q5T-c2-NAL" userLabel="LTC, ETC">
+                                                <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" ambiguous="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q5T-c2-NAL" userLabel="LTC, ETC">
                                                     <rect key="frame" x="0.0" y="516" width="308" height="250"/>
                                                     <subviews>
-                                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="URR-Q8-MSP" userLabel="LTC" customClass="QRCodeView" customModule="CointrackingBar" customModuleProvider="target">
+                                                        <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="URR-Q8-MSP" userLabel="LTC" customClass="QRCodeView" customModule="CointrackingBar" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="filename" value="LTC-QR-Code-litecoin-MUQe6TifzwTuD6xAJhx3ovmmU8HHRicDHy.png"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </customView>
-                                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="kaR-Ak-RpH" userLabel="ETC" customClass="QRCodeView" customModule="CointrackingBar" customModuleProvider="target">
+                                                        <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kaR-Ak-RpH" userLabel="ETC" customClass="QRCodeView" customModule="CointrackingBar" customModuleProvider="target">
                                                             <rect key="frame" x="158" y="0.0" width="150" height="250"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="filename" value="ETC-QR-Code-0x67d94CCe7565aCc23a857a13268A7277b4f24011.png"/>
@@ -80,16 +77,16 @@
                                                         <real value="3.4028234663852886e+38"/>
                                                     </customSpacing>
                                                 </stackView>
-                                                <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PBM-UL-CGQ" userLabel="Dash, BTC">
+                                                <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" ambiguous="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PBM-UL-CGQ" userLabel="Dash, BTC">
                                                     <rect key="frame" x="0.0" y="258" width="308" height="250"/>
                                                     <subviews>
-                                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="RjB-v8-Mun" userLabel="Dash" customClass="QRCodeView" customModule="CointrackingBar" customModuleProvider="target">
+                                                        <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RjB-v8-Mun" userLabel="Dash" customClass="QRCodeView" customModule="CointrackingBar" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="filename" value="Dash-QR-Code-dash-XeRMwDcuftu1aXyfa1egPJvt3SD8jUzTqA.png"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </customView>
-                                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="0gl-gz-t5w" userLabel="BTC" customClass="QRCodeView" customModule="CointrackingBar" customModuleProvider="target">
+                                                        <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0gl-gz-t5w" userLabel="BTC" customClass="QRCodeView" customModule="CointrackingBar" customModuleProvider="target">
                                                             <rect key="frame" x="158" y="0.0" width="150" height="250"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="filename" value="BTC-QR-Code-bitcoin-32iWBRGSdKTZBzArEmmAmNxftoTKTByGtJ.png"/>
@@ -105,16 +102,16 @@
                                                         <real value="3.4028234663852886e+38"/>
                                                     </customSpacing>
                                                 </stackView>
-                                                <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mSG-Oj-zAL" userLabel="Ripple, Stellar">
+                                                <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" ambiguous="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mSG-Oj-zAL" userLabel="Ripple, Stellar">
                                                     <rect key="frame" x="0.0" y="0.0" width="308" height="250"/>
                                                     <subviews>
-                                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="tea-TA-Im4" userLabel="Ripple" customClass="QRCodeView" customModule="CointrackingBar" customModuleProvider="target">
+                                                        <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tea-TA-Im4" userLabel="Ripple" customClass="QRCodeView" customModule="CointrackingBar" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="filename" value="Ripple-QR-Code-r3JxQFLkPGSFN3VPuc79L8TNdnhjo9cSyh.png"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </customView>
-                                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="vom-4U-bm1" userLabel="Stellar" customClass="QRCodeView" customModule="CointrackingBar" customModuleProvider="target">
+                                                        <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vom-4U-bm1" userLabel="Stellar" customClass="QRCodeView" customModule="CointrackingBar" customModuleProvider="target">
                                                             <rect key="frame" x="158" y="0.0" width="150" height="250"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="filename" value="Stellar-QR-Code-GAZD6QN2FT3MABIPEY7FIDRFSX62F6V3RUDOQHRKXPNWQ6FVWYNES3A6.png"/>

@@ -91,7 +91,7 @@ final class QRCodeView: TransparentView {
             textColor = .black
             alignment = .center
             isEditable = false
-            isEnabled = false
+//            isEnabled = false
         }
 
         required init?(coder: NSCoder) {

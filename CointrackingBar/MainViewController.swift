@@ -16,6 +16,7 @@ final class MainViewController: NSViewController, StoryboardViewController {
 
     weak var contentViewController: ContentViewController? {
         didSet {
+            contentViewController?.delegate = self
             guard let controller = webViewController else { return }
             controller.load(with: self)
         }
@@ -25,6 +26,7 @@ final class MainViewController: NSViewController, StoryboardViewController {
     @IBOutlet weak var forwardButton: NSButton!
     @IBOutlet weak var infoButton: NSButton!
     @IBOutlet weak var quitButton: NSButton!
+    var controlButtons: [NSButton] { return [backButton, forwardButton] }
 
     @IBOutlet weak var loadingView: LoadingView!
     private weak var popover: NSPopover?
@@ -67,6 +69,25 @@ final class MainViewController: NSViewController, StoryboardViewController {
         }
     }
     
+}
+
+extension MainViewController: ContentViewControllerDelegate {
+    
+    func infoViewControllerWillPresent() {
+        NSAnimationContext.runAnimationGroup({ _ in
+            controlButtons.forEach { $0.isHidden = true }
+        }, completionHandler: nil)
+    }
+
+    func infoViewControllerDidDismiss() {
+        NSAnimationContext.runAnimationGroup({ _ in
+            controlButtons.forEach { $0.isHidden = false }
+        }, completionHandler: nil)
+    }
+
+    func infoViewControllerWillDismiss() {}
+    func infoViewControllerDidPresent() {}
+
 }
 
 extension MainViewController {

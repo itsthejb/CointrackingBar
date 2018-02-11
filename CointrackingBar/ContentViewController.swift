@@ -8,10 +8,20 @@
 
 import Cocoa
 
+protocol ContentViewControllerDelegate: class {
+
+    func infoViewControllerWillPresent()
+    func infoViewControllerWillDismiss()
+    func infoViewControllerDidPresent()
+    func infoViewControllerDidDismiss()
+
+}
+
 final class ContentViewController: NSViewController {
 
     let webViewController = WebViewController.controller()
     weak var infoViewController: InfoViewController?
+    weak var delegate: ContentViewControllerDelegate?
 
     struct Segues {
         static let infoViewController = NSStoryboardSegue.Identifier(class: InfoViewController.self)
@@ -55,14 +65,19 @@ final class ContentViewController: NSViewController {
 final class InfoViewControllerPresentation: NSObject, NSViewControllerPresentationAnimator {
     func animatePresentation(of viewController: NSViewController, from fromViewController: NSViewController) {
         guard let from = fromViewController as? ContentViewController else { return }
+        from.delegate?.infoViewControllerWillPresent()
         from.addChildViewController(viewController)
-        from.transition(from: from.webViewController, to: viewController, options: [.slideUp])
+        from.transition(from: from.webViewController, to: viewController, options: [.slideUp]) {
+            from.delegate?.infoViewControllerDidPresent()
+        }
     }
 
     func animateDismissal(of viewController: NSViewController, from fromViewController: NSViewController) {
         guard let from = fromViewController as? ContentViewController else { return }
+        from.delegate?.infoViewControllerWillDismiss()
         from.transition(from: viewController, to: from.webViewController, options: [.crossfade]) {
             viewController.removeFromParentViewController()
+            from.delegate?.infoViewControllerDidDismiss()
         }
     }
 }

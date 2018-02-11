@@ -85,6 +85,10 @@ final class QRCodeView: TransparentView {
 
         override init(frame frameRect: NSRect) {
             super.init(frame: frameRect)
+            setContentCompressionResistancePriority(.required, for: .vertical)
+            setContentCompressionResistancePriority(.required, for: .horizontal)
+            font = NSFont.boldSystemFont(ofSize: 16)
+            textColor = .black
             alignment = .center
             isEditable = false
             isEnabled = false

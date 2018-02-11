@@ -8,15 +8,6 @@
 
 import Cocoa
 
-protocol ContentViewControllerDelegate: class {
-
-    func infoViewControllerWillPresent()
-    func infoViewControllerWillDismiss()
-    func infoViewControllerDidPresent()
-    func infoViewControllerDidDismiss()
-
-}
-
 final class ContentViewController: NSViewController {
 
     let webViewController = WebViewController.controller()
@@ -28,7 +19,9 @@ final class ContentViewController: NSViewController {
     }
 
     func toggleInfo(animated: Bool) {
-        isInfoViewControllerVisible ? hideInfoViewController(animated: animated) : showInfoViewController(animated: animated)
+        isInfoViewControllerVisible
+            ? hideInfoViewController(animated: animated)
+            : showInfoViewController(animated: animated)
     }
 
     private func showInfoViewController(animated: Bool) {
@@ -59,7 +52,12 @@ final class ContentViewController: NSViewController {
         addChildViewController(webViewController)
         view.addSubview(webViewController.view)
     }
-    
+
+//    override func viewWillTransition(to newSize: NSSize) {
+//        super.viewWillTransition(to: newSize)
+//        infoViewController?.view.frame = NSRect(origin: .zero, size: newSize)
+//    }
+
 }
 
 final class InfoViewControllerPresentation: NSObject, NSViewControllerPresentationAnimator {
@@ -80,4 +78,11 @@ final class InfoViewControllerPresentation: NSObject, NSViewControllerPresentati
             from.delegate?.infoViewControllerDidDismiss()
         }
     }
+}
+
+protocol ContentViewControllerDelegate: class {
+    func infoViewControllerWillPresent()
+    func infoViewControllerWillDismiss()
+    func infoViewControllerDidPresent()
+    func infoViewControllerDidDismiss()
 }

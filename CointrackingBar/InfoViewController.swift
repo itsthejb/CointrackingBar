@@ -20,23 +20,11 @@ final class InfoViewController: NSViewController, StoryboardViewController {
         super.viewDidLoad()
         let nib = NSNib(nibNamed: NSNib.Name(String(describing: QRCodeCollectionViewItem.self)), bundle: nil)
         collectionView.register(nib, forItemWithIdentifier: QRCodeCollectionViewItem.identifier)
-//        NSLayoutConstraint.activate([
-//            collectionView.topAnchor.constraint(equalTo: clipView.topAnchor),
-//            collectionView.bottomAnchor.constraint(equalTo: clipView.bottomAnchor),
-//            collectionView.leftAnchor.constraint(equalTo: clipView.leftAnchor),
-//            collectionView.rightAnchor.constraint(equalTo: clipView.rightAnchor),
-//            ])
-//        UserDefaults.standard.set(false, forKey: "NSConstraintBasedLayoutVisualizeMutuallyExclusiveConstraints")
     }
 
     override func viewWillLayout() {
         super.viewWillLayout()
         clipView.frame = view.bounds
-//        collectionView.frame = clipView.bounds
-    }
-
-    override func viewDidLayout() {
-        super.viewDidLayout()
     }
 
 }
@@ -63,3 +51,4 @@ extension InfoViewController: NSCollectionViewDelegateFlowLayout {
 //        return NSSize(width: width, height: width * aspect)
 //    }
 }
+

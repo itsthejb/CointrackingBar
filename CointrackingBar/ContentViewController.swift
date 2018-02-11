@@ -11,11 +11,7 @@ import Cocoa
 final class ContentViewController: NSViewController {
 
     let webViewController = WebViewController.controller()
-//    let infoViewController = InfoViewController.controller()
-
-//    enum Content {
-//        case webView, info
-//    }
+    weak var infoViewController: InfoViewController?
 
     struct Segues {
         static let infoViewController = NSStoryboardSegue.Identifier(class: InfoViewController.self)
@@ -26,20 +22,21 @@ final class ContentViewController: NSViewController {
     }
 
     private func showInfoViewController(animated: Bool) {
+        presentViewController(<#T##viewController: NSViewController##NSViewController#>, animator: <#T##NSViewControllerPresentationAnimator#>)
         performSegue(withIdentifier: Segues.infoViewController, sender: self)
-//        addChildViewController(infoViewController)
-//        transition(from: webViewController, to: infoViewController, options: .slideUp)
     }
 
     private func hideInfoViewController(animated: Bool) {
+        guard let controller = infoViewController else { return }
+        dismissViewController(controller)
+//        infoViewController?.dismissViewController(<#T##viewController: NSViewController##NSViewController#>)
 //        transition(from: infoViewController, to: webViewController, options: .slideDown) {
 //            self.infoViewController.removeFromParentViewController()
 //        }
     }
 
     private var isInfoViewControllerVisible: Bool {
-        return false
-//        return infoViewController.view.superview != nil
+        return infoViewController != nil
     }
 
     override func viewDidLayout() {
@@ -56,4 +53,35 @@ final class ContentViewController: NSViewController {
         view.addSubview(webViewController.view)
     }
     
+}
+
+extension ContentViewController {
+
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+
+        switch segue.destinationController {
+        case let controller as InfoViewController:
+            infoViewController = controller
+        default:
+            break
+        }
+    }
+
+}
+
+
+final class InfoViewControllerSegue: NSStoryboardSegue {
+
+    override func perform() {
+        guard
+            let source = sourceController as? ContentViewController,
+            let destination = destinationController as? NSViewController
+            else { return }
+        source.addChildViewController(destination)
+        source.transition(from: source.webViewController,
+                          to: destination, options: [.slideUp],
+                          completionHandler: nil)
+    }
+
 }

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		49117BA320305E4300E8690A /* InfoViewControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49117BA220305E4300E8690A /* InfoViewControllerSegue.swift */; };
 		492BF29F1FE53E0400CAB5C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492BF29E1FE53E0400CAB5C5 /* AppDelegate.swift */; };
 		492BF2A11FE53E0400CAB5C5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492BF2A01FE53E0400CAB5C5 /* MainViewController.swift */; };
 		492BF2A31FE53E0400CAB5C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 492BF2A21FE53E0400CAB5C5 /* Assets.xcassets */; };
@@ -28,7 +27,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		49117BA220305E4300E8690A /* InfoViewControllerSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewControllerSegue.swift; sourceTree = "<group>"; };
 		492BF29B1FE53E0400CAB5C5 /* CointrackingBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CointrackingBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		492BF29E1FE53E0400CAB5C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		492BF2A01FE53E0400CAB5C5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -140,7 +138,6 @@
 				49C0D59D20165E1800CC3EB7 /* WebViewController.swift */,
 				49C0D5A12017D7BB00CC3EB7 /* InfoViewController.swift */,
 				4968C2252028F66D00ECD1E7 /* QRCodeCollectionViewItem.swift */,
-				49117BA220305E4300E8690A /* InfoViewControllerSegue.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -233,7 +230,6 @@
 				49C0D59E20165E1800CC3EB7 /* WebViewController.swift in Sources */,
 				492BF2A11FE53E0400CAB5C5 /* MainViewController.swift in Sources */,
 				49C0D5A22017D7BB00CC3EB7 /* InfoViewController.swift in Sources */,
-				49117BA320305E4300E8690A /* InfoViewControllerSegue.swift in Sources */,
 				492BF29F1FE53E0400CAB5C5 /* AppDelegate.swift in Sources */,
 				49C0D5A02017D21C00CC3EB7 /* DetachedWindow.swift in Sources */,
 				498156922014C501004AE737 /* Extensions.swift in Sources */,

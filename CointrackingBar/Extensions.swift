@@ -99,17 +99,14 @@ extension NSStoryboardSegue.Identifier {
 }
 
 extension NSStoryboard {
-
     static func with<T>(`class`: T.Type, storyboardNamed name: String = "Main") -> T {
         let scene = NSStoryboard.SceneIdentifier(String(describing: T.self))
         let storyboard = NSStoryboard(name: NSStoryboard.Name(name), bundle: nil)
         return storyboard.instantiateController(withIdentifier: scene) as! T
     }
-
 }
 
 private extension NSButton.Icon {
-
     var iconString: String {
         switch self {
         case .forwards:
@@ -120,5 +117,4 @@ private extension NSButton.Icon {
             return "\u{f05a}"
         }
     }
-
 }

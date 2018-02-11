@@ -19,7 +19,8 @@ final class DetachedWindowController: NSWindowController, StoryboardViewControll
         super.init(window: window)
         self.contentViewController = contentViewController
         window.appearance = popover.appearance
-        window.delegate = self
+//        window.delegate = self
+//        print(window)
     }
 
     required init?(coder: NSCoder) {

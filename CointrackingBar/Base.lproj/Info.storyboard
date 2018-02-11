@@ -12,20 +12,20 @@
             <objects>
                 <viewController storyboardIdentifier="InfoViewController" id="cvj-N4-F7P" customClass="InfoViewController" customModule="CointrackingBar" customModuleProvider="target" sceneMemberID="viewController">
                     <scrollView key="view" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="YCC-Kx-vYs">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="1344"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="1360"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <clipView key="contentView" id="LT7-Sd-xVz">
-                            <rect key="frame" x="1" y="1" width="448" height="1342"/>
+                            <rect key="frame" x="1" y="1" width="448" height="1358"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <view translatesAutoresizingMaskIntoConstraints="NO" id="bAa-wm-rvu">
-                                    <rect key="frame" x="0.0" y="0.0" width="448" height="1342"/>
+                                <view translatesAutoresizingMaskIntoConstraints="NO" id="bAa-wm-rvu" customClass="TransparentView" customModule="CointrackingBar" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="448" height="1358"/>
                                     <subviews>
                                         <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mso-cV-bM9">
-                                            <rect key="frame" x="0.0" y="0.0" width="448" height="1342"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="448" height="1358"/>
                                             <subviews>
                                                 <box ambiguous="YES" boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="Dij-0a-iDa">
-                                                    <rect key="frame" x="117" y="1228" width="215" height="114"/>
+                                                    <rect key="frame" x="117" y="1236" width="215" height="114"/>
                                                     <view key="contentView" ambiguous="YES" id="Uaf-1H-AGK">
                                                         <rect key="frame" x="1" y="1" width="213" height="112"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,16 +76,16 @@
                                                     </view>
                                                 </box>
                                                 <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" ambiguous="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xwl-NY-91l" userLabel="BCH, ETH">
-                                                    <rect key="frame" x="70" y="921" width="308" height="299"/>
+                                                    <rect key="frame" x="0.0" y="929" width="448" height="299"/>
                                                     <subviews>
                                                         <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zqv-RT-ZWB" userLabel="BCH" customClass="QRCodeView" customModule="CointrackingBar" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="299"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="220" height="299"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="filename" value="BCH-QR-Code-bitcoin-1QFp5qEzYoqsM9bWo1mGHaf6n3NDxuEBL2.png"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </customView>
                                                         <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wSV-fv-pA4" userLabel="ETH" customClass="QRCodeView" customModule="CointrackingBar" customModuleProvider="target">
-                                                            <rect key="frame" x="158" y="0.0" width="150" height="299"/>
+                                                            <rect key="frame" x="228" y="0.0" width="220" height="299"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="filename" value="ETH-QR-Code-0x244CA053df5aAB65932B306c87317BBcFa7fA37e.png"/>
                                                             </userDefinedRuntimeAttributes>
@@ -105,16 +105,16 @@
                                                     </customSpacing>
                                                 </stackView>
                                                 <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" ambiguous="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q5T-c2-NAL" userLabel="LTC, ETC">
-                                                    <rect key="frame" x="70" y="614" width="308" height="299"/>
+                                                    <rect key="frame" x="0.0" y="622" width="448" height="299"/>
                                                     <subviews>
                                                         <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="URR-Q8-MSP" userLabel="LTC" customClass="QRCodeView" customModule="CointrackingBar" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="299"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="220" height="299"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="filename" value="LTC-QR-Code-litecoin-MUQe6TifzwTuD6xAJhx3ovmmU8HHRicDHy.png"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </customView>
                                                         <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kaR-Ak-RpH" userLabel="ETC" customClass="QRCodeView" customModule="CointrackingBar" customModuleProvider="target">
-                                                            <rect key="frame" x="158" y="0.0" width="150" height="299"/>
+                                                            <rect key="frame" x="228" y="0.0" width="220" height="299"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="filename" value="ETC-QR-Code-0x67d94CCe7565aCc23a857a13268A7277b4f24011.png"/>
                                                             </userDefinedRuntimeAttributes>
@@ -130,16 +130,16 @@
                                                     </customSpacing>
                                                 </stackView>
                                                 <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" ambiguous="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PBM-UL-CGQ" userLabel="Dash, BTC">
-                                                    <rect key="frame" x="70" y="307" width="308" height="299"/>
+                                                    <rect key="frame" x="0.0" y="315" width="448" height="299"/>
                                                     <subviews>
                                                         <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RjB-v8-Mun" userLabel="Dash" customClass="QRCodeView" customModule="CointrackingBar" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="299"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="220" height="299"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="filename" value="Dash-QR-Code-dash-XeRMwDcuftu1aXyfa1egPJvt3SD8jUzTqA.png"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </customView>
                                                         <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0gl-gz-t5w" userLabel="BTC" customClass="QRCodeView" customModule="CointrackingBar" customModuleProvider="target">
-                                                            <rect key="frame" x="158" y="0.0" width="150" height="299"/>
+                                                            <rect key="frame" x="228" y="0.0" width="220" height="299"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="filename" value="BTC-QR-Code-bitcoin-32iWBRGSdKTZBzArEmmAmNxftoTKTByGtJ.png"/>
                                                             </userDefinedRuntimeAttributes>
@@ -155,16 +155,16 @@
                                                     </customSpacing>
                                                 </stackView>
                                                 <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" ambiguous="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mSG-Oj-zAL" userLabel="Ripple, Stellar">
-                                                    <rect key="frame" x="70" y="0.0" width="308" height="299"/>
+                                                    <rect key="frame" x="0.0" y="8" width="448" height="299"/>
                                                     <subviews>
                                                         <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tea-TA-Im4" userLabel="Ripple" customClass="QRCodeView" customModule="CointrackingBar" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="299"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="220" height="299"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="filename" value="Ripple-QR-Code-r3JxQFLkPGSFN3VPuc79L8TNdnhjo9cSyh.png"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </customView>
                                                         <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vom-4U-bm1" userLabel="Stellar" customClass="QRCodeView" customModule="CointrackingBar" customModuleProvider="target">
-                                                            <rect key="frame" x="158" y="0.0" width="150" height="299"/>
+                                                            <rect key="frame" x="228" y="0.0" width="220" height="299"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="filename" value="Stellar-QR-Code-GAZD6QN2FT3MABIPEY7FIDRFSX62F6V3RUDOQHRKXPNWQ6FVWYNES3A6.png"/>
                                                             </userDefinedRuntimeAttributes>
@@ -180,6 +180,7 @@
                                                     </customSpacing>
                                                 </stackView>
                                             </subviews>
+                                            <edgeInsets key="edgeInsets" left="8" right="8" top="8" bottom="8"/>
                                             <constraints>
                                                 <constraint firstItem="RjB-v8-Mun" firstAttribute="width" secondItem="Zqv-RT-ZWB" secondAttribute="width" id="1d7-C6-2jl"/>
                                                 <constraint firstItem="URR-Q8-MSP" firstAttribute="height" secondItem="Zqv-RT-ZWB" secondAttribute="height" id="5He-wD-ihW"/>
@@ -225,12 +226,12 @@
                                 <constraint firstAttribute="trailing" secondItem="bAa-wm-rvu" secondAttribute="trailing" id="ty8-cY-dxh"/>
                             </constraints>
                         </clipView>
-                        <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="4jR-Tj-3Lq">
-                            <rect key="frame" x="1" y="1327" width="448" height="16"/>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="4jR-Tj-3Lq">
+                            <rect key="frame" x="1" y="1343" width="448" height="16"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="fJN-XV-L8w">
-                            <rect key="frame" x="433" y="1" width="16" height="1342"/>
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="fJN-XV-L8w">
+                            <rect key="frame" x="433" y="1" width="16" height="1358"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>

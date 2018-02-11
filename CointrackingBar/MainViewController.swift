@@ -13,6 +13,7 @@ final class MainViewController: NSViewController, StoryboardViewController {
 
     weak var webView: WKWebView? { return webViewController?.webView }
     weak var webViewController: WebViewController? { return contentViewController?.webViewController }
+    weak var dettachedWindowController: DetachedWindowController?
 
     weak var contentViewController: ContentViewController? {
         didSet {
@@ -30,10 +31,6 @@ final class MainViewController: NSViewController, StoryboardViewController {
 
     @IBOutlet weak var loadingView: LoadingView!
     private weak var popover: NSPopover?
-
-    func detachedWindowController(contentController: NSViewController, popover: NSPopover) -> DetachedWindowController {
-        return DetachedWindowController(contentViewController: contentController, popover: popover)
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,19 +99,14 @@ extension MainViewController: NSPopoverDelegate {
     }
 
     func detachableWindow(for popover: NSPopover) -> NSWindow? {
-        return detachedWindowController(contentController: self, popover: popover).window
+        guard dettachedWindowController == nil else { return nil }
+        let controller = DetachedWindowController(contentViewController: self, popover: popover)
+        defer { dettachedWindowController = controller }
+        return controller.window
     }
 
     func popoverShouldDetach(_ popover: NSPopover) -> Bool {
         return true
-    }
-
-}
-
-extension MainViewController: NSWindowDelegate {
-
-    @objc func detachedWindowWillClose(_ notification: Notification) {
-        // TODO pass back?
     }
 
 }

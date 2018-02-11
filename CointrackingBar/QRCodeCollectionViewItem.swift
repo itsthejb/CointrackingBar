@@ -13,13 +13,20 @@ final class QRCodeCollectionViewItem: NSCollectionViewItem {
     static let identifier = NSUserInterfaceItemIdentifier(String(describing: self))
 
     @IBOutlet weak var codeImageView: NSImageView!
-    @IBOutlet weak var label: NSTextField!
+    @IBOutlet weak var currencyLabel: NSTextField!
+    @IBOutlet weak var addressLabel: NSTextField!
 
     var code: QRCode? {
         didSet {
             codeImageView?.image = code?.image
-            label?.stringValue = code?.address ?? ""
+            currencyLabel?.stringValue = code?.currency ?? ""
+            addressLabel?.stringValue = code?.address ?? ""
         }
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+//        [currencyLabel, addressLabel].forEach { $0.setEdit}
     }
 
 }

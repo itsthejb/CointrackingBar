@@ -19,6 +19,7 @@ final class InfoViewController: NSViewController, StoryboardViewController {
         super.viewDidLoad()
         let nib = NSNib(nibNamed: NSNib.Name(String(describing: QRCodeCollectionViewItem.self)), bundle: nil)
         collectionView.register(nib, forItemWithIdentifier: QRCodeCollectionViewItem.identifier)
+        UserDefaults.standard.set(false, forKey: "NSConstraintBasedLayoutVisualizeMutuallyExclusiveConstraints")
     }
 
 }
@@ -40,6 +41,8 @@ extension InfoViewController: NSCollectionViewDataSource {
 
 extension InfoViewController: NSCollectionViewDelegateFlowLayout {
 //    func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {
-//        return NSSize(width: 200, height: 300)
+//        let aspect: CGFloat = 1.6
+//        let width = collectionView.frame.width
+//        return NSSize(width: width, height: width * aspect)
 //    }
 }

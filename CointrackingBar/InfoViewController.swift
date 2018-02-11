@@ -31,6 +31,7 @@ final class InfoViewController: NSViewController, StoryboardViewController {
 
     override func viewWillLayout() {
         super.viewWillLayout()
+        clipView.frame = view.bounds
 //        collectionView.frame = clipView.bounds
     }
 

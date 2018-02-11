@@ -27,7 +27,9 @@ final class MainViewController: NSViewController, StoryboardViewController {
     @IBOutlet weak var forwardButton: NSButton!
     @IBOutlet weak var infoButton: NSButton!
     @IBOutlet weak var quitButton: NSButton!
-    var controlButtons: [NSButton] { return [backButton, forwardButton] }
+
+    @IBOutlet weak var backContainer: NSView!
+    @IBOutlet weak var forwardContainer: NSView!
 
     @IBOutlet weak var loadingView: LoadingView!
     private weak var popover: NSPopover?
@@ -66,15 +68,11 @@ final class MainViewController: NSViewController, StoryboardViewController {
 
 extension MainViewController: ContentViewControllerDelegate {
     func infoViewControllerWillPresent() {
-        NSAnimationContext.runAnimationGroup({ _ in
-            controlButtons.forEach { $0.isHidden = true }
-        }, completionHandler: nil)
+        [forwardContainer, backContainer].forEach { $0?.layer?.opacity = 0 }
     }
 
     func infoViewControllerDidDismiss() {
-        NSAnimationContext.runAnimationGroup({ _ in
-            controlButtons.forEach { $0.isHidden = false }
-        }, completionHandler: nil)
+        [forwardContainer, backContainer].forEach { $0?.layer?.opacity = 1 }
     }
 
     func infoViewControllerWillDismiss() {}

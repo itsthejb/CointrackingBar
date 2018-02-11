@@ -852,7 +852,9 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="eH9-UQ-F97" id="DJ1-wW-ThK"/>
+                        <outlet property="backContainer" destination="Rth-Qe-zFl" id="vRA-qZ-fG9"/>
                         <outlet property="forwardButton" destination="0od-r6-2oF" id="64w-Xx-u4z"/>
+                        <outlet property="forwardContainer" destination="Oa5-tN-Avc" id="gll-9e-eAq"/>
                         <outlet property="infoButton" destination="fN7-I5-QNT" id="Cl8-zc-S37"/>
                         <outlet property="loadingView" destination="VNL-LO-ZoJ" id="bX6-Q2-YkJ"/>
                         <outlet property="quitButton" destination="8h4-28-8lh" id="lAc-IY-6ol"/>

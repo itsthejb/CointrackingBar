@@ -69,12 +69,12 @@ extension NSButton {
 }
 
 protocol StoryboardViewController {
-    static func controller() -> Self
+    static func controller(storyboardNamed name: String) -> Self
 }
 
 extension StoryboardViewController {
-    static func controller() -> Self {
-        return NSStoryboard.with(class: self)
+    static func controller(storyboardNamed name: String = "Main") -> Self {
+        return NSStoryboard.with(class: self, storyboardNamed: name)
     }
 }
 
@@ -96,15 +96,14 @@ extension NSStoryboardSegue.Identifier {
     }
 }
 
-private extension NSStoryboard {
-    static func with<T>(`class`: T.Type) -> T {
+extension NSStoryboard {
+
+    static func with<T>(`class`: T.Type, storyboardNamed name: String = "Main") -> T {
         let scene = NSStoryboard.SceneIdentifier(String(describing: T.self))
+        let storyboard = NSStoryboard(name: NSStoryboard.Name(name), bundle: nil)
         return storyboard.instantiateController(withIdentifier: scene) as! T
     }
 
-    static private var storyboard: NSStoryboard {
-        return NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
-    }
 }
 
 private extension NSButton.Icon {

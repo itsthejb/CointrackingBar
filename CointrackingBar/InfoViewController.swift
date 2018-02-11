@@ -10,16 +10,10 @@ import Cocoa
 
 final class InfoViewController: NSViewController, StoryboardViewController {
 
-    @IBOutlet weak var collectionView: NSCollectionView!
     @IBOutlet weak var clipView: NSClipView!
 
-//    lazy var qrCodes = (Bundle.main.urls(forResourcesWithExtension: "png", subdirectory: "QR Codes") ?? [])
-//        .flatMap { QRCode(with: $0) }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let nib = NSNib(nibNamed: NSNib.Name(String(describing: QRCodeCollectionViewItem.self)), bundle: nil)
-//        collectionView.register(nib, forItemWithIdentifier: QRCodeCollectionViewItem.identifier)
+    static func controller() -> Self {
+        return NSStoryboard.with(class: self, storyboardNamed: "Info")
     }
 
     override func viewWillLayout() {
@@ -28,27 +22,3 @@ final class InfoViewController: NSViewController, StoryboardViewController {
     }
 
 }
-
-extension InfoViewController: NSCollectionViewDataSource {
-
-    func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
-    }
-
-    func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        let item = collectionView.makeItem(withIdentifier: QRCodeCollectionViewItem.identifier, for: indexPath)
-        guard let qrItem = item as? QRCodeCollectionViewItem else { return item }
-//        qrItem.code = qrCodes[indexPath.item]
-        return qrItem
-    }
-
-}
-
-extension InfoViewController: NSCollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {
-//        let aspect: CGFloat = 1.6
-//        let width = collectionView.frame.width
-//        return NSSize(width: width, height: width * aspect)
-//    }
-}
-

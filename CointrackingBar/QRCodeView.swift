@@ -9,7 +9,7 @@
 import Cocoa
 
 @IBDesignable
-final class QRCodeView: NSView {
+final class QRCodeView: TransparentView {
 
     @IBInspectable var filename: String? {
         didSet { configure(withFilename: filename) }
@@ -26,6 +26,8 @@ final class QRCodeView: NSView {
     private lazy var stackView: NSStackView = {
         let view = NSStackView(views: [self.imageView, self.currencyLabel, self.addressLabel])
         view.orientation = .vertical
+        view.alignment = .centerX
+        view.distribution = .fillProportionally
         return view
     }()
 
@@ -33,20 +35,16 @@ final class QRCodeView: NSView {
         let view = NSImageView()
         view.imageAlignment = .alignCenter
         view.imageScaling = .scaleProportionallyUpOrDown
+        view.imageFrameStyle = .none
+//        NSLayoutConstraint.activate([
+//            view.widthAnchor.constraint(equalToConstant: 200),
+//            view.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1.0)
+//            ])
         return view
     }()
 
-    private lazy var currencyLabel: NSTextField = {
-        let view = NSTextField()
-        view.textColor = .black
-        return view
-    }()
-
-    private lazy var addressLabel: NSTextField = {
-        let view = NSTextField()
-        view.textColor = .black
-        return view
-    }()
+    private lazy var currencyLabel: NSTextField = { return QRCodeLabel() }()
+    private lazy var addressLabel: NSTextField = { return QRCodeLabel() }()
 
     override init(frame frameRect: NSRect) {
         fatalError("init(frame:) has not been implemented")
@@ -83,9 +81,19 @@ final class QRCodeView: NSView {
         configure(withFilename: filename)
     }
 
-    override func draw(_ dirtyRect: NSRect) {
-        NSColor.red.set()
-        NSRect.fill(dirtyRect)(using: .copy)
+    private final class QRCodeLabel: NSTextField {
+
+        override init(frame frameRect: NSRect) {
+            super.init(frame: frameRect)
+            alignment = .center
+            isEditable = false
+            isEnabled = false
+        }
+
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+
     }
 
 }

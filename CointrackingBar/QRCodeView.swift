@@ -40,11 +40,11 @@ final class QRCodeView: TransparentView {
     }()
 
     private lazy var currencyLabel: NSTextField = {
-        return QRCodeLabel(font: NSFont.boldSystemFont(ofSize: 16), textColor: .black)
+        return QRCodeLabel(font: NSFont.boldSystemFont(ofSize: 16), textColor: .black, bordered: true)
     }()
 
     private lazy var addressLabel: NSTextField = {
-        return QRCodeLabel(font: NSFont.systemFont(ofSize: 12), textColor: .gray)
+        return QRCodeLabel(font: NSFont.labelFont(ofSize: NSFont.labelFontSize), textColor: .gray, bordered: false)
     }()
 
     override init(frame frameRect: NSRect) {
@@ -84,7 +84,7 @@ final class QRCodeView: TransparentView {
 
     private final class QRCodeLabel: NSTextField {
 
-        init(font: NSFont, textColor color: NSColor) {
+        init(font: NSFont, textColor color: NSColor, bordered: Bool) {
             super.init(frame: .zero)
             setContentCompressionResistancePriority(.required, for: .vertical)
             setContentCompressionResistancePriority(.required, for: .horizontal)
@@ -93,6 +93,7 @@ final class QRCodeView: TransparentView {
             textColor = color
             alignment = .center
             isEditable = false
+            isBordered = bordered
         }
 
         required init?(coder: NSCoder) {

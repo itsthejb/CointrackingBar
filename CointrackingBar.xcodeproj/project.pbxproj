@@ -12,8 +12,8 @@
 		492BF2A31FE53E0400CAB5C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 492BF2A21FE53E0400CAB5C5 /* Assets.xcassets */; };
 		492BF2A61FE53E0400CAB5C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 492BF2A41FE53E0400CAB5C5 /* Main.storyboard */; };
 		4968C2202028EF4100ECD1E7 /* QR Codes in Resources */ = {isa = PBXBuildFile; fileRef = 4968C21F2028EF4000ECD1E7 /* QR Codes */; };
-		4968C2272028F66D00ECD1E7 /* QRCodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4968C2252028F66D00ECD1E7 /* QRCodeCollectionViewCell.swift */; };
-		4968C2282028F66D00ECD1E7 /* QRCodeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4968C2262028F66D00ECD1E7 /* QRCodeCollectionViewCell.xib */; };
+		4968C2272028F66D00ECD1E7 /* QRCodeCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4968C2252028F66D00ECD1E7 /* QRCodeCollectionViewItem.swift */; };
+		4968C2282028F66D00ECD1E7 /* QRCodeCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4968C2262028F66D00ECD1E7 /* QRCodeCollectionViewItem.xib */; };
 		497BD06C1FE6CC9400589FDD /* Font Awesome 5 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 497BD0691FE6CC9300589FDD /* Font Awesome 5 Brands-Regular-400.otf */; };
 		497BD06D1FE6CC9400589FDD /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 497BD06A1FE6CC9300589FDD /* Font Awesome 5 Free-Regular-400.otf */; };
 		497BD06E1FE6CC9400589FDD /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 497BD06B1FE6CC9300589FDD /* Font Awesome 5 Free-Solid-900.otf */; };
@@ -35,8 +35,8 @@
 		492BF2A71FE53E0400CAB5C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		492BF2A81FE53E0400CAB5C5 /* CointrackingBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CointrackingBar.entitlements; sourceTree = "<group>"; };
 		4968C21F2028EF4000ECD1E7 /* QR Codes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "QR Codes"; sourceTree = "<group>"; };
-		4968C2252028F66D00ECD1E7 /* QRCodeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeCollectionViewCell.swift; sourceTree = "<group>"; };
-		4968C2262028F66D00ECD1E7 /* QRCodeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeCollectionViewCell.xib; sourceTree = "<group>"; };
+		4968C2252028F66D00ECD1E7 /* QRCodeCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeCollectionViewItem.swift; sourceTree = "<group>"; };
+		4968C2262028F66D00ECD1E7 /* QRCodeCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeCollectionViewItem.xib; sourceTree = "<group>"; };
 		497BD0691FE6CC9300589FDD /* Font Awesome 5 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Brands-Regular-400.otf"; sourceTree = "<group>"; };
 		497BD06A1FE6CC9300589FDD /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
 		497BD06B1FE6CC9300589FDD /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 				497BD0681FE6CC8A00589FDD /* Fonts */,
 				492BF2A21FE53E0400CAB5C5 /* Assets.xcassets */,
 				492BF2A41FE53E0400CAB5C5 /* Main.storyboard */,
-				4968C2262028F66D00ECD1E7 /* QRCodeCollectionViewCell.xib */,
+				4968C2262028F66D00ECD1E7 /* QRCodeCollectionViewItem.xib */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -137,7 +137,7 @@
 				4993969F202721D70020EF27 /* ContentViewController.swift */,
 				49C0D59D20165E1800CC3EB7 /* WebViewController.swift */,
 				49C0D5A12017D7BB00CC3EB7 /* InfoViewController.swift */,
-				4968C2252028F66D00ECD1E7 /* QRCodeCollectionViewCell.swift */,
+				4968C2252028F66D00ECD1E7 /* QRCodeCollectionViewItem.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -208,7 +208,7 @@
 			files = (
 				498156952014C879004AE737 /* README.md in Resources */,
 				492BF2A31FE53E0400CAB5C5 /* Assets.xcassets in Resources */,
-				4968C2282028F66D00ECD1E7 /* QRCodeCollectionViewCell.xib in Resources */,
+				4968C2282028F66D00ECD1E7 /* QRCodeCollectionViewItem.xib in Resources */,
 				497BD06D1FE6CC9400589FDD /* Font Awesome 5 Free-Regular-400.otf in Resources */,
 				497BD06C1FE6CC9400589FDD /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
 				492BF2A61FE53E0400CAB5C5 /* Main.storyboard in Resources */,
@@ -224,7 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4968C2272028F66D00ECD1E7 /* QRCodeCollectionViewCell.swift in Sources */,
+				4968C2272028F66D00ECD1E7 /* QRCodeCollectionViewItem.swift in Sources */,
 				499396A1202721D70020EF27 /* ContentViewController.swift in Sources */,
 				4981568E2014BCBF004AE737 /* CustomViews.swift in Sources */,
 				49C0D59E20165E1800CC3EB7 /* WebViewController.swift in Sources */,

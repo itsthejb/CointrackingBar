@@ -25,18 +25,12 @@ final class ContentViewController: NSViewController {
         guard infoViewController == nil else { return }
         let controller = InfoViewController.controller()
         defer { infoViewController = controller }
-//        presentView
         presentViewController(controller, animator: InfoViewControllerPresentation())
-//        performSegue(withIdentifier: Segues.infoViewController, sender: self)
     }
 
     private func hideInfoViewController(animated: Bool) {
         guard let controller = infoViewController else { return }
         dismissViewController(controller)
-//        infoViewController?.dismissViewController(<#T##viewController: NSViewController##NSViewController#>)
-//        transition(from: infoViewController, to: webViewController, options: .slideDown) {
-//            self.infoViewController.removeFromParentViewController()
-//        }
     }
 
     private var isInfoViewControllerVisible: Bool {
@@ -45,7 +39,6 @@ final class ContentViewController: NSViewController {
 
     override func viewDidLayout() {
         super.viewDidLayout()
-
         [webViewController]
             .filter { $0.view.superview != nil}
             .forEach { $0.view.frame = view.bounds }
@@ -57,21 +50,6 @@ final class ContentViewController: NSViewController {
         view.addSubview(webViewController.view)
     }
     
-}
-
-extension ContentViewController {
-
-    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-
-        switch segue.destinationController {
-        case let controller as InfoViewController:
-            infoViewController = controller
-        default:
-            break
-        }
-    }
-
 }
 
 final class InfoViewControllerPresentation: NSObject, NSViewControllerPresentationAnimator {

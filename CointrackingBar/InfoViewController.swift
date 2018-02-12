@@ -34,7 +34,6 @@ final class InfoViewController: NSViewController, StoryboardViewController {
 }
 
 extension InfoViewController: NSCollectionViewDataSource {
-
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
         return QRCode.codes.count
     }

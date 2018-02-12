@@ -34,23 +34,46 @@ final class Popover: NSPopover {
 }
 
 extension NSView {
-    func drawTransparentFill(_ dirtyRect: NSRect) {
+    func fillColorBackground(_ color: NSColor, dirtyRect: NSRect) {
         NSColor.clear.set()
         NSRect.fill(dirtyRect)(using: .copy)
     }
 }
 
-class TransparentView: NSView {
+class BackgroundColorView: NSView {
+    fileprivate var backgroundColor: NSColor?
+
+    init(color: NSColor) {
+        self.backgroundColor = color
+        super.init(frame: .zero)
+    }
+
+    required init?(coder decoder: NSCoder) {
+        super.init(coder: decoder)
+    }
+
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-        drawTransparentFill(dirtyRect)
+        let color = backgroundColor ?? .white
+        fillColorBackground(color, dirtyRect: dirtyRect)
+    }
+}
+
+class TransparentView: BackgroundColorView {
+    init() {
+        super.init(color: .clear)
+    }
+
+    required init?(coder decoder: NSCoder) {
+        super.init(coder: decoder)
+        self.backgroundColor = .clear
     }
 }
 
 final class TransparentStackView: NSStackView {
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-        drawTransparentFill(dirtyRect)
+        fillColorBackground(.clear, dirtyRect: dirtyRect)
     }
 }
 

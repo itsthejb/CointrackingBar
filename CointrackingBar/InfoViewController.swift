@@ -28,9 +28,8 @@ final class InfoViewController: NSViewController, StoryboardViewController {
     override func viewWillLayout() {
         super.viewWillLayout()
         clipView.frame = view.bounds
-        collectionView.register(QRCodeView.self, forItemWithIdentifier: QRCodeView.identifier)
+        collectionView.register(QRCodeViewItem.self, forItemWithIdentifier: QRCodeViewItem.identifier)
     }
-
 }
 
 extension InfoViewController: NSCollectionViewDataSource {
@@ -39,14 +38,21 @@ extension InfoViewController: NSCollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        let item = collectionView.makeItem(withIdentifier: QRCodeView.identifier, for: indexPath)
-        guard let codeItem = item as? QRCodeView else { return item }
+        let item = collectionView.makeItem(withIdentifier: QRCodeViewItem.identifier, for: indexPath)
+        guard let codeItem = item as? QRCodeViewItem else { return item }
         codeItem.code = QRCode.codes[indexPath.item]
         return codeItem
     }
 }
 
-extension InfoViewController: NSCollectionViewDelegateFlowLayout {
-
+extension InfoViewController: NSCollectionViewDelegate {
 }
 
+final class InfoViewControllerLayout: NSCollectionViewGridLayout {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        margins = NSEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
+        minimumLineSpacing = 8
+        minimumInteritemSpacing = 8
+    }
+}

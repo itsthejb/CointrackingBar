@@ -30,12 +30,11 @@ final class Popover: NSPopover {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 }
 
 extension NSView {
     func fillColorBackground(_ color: NSColor, dirtyRect: NSRect) {
-        NSColor.clear.set()
+        color.set()
         NSRect.fill(dirtyRect)(using: .copy)
     }
 }
@@ -71,6 +70,27 @@ class TransparentView: BackgroundColorView {
 }
 
 final class TransparentStackView: NSStackView {
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
+        fillColorBackground(.clear, dirtyRect: dirtyRect)
+    }
+}
+
+final class TransparentCollectionView: NSCollectionView {
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
+        fillColorBackground(.clear, dirtyRect: dirtyRect)
+    }
+}
+
+final class TransparentScrollView: NSScrollView {
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
+        fillColorBackground(.clear, dirtyRect: dirtyRect)
+    }
+}
+
+final class TransparentClipView: NSClipView {
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         fillColorBackground(.clear, dirtyRect: dirtyRect)

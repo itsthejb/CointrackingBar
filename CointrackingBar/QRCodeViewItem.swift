@@ -8,8 +8,7 @@
 
 import Cocoa
 
-@IBDesignable
-final class QRCodeView: NSCollectionViewItem {
+final class QRCodeViewItem: NSCollectionViewItem {
 
     static let identifier = NSUserInterfaceItemIdentifier(String(describing: self))
 
@@ -86,11 +85,6 @@ final class QRCodeView: NSCollectionViewItem {
         loadView()
         code = QRCode(filename: filename)
     }
-
-//    override func draw(_ dirtyRect: NSRect) {
-//        NSColor.white.set()
-//        NSRect.fill(dirtyRect)(using: .copy)
-//    }
 
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()

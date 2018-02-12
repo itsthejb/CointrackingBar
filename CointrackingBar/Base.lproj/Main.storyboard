@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
-        <plugIn identifier="com.apple.WebKit2IBPlugin" version="13771"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
@@ -865,26 +864,6 @@
                 </textFieldCell>
             </objects>
             <point key="canvasLocation" x="77" y="703"/>
-        </scene>
-        <!--Web View Controller-->
-        <scene sceneID="go1-ER-V2O">
-            <objects>
-                <customObject id="0fC-cd-CmO" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="WebViewController" id="mX4-iK-qkW" customClass="WebViewController" customModule="CointrackingBar" customModuleProvider="target" sceneMemberID="viewController">
-                    <wkWebView key="view" wantsLayer="YES" id="xfD-1N-ezQ" customClass="WebView" customModule="CointrackingBar" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <wkWebViewConfiguration key="configuration">
-                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                            <wkPreferences key="preferences"/>
-                        </wkWebViewConfiguration>
-                    </wkWebView>
-                    <connections>
-                        <outlet property="webView" destination="xfD-1N-ezQ" id="waV-GO-mpI"/>
-                    </connections>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="547" y="692"/>
         </scene>
         <!--ContentViewController-->
         <scene sceneID="13S-S6-hkB">

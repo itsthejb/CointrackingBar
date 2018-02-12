@@ -8,10 +8,22 @@
 
 import WebKit
 
-final class WebViewController: NSViewController, StoryboardViewController {
+final class WebViewController: NSViewController {
 
     private let url = URL(string: "https://cointracking.info/dashboard.php?mobile=on")
     @IBOutlet var webView: WKWebView?
+
+    static func controller(storyboardNamed name: String = "") -> WebViewController {
+        return WebViewController()
+    }
+
+    override func loadView() {
+        guard !isViewLoaded else { return }
+        (self.view, self.webView) = {
+            let webView = WebView()
+            return (webView, webView)
+        }()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,13 +50,16 @@ final class WebViewController: NSViewController, StoryboardViewController {
 }
 
 final class WebView: WKWebView {
-    override func awakeFromNib() {
-        super.awakeFromNib()
-
+    init() {
+        super.init(frame: .zero, configuration: WKWebViewConfiguration())
         if NSAppKitVersion.current.rawValue > 1500 {
             setValue(false, forKey: "drawsBackground")
         } else {
             setValue(true, forKey: "drawsTransparentBackground")
         }
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

@@ -9,15 +9,17 @@
 import Cocoa
 
 @IBDesignable
-final class QRCodeView: TransparentView {
+final class QRCodeView: NSCollectionViewItem {
+
+    static let identifier = NSUserInterfaceItemIdentifier(String(describing: self))
 
     @IBInspectable var filename: String? {
         didSet { configure(withFilename: filename) }
     }
 
-    private var code: QRCode? {
+    var code: QRCode? {
         didSet {
-            imageView.image = code?.image
+            codeImageView.image = code?.image
             currencyLabel.stringValue = code?.currency ?? ""
             addressLabel.stringValue = code?.address ?? ""
         }
@@ -25,7 +27,7 @@ final class QRCodeView: TransparentView {
 
     private lazy var stackView: NSStackView = {
         let view = NSStackView(views: [
-            self.imageView, self.currencyLabel, self.addressLabel
+            self.codeImageView, self.currencyLabel, self.addressLabel
             ])
         view.translatesAutoresizingMaskIntoConstraints = false
         view.edgeInsets = NSEdgeInsets(top: 4, left: 8, bottom: 4, right: 8)
@@ -35,7 +37,7 @@ final class QRCodeView: TransparentView {
         return view
     }()
 
-    private lazy var imageView: NSImageView = {
+    private lazy var codeImageView: NSImageView = {
         let view = NSImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.imageAlignment = .alignCenter
@@ -61,46 +63,34 @@ final class QRCodeView: TransparentView {
                            selectable: true)
     }()
 
-    override init(frame frameRect: NSRect) {
-        fatalError("init(frame:) has not been implemented")
-    }
-
-    required init?(coder decoder: NSCoder) {
-        super.init(coder: decoder)
-        wantsLayer = true
-        borderColor = .controlLightHighlightColor
-        borderWidth = 1
-        layer?.cornerRadius = 4
-    }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        loadViews()
-    }
-
-    private func loadViews() {
-        guard stackView.superview == nil else { return }
-        addSubview(stackView)
+    override func loadView() {
+        guard !isViewLoaded else { return }
+        let view = BackgroundColorView(color: .white)
+        view.wantsLayer = true
+        view.borderColor = .controlLightHighlightColor
+        view.borderWidth = 1
+        view.layer?.cornerRadius = 4
+        view.addSubview(stackView)
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            stackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 8),
-            stackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -8),
-            //
+            stackView.topAnchor.constraint(equalTo: view.topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            stackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 8),
+            stackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -8),
             addressLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor)
             ])
+        self.view = view
     }
 
     private func configure(withFilename filename: String?) {
         guard let filename = filename else { code = nil; return }
-        loadViews()
+        loadView()
         code = QRCode(filename: filename)
     }
 
-    override func draw(_ dirtyRect: NSRect) {
-        NSColor.white.set()
-        NSRect.fill(dirtyRect)(using: .copy)
-    }
+//    override func draw(_ dirtyRect: NSRect) {
+//        NSColor.white.set()
+//        NSRect.fill(dirtyRect)(using: .copy)
+//    }
 
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()

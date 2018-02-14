@@ -1,0 +1,12 @@
+language: objective-c
+os: osx
+osx_image: xcode9.2
+
+cache:
+  - bundler
+  
+before_install:
+  - bundle install
+  
+script: 
+  - xcodebuild -project CointrackingBar.xcodeproj -target CointrackingBar build | xcpretty 

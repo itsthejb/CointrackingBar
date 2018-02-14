@@ -42,16 +42,13 @@ final class QRCodeViewItem: NSCollectionViewItem {
         view.imageAlignment = .alignCenter
         view.imageScaling = .scaleProportionallyUpOrDown
         view.imageFrameStyle = .none
-        NSLayoutConstraint.activate([
-            view.widthAnchor.constraint(greaterThanOrEqualToConstant: 150)
-            ])
         return view
     }()
 
     private lazy var currencyLabel: NSTextField = {
         return QRCodeLabel(font: NSFont.boldSystemFont(ofSize: 16),
                            textColor: .black,
-                           bordered: true,
+                           bordered: false,
                            selectable: false)
     }()
 
@@ -99,6 +96,7 @@ final class QRCodeViewItem: NSCollectionViewItem {
             setContentCompressionResistancePriority(.required, for: .horizontal)
             setContentHuggingPriority(.required, for: .vertical)
             setContentHuggingPriority(.defaultLow, for: .horizontal)
+            self.font = font
             textColor = color
             alignment = .center
             isEditable = false

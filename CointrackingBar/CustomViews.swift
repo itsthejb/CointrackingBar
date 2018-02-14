@@ -15,7 +15,7 @@ final class Popover: NSPopover {
     override init() {
         super.init()
         appearance = NSAppearance.style
-        contentSize = NSSize(width: contentWidth, height: contentWidth * 1.61803398875)
+        contentSize = NSSize(width: contentWidth, height: contentWidth * CGFloat.goldenSection)
         animates = true
         behavior = .semitransient
     }

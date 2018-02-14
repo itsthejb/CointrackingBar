@@ -82,6 +82,10 @@ extension NSTextCheckingResult {
     }
 }
 
+extension CGFloat {
+    static let goldenSection: CGFloat = 1.61803398875
+}
+
 extension Bundle {
     static func resources(with extension: String, type: String) -> [URL] {
         return (appBundle?.urls(forResourcesWithExtension: "png", subdirectory: "Resources/\(type)") ?? [])

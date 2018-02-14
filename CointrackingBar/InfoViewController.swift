@@ -33,10 +33,6 @@ final class InfoViewController: NSViewController, StoryboardViewController {
         clipView.frame = view.bounds
         collectionView.collectionViewLayout?.invalidateLayout()
     }
-
-    override func viewWillTransition(to newSize: NSSize) {
-        super.viewWillTransition(to: newSize)
-    }
 }
 
 extension InfoViewController: NSCollectionViewDataSource {

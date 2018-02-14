@@ -76,6 +76,13 @@ final class TransparentStackView: NSStackView {
     }
 }
 
+final class InfoStackView: NSStackView {
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
+        fillColorBackground(.controlColor, dirtyRect: dirtyRect)
+    }
+}
+
 final class TransparentCollectionView: NSCollectionView {
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)

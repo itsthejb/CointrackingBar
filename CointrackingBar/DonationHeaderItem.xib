@@ -3,32 +3,82 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
+        <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="DonationHeaderItem" customModule="CointrackingBar" customModuleProvider="target"/>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" id="YJJ-kS-wCa">
-            <rect key="frame" x="0.0" y="0.0" width="110" height="17"/>
-            <autoresizingMask key="autoresizingMask"/>
+        <customView id="Eti-6U-FYJ">
+            <rect key="frame" x="0.0" y="0.0" width="312" height="173"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="MYH-3K-tJG">
-                    <rect key="frame" x="-2" y="0.0" width="92" height="17"/>
-                    <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Multiline Label" id="u3P-Qk-66K">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
+                <box boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="2KD-ay-epI">
+                    <rect key="frame" x="20" y="20" width="272" height="133"/>
+                    <view key="contentView" id="o4Q-mk-75y">
+                        <rect key="frame" x="1" y="1" width="270" height="131"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YJJ-kS-wCa" customClass="InfoStackView" customModule="CointrackingBar" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="270" height="131"/>
+                                <subviews>
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="MYH-3K-tJG">
+                                        <rect key="frame" x="51" y="87" width="169" height="24"/>
+                                        <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="CointrackingBar" id="u3P-Qk-66K">
+                                            <font key="font" metaFont="systemHeavy" size="20"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="eNU-6I-cPH">
+                                        <rect key="frame" x="6" y="62" width="258" height="17"/>
+                                        <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Contact cointrackingbar@joncrooke.co.uk" id="Ehq-4e-fVC">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="41U-F4-tTu">
+                                        <rect key="frame" x="8" y="20" width="255" height="34"/>
+                                        <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Please consider making a donation if you find this app useful!" id="DRL-pn-p8z">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <edgeInsets key="edgeInsets" left="20" right="20" top="20" bottom="20"/>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="YJJ-kS-wCa" firstAttribute="top" secondItem="o4Q-mk-75y" secondAttribute="top" id="5Qx-2c-rE2"/>
+                            <constraint firstAttribute="bottom" secondItem="YJJ-kS-wCa" secondAttribute="bottom" id="edv-Wi-jkM"/>
+                            <constraint firstItem="YJJ-kS-wCa" firstAttribute="leading" secondItem="o4Q-mk-75y" secondAttribute="leading" id="upw-yd-0Fo"/>
+                            <constraint firstAttribute="trailing" secondItem="YJJ-kS-wCa" secondAttribute="trailing" id="ywx-TM-zgf"/>
+                        </constraints>
+                    </view>
+                </box>
             </subviews>
-            <visibilityPriorities>
-                <integer value="1000"/>
-            </visibilityPriorities>
-            <customSpacing>
-                <real value="3.4028234663852886e+38"/>
-            </customSpacing>
-        </stackView>
+            <constraints>
+                <constraint firstItem="2KD-ay-epI" firstAttribute="leading" secondItem="Eti-6U-FYJ" secondAttribute="leading" constant="20" id="Aqv-og-jyJ"/>
+                <constraint firstAttribute="bottom" secondItem="2KD-ay-epI" secondAttribute="bottom" constant="20" id="NNa-S2-Ota"/>
+                <constraint firstAttribute="trailing" secondItem="2KD-ay-epI" secondAttribute="trailing" constant="20" id="ug7-sv-wbS"/>
+                <constraint firstItem="2KD-ay-epI" firstAttribute="top" secondItem="Eti-6U-FYJ" secondAttribute="top" constant="20" id="uy9-s0-p8W"/>
+            </constraints>
+            <point key="canvasLocation" x="213" y="274"/>
+        </customView>
     </objects>
 </document>

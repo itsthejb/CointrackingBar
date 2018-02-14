@@ -23,16 +23,16 @@ final class InfoViewController: NSViewController, StoryboardViewController {
         super.viewDidLoad()
         iconPopUpButton.removeAllItems()
         iconPopUpButton.addItems(withTitles: BarIcon.icons.map { $0.name })
-    }
-
-    override func viewWillLayout() {
-        super.viewWillLayout()
-        clipView.frame = view.bounds
         collectionView.register(QRCodeViewItem.self,
                                 forItemWithIdentifier: QRCodeViewItem.userInterfaceIdentifier)
         collectionView.register(DonationHeaderItem.nib,
                                 forSupplementaryViewOfKind: DonationHeaderItem.elementKind,
                                 withIdentifier: DonationHeaderItem.userInterfaceIdentifier)
+    }
+
+    override func viewWillLayout() {
+        super.viewWillLayout()
+        clipView.frame = view.bounds
     }
 }
 
@@ -56,25 +56,16 @@ extension InfoViewController: NSCollectionViewDataSource {
 }
 
 extension InfoViewController: NSCollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> NSSize {
-        return NSSize(width: collectionView.frame.width, height: 200)
-    }
-}
-
-final class InfoViewControllerLayout: NSCollectionViewGridLayout {
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        margins = NSEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
-        minimumLineSpacing = 8
-        minimumInteritemSpacing = 8
-        minimumItemSize = NSSize.qrCodeSize(width: 200)
-        maximumItemSize = NSSize.qrCodeSize(width: 500)
-    }
-}
-
-private extension NSSize {
-    static func qrCodeSize(width: CGFloat) -> NSSize {
-        let ratio: CGFloat = 1.0
-        return NSSize(width: width, height: width * ratio)
+    func collectionView(_ collectionView: NSCollectionView,
+                        layout collectionViewLayout: NSCollectionViewLayout,
+                        referenceSizeForHeaderInSection section: Int) -> NSSize {
+        var ptr: NSArray? = nil
+        guard
+            let nib = DonationHeaderItem.nib,
+            nib.instantiate(withOwner: nil, topLevelObjects: &ptr),
+            let array = ptr,
+            let view = (array.flatMap { $0 as? NSView }).first
+            else { return .zero }
+        return view.fittingSize
     }
 }

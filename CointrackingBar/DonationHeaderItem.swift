@@ -11,7 +11,9 @@ import Cocoa
 final class DonationHeaderItem: NSView {
 
     static let elementKind = NSCollectionView.SupplementaryElementKind.sectionHeader
-    static let nib = NSNib(nibNamed: NSNib.Name(String(describing: DonationHeaderItem.self)),
-                           bundle: Bundle.appBundle)
+    static var nib: NSNib? {
+        return NSNib(nibNamed: NSNib.Name(String(describing: DonationHeaderItem.self)),
+                     bundle: Bundle.appBundle)
+    }
     
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
         <capability name="box content view" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,43 +12,43 @@
         <scene sceneID="ujO-XC-FS5">
             <objects>
                 <viewController storyboardIdentifier="InfoViewController" id="cvj-N4-F7P" customClass="InfoViewController" customModule="CointrackingBar" customModuleProvider="target" sceneMemberID="viewController">
-                    <scrollView key="view" wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="DYM-Mg-7oh" customClass="TransparentScrollView" customModule="CointrackingBar" customModuleProvider="target">
+                    <scrollView key="view" wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="fMb-04-JQz">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <clipView key="contentView" drawsBackground="NO" id="LRj-CE-gmx" customClass="TransparentClipView" customModule="CointrackingBar" customModuleProvider="target">
+                        <clipView key="contentView" drawsBackground="NO" id="mP9-kP-Rxy">
                             <rect key="frame" x="1" y="1" width="448" height="298"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <collectionView id="cPK-kY-Zhp">
+                                <collectionView id="AJ2-ag-gfQ">
                                     <rect key="frame" x="0.0" y="0.0" width="448" height="158"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                    <collectionViewGridLayout key="collectionViewLayout" maximumNumberOfRows="4" maximumNumberOfColumns="4" id="7NU-km-kDO" customClass="InfoViewControllerLayout" customModule="CointrackingBar" customModuleProvider="target">
-                                        <size key="minimumItemSize" width="150" height="200"/>
-                                        <size key="maximumItemSize" width="200" height="0.0"/>
-                                    </collectionViewGridLayout>
-                                    <color key="primaryBackgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="8" minimumLineSpacing="8" id="6fp-OB-HPD">
+                                        <size key="itemSize" width="200" height="250"/>
+                                        <edgeInsets key="sectionInset" left="8" right="8" top="8" bottom="8"/>
+                                    </collectionViewFlowLayout>
+                                    <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <connections>
-                                        <outlet property="dataSource" destination="cvj-N4-F7P" id="XCi-TO-o9R"/>
-                                        <outlet property="delegate" destination="cvj-N4-F7P" id="W0b-UM-oXo"/>
+                                        <outlet property="dataSource" destination="cvj-N4-F7P" id="pcc-AD-UQQ"/>
+                                        <outlet property="delegate" destination="cvj-N4-F7P" id="pZM-fw-B0Q"/>
                                     </connections>
                                 </collectionView>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </clipView>
-                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="cpt-Pg-Wnj">
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="CuO-Jt-9lF">
                             <rect key="frame" x="1" y="144" width="233" height="15"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="CCV-5M-eGv">
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="RmU-fA-Vqq">
                             <rect key="frame" x="234" y="1" width="15" height="143"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
                     <connections>
-                        <outlet property="clipView" destination="LRj-CE-gmx" id="ZeN-23-TNd"/>
-                        <outlet property="collectionView" destination="cPK-kY-Zhp" id="xpy-ca-2x2"/>
+                        <outlet property="clipView" destination="mP9-kP-Rxy" id="wZk-HL-YuY"/>
+                        <outlet property="collectionView" destination="AJ2-ag-gfQ" id="UJF-vE-qha"/>
                         <outlet property="iconPopUpButton" destination="vN1-ZD-xRE" id="msb-tZ-wYY"/>
-                        <outlet property="scrollView" destination="DYM-Mg-7oh" id="AF4-sk-IRA"/>
+                        <outlet property="scrollView" destination="fMb-04-JQz" id="wLI-2J-23N"/>
                     </connections>
                 </viewController>
                 <customObject id="4la-76-BdH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

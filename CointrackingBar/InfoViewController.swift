@@ -30,6 +30,9 @@ final class InfoViewController: NSViewController, StoryboardViewController {
         clipView.frame = view.bounds
         collectionView.register(QRCodeViewItem.self,
                                 forItemWithIdentifier: QRCodeViewItem.userInterfaceIdentifier)
+        collectionView.register(DonationHeaderItem.nib,
+                                forSupplementaryViewOfKind: DonationHeaderItem.elementKind,
+                                withIdentifier: DonationHeaderItem.userInterfaceIdentifier)
     }
 }
 
@@ -44,9 +47,18 @@ extension InfoViewController: NSCollectionViewDataSource {
         codeItem.code = QRCode.codes[indexPath.item]
         return codeItem
     }
+
+    func collectionView(_ collectionView: NSCollectionView, viewForSupplementaryElementOfKind kind: NSCollectionView.SupplementaryElementKind, at indexPath: IndexPath) -> NSView {
+        return collectionView.makeSupplementaryView(ofKind: DonationHeaderItem.elementKind,
+                                                    withIdentifier: DonationHeaderItem.userInterfaceIdentifier,
+                                                    for: indexPath)
+    }
 }
 
-extension InfoViewController: NSCollectionViewDelegate {
+extension InfoViewController: NSCollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> NSSize {
+        return NSSize(width: collectionView.frame.width, height: 200)
+    }
 }
 
 final class InfoViewControllerLayout: NSCollectionViewGridLayout {

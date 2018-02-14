@@ -28,7 +28,8 @@ final class InfoViewController: NSViewController, StoryboardViewController {
     override func viewWillLayout() {
         super.viewWillLayout()
         clipView.frame = view.bounds
-        collectionView.register(QRCodeViewItem.self, forItemWithIdentifier: QRCodeViewItem.identifier)
+        collectionView.register(QRCodeViewItem.self,
+                                forItemWithIdentifier: QRCodeViewItem.userInterfaceIdentifier)
     }
 }
 
@@ -38,7 +39,7 @@ extension InfoViewController: NSCollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        let item = collectionView.makeItem(withIdentifier: QRCodeViewItem.identifier, for: indexPath)
+        let item = collectionView.makeItem(withIdentifier: QRCodeViewItem.userInterfaceIdentifier, for: indexPath)
         guard let codeItem = item as? QRCodeViewItem else { return item }
         codeItem.code = QRCode.codes[indexPath.item]
         return codeItem

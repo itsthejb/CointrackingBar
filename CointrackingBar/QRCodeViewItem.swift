@@ -10,8 +10,6 @@ import Cocoa
 
 final class QRCodeViewItem: NSCollectionViewItem {
 
-    static let identifier = NSUserInterfaceItemIdentifier(String(describing: self))
-
     @IBInspectable var filename: String? {
         didSet { configure(withFilename: filename) }
     }

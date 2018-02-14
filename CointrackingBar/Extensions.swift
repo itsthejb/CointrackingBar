@@ -91,9 +91,13 @@ extension Bundle {
         return (appBundle?.urls(forResourcesWithExtension: "png", subdirectory: "Resources/\(type)") ?? [])
     }
 
-    private static var appBundle: Bundle? {
+    static var appBundle: Bundle? {
         return Bundle(identifier: "com.jonathancrooke.CointrackingBar")
     }
+}
+
+extension NSResponder {
+    static let userInterfaceIdentifier = NSUserInterfaceItemIdentifier(String(describing: self))
 }
 
 extension NSStoryboardSegue.Identifier {

@@ -87,5 +87,13 @@
             </constraints>
             <point key="canvasLocation" x="213" y="274"/>
         </customView>
+        <customObject id="4qt-7t-sfQ" customClass="DonationHeaderItemController" customModule="CointrackingBar" customModuleProvider="target">
+            <connections>
+                <outlet property="contactLabel" destination="eNU-6I-cPH" id="hVm-qF-V52"/>
+                <outlet property="donationLabel" destination="41U-F4-tTu" id="Ezu-MB-gpq"/>
+                <outlet property="titleLabel" destination="MYH-3K-tJG" id="idr-lP-804"/>
+                <outlet property="view" destination="Eti-6U-FYJ" id="qhQ-6a-dDa"/>
+            </connections>
+        </customObject>
     </objects>
 </document>

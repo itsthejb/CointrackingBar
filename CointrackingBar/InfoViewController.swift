@@ -15,7 +15,10 @@ final class InfoViewController: NSViewController, StoryboardViewController {
     @IBOutlet weak var clipView: NSClipView!
     @IBOutlet weak var iconPopUpButton: NSPopUpButton!
 
-    lazy var layoutHeader: NSViewController = { return DonationHeaderItemController.controller() }()
+    enum Section: Int {
+        case header = 0, codes
+        static let all: [Section] = [.header, .codes]
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +27,7 @@ final class InfoViewController: NSViewController, StoryboardViewController {
         collectionView.register(QRCodeViewItem.self,
                                 forItemWithIdentifier: QRCodeViewItem.userInterfaceIdentifier)
         collectionView.register(DonationHeaderItemController.nib,
-                                forSupplementaryViewOfKind: DonationHeaderItemController.elementKind,
-                                withIdentifier: DonationHeaderItemController.userInterfaceIdentifier)
+                                forItemWithIdentifier: DonationHeaderItemController.userInterfaceIdentifier)
     }
 
     override func viewWillLayout() {
@@ -36,37 +38,44 @@ final class InfoViewController: NSViewController, StoryboardViewController {
 }
 
 extension InfoViewController: NSCollectionViewDataSource {
+    func numberOfSections(in collectionView: NSCollectionView) -> Int {
+        return Section.all.count
+    }
+
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return QRCode.codes.count
+        guard let section = Section(rawValue: section) else { return 0 }
+
+        switch section {
+        case .header:
+            return 1
+        case .codes:
+            return QRCode.codes.count
+        }
     }
 
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        let item = collectionView.makeItem(withIdentifier: QRCodeViewItem.userInterfaceIdentifier, for: indexPath)
-        guard let codeItem = item as? QRCodeViewItem else { return item }
-        codeItem.code = QRCode.codes[indexPath.item]
-        return codeItem
-    }
+        let blankItem = NSCollectionViewItem()
+        guard let section = Section(rawValue: indexPath.section) else { return blankItem }
 
-    func collectionView(_ collectionView: NSCollectionView, viewForSupplementaryElementOfKind kind: NSCollectionView.SupplementaryElementKind, at indexPath: IndexPath) -> NSView {
-        return collectionView.makeSupplementaryView(ofKind: DonationHeaderItemController.elementKind,
-                                                    withIdentifier: DonationHeaderItemController.userInterfaceIdentifier,
-                                                    for: indexPath)
+        switch section {
+        case .header:
+            return collectionView.makeItem(withIdentifier: DonationHeaderItemController.userInterfaceIdentifier,
+                                           for: indexPath)
+        case .codes:
+            guard
+                let item = collectionView.makeItem(withIdentifier: QRCodeViewItem.userInterfaceIdentifier, for: indexPath) as? QRCodeViewItem
+                else { return blankItem }
+            item.code = QRCode.codes[indexPath.item]
+            return item
+        }
     }
 }
 
 extension InfoViewController: NSCollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: NSCollectionView,
-                        layout collectionViewLayout: NSCollectionViewLayout,
-                        referenceSizeForHeaderInSection section: Int) -> NSSize {
-        return layoutHeader.view.fittingSize
-    }
+//    func collectionView(_ collectionView: NSCollectionView,
+//                        layout collectionViewLayout: NSCollectionViewLayout,
+//                        referenceSizeForHeaderInSection section: Int) -> NSSize {
+//        return layoutHeader.view.fittingSize
+//    }
 }
 
-final class QRCodeCollectionViewLayout: NSCollectionViewFlowLayout {
-    override func shouldInvalidateLayout(forBoundsChange newBounds: NSRect) -> Bool {
-        guard let collectionView = collectionView, abs(newBounds.size.height - collectionView.frame.size.height) > 1E-2
-            else { return false }
-        collectionView.reloadSections(IndexSet(integer: 0))
-        return true
-    }
-}

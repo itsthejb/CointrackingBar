@@ -29,7 +29,7 @@
                         <rect key="frame" x="1" y="1" width="270" height="131"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YJJ-kS-wCa" customClass="InfoStackView" customModule="CointrackingBar" customModuleProvider="target">
+                            <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="1000" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YJJ-kS-wCa" customClass="InfoStackView" customModule="CointrackingBar" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="270" height="131"/>
                                 <subviews>
                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="MYH-3K-tJG" customClass="TransparentTextField" customModule="CointrackingBar" customModuleProvider="target">

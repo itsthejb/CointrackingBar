@@ -8,10 +8,15 @@
 
 import Cocoa
 
-final class DonationHeaderItemController: NSViewController, StoryboardViewController {
+final class DonationHeaderItemController: NSViewController {
     static let elementKind = NSCollectionView.SupplementaryElementKind.sectionHeader
-    static let nib = NSNib(nibNamed: NSNib.Name(String(describing: DonationHeaderItemController.self)),
-                           bundle: Bundle.appBundle)
+
+    static let nibName = NSNib.Name(String(describing: DonationHeaderItemController.self))
+    static let nib = NSNib(nibNamed: nibName, bundle: Bundle.appBundle)
+
+    static func controller() -> DonationHeaderItemController {
+        return DonationHeaderItemController(nibName: nibName, bundle: Bundle.appBundle)
+    }
 
     @IBOutlet weak var titleLabel: TransparentTextField!
     @IBOutlet weak var contactLabel: TransparentTextField!

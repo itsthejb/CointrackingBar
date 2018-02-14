@@ -14,6 +14,8 @@ final class InfoViewController: NSViewController, StoryboardViewController {
     @IBOutlet var scrollView: NSScrollView!
     @IBOutlet weak var clipView: NSClipView!
     @IBOutlet weak var iconPopUpButton: NSPopUpButton!
+
+    lazy var layoutHeader: NSViewController = { return DonationHeaderItemController.controller() }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,11 @@ final class InfoViewController: NSViewController, StoryboardViewController {
     override func viewWillLayout() {
         super.viewWillLayout()
         clipView.frame = view.bounds
+        collectionView.collectionViewLayout?.invalidateLayout()
+    }
+
+    override func viewWillTransition(to newSize: NSSize) {
+        super.viewWillTransition(to: newSize)
     }
 }
 
@@ -55,13 +62,15 @@ extension InfoViewController: NSCollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: NSCollectionView,
                         layout collectionViewLayout: NSCollectionViewLayout,
                         referenceSizeForHeaderInSection section: Int) -> NSSize {
-        var ptr: NSArray? = nil
-        guard
-            let nib = DonationHeaderItemController.nib,
-            nib.instantiate(withOwner: nil, topLevelObjects: &ptr),
-            let array = ptr,
-            let view = (array.flatMap { $0 as? NSView }).first
-            else { return .zero }
-        return view.fittingSize
+        return layoutHeader.view.fittingSize
+    }
+}
+
+final class QRCodeCollectionViewLayout: NSCollectionViewFlowLayout {
+    override func shouldInvalidateLayout(forBoundsChange newBounds: NSRect) -> Bool {
+        guard let collectionView = collectionView, abs(newBounds.size.height - collectionView.frame.size.height) > 1E-2
+            else { return false }
+        collectionView.reloadSections(IndexSet(integer: 0))
+        return true
     }
 }

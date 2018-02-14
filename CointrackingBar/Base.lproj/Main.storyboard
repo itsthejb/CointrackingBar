@@ -908,7 +908,7 @@
                                 <collectionView id="jlC-Yd-tGD">
                                     <rect key="frame" x="0.0" y="0.0" width="448" height="158"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                    <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="8" minimumLineSpacing="8" id="zWa-is-xYa">
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="8" minimumLineSpacing="8" id="zWa-is-xYa" customClass="QRCodeCollectionViewLayout" customModule="CointrackingBar" customModuleProvider="target">
                                         <size key="itemSize" width="200" height="250"/>
                                         <edgeInsets key="sectionInset" left="8" right="8" top="8" bottom="8"/>
                                     </collectionViewFlowLayout>

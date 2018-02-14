@@ -15,19 +15,15 @@ final class InfoViewController: NSViewController, StoryboardViewController {
     @IBOutlet weak var clipView: NSClipView!
     @IBOutlet weak var iconPopUpButton: NSPopUpButton!
     
-    static func controller() -> Self {
-        return NSStoryboard.with(class: self, storyboardNamed: "Info")
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         iconPopUpButton.removeAllItems()
         iconPopUpButton.addItems(withTitles: BarIcon.icons.map { $0.name })
         collectionView.register(QRCodeViewItem.self,
                                 forItemWithIdentifier: QRCodeViewItem.userInterfaceIdentifier)
-        collectionView.register(DonationHeaderItem.nib,
-                                forSupplementaryViewOfKind: DonationHeaderItem.elementKind,
-                                withIdentifier: DonationHeaderItem.userInterfaceIdentifier)
+        collectionView.register(DonationHeaderItemController.nib,
+                                forSupplementaryViewOfKind: DonationHeaderItemController.elementKind,
+                                withIdentifier: DonationHeaderItemController.userInterfaceIdentifier)
     }
 
     override func viewWillLayout() {
@@ -49,8 +45,8 @@ extension InfoViewController: NSCollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: NSCollectionView, viewForSupplementaryElementOfKind kind: NSCollectionView.SupplementaryElementKind, at indexPath: IndexPath) -> NSView {
-        return collectionView.makeSupplementaryView(ofKind: DonationHeaderItem.elementKind,
-                                                    withIdentifier: DonationHeaderItem.userInterfaceIdentifier,
+        return collectionView.makeSupplementaryView(ofKind: DonationHeaderItemController.elementKind,
+                                                    withIdentifier: DonationHeaderItemController.userInterfaceIdentifier,
                                                     for: indexPath)
     }
 }
@@ -61,7 +57,7 @@ extension InfoViewController: NSCollectionViewDelegateFlowLayout {
                         referenceSizeForHeaderInSection section: Int) -> NSSize {
         var ptr: NSArray? = nil
         guard
-            let nib = DonationHeaderItem.nib,
+            let nib = DonationHeaderItemController.nib,
             nib.instantiate(withOwner: nil, topLevelObjects: &ptr),
             let array = ptr,
             let view = (array.flatMap { $0 as? NSView }).first

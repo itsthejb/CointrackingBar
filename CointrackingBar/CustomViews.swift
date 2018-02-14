@@ -104,6 +104,13 @@ final class TransparentClipView: NSClipView {
     }
 }
 
+final class TransparentTextField: NSTextField {
+//    override func draw(_ dirtyRect: NSRect) {
+//        super.draw(dirtyRect)
+//        fillColorBackground(.clear, dirtyRect: dirtyRect)
+//    }
+}
+
 final class LoadingView: TransparentView {
 
     @IBOutlet var progressIndicator: NSProgressIndicator?

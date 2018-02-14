@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
@@ -891,6 +893,110 @@
                 <customObject id="ugc-bF-vUC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="83" y="1307"/>
+        </scene>
+        <!--Info View Controller-->
+        <scene sceneID="sUq-H8-9dl">
+            <objects>
+                <viewController storyboardIdentifier="InfoViewController" id="Qfu-zP-ueh" customClass="InfoViewController" customModule="CointrackingBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <scrollView key="view" wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="NsT-D8-7wW">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <clipView key="contentView" drawsBackground="NO" id="3wy-sq-axZ">
+                            <rect key="frame" x="1" y="1" width="448" height="298"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <collectionView id="jlC-Yd-tGD">
+                                    <rect key="frame" x="0.0" y="0.0" width="448" height="158"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="8" minimumLineSpacing="8" id="zWa-is-xYa">
+                                        <size key="itemSize" width="200" height="250"/>
+                                        <edgeInsets key="sectionInset" left="8" right="8" top="8" bottom="8"/>
+                                    </collectionViewFlowLayout>
+                                    <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="Qfu-zP-ueh" id="Yc2-af-7h0"/>
+                                        <outlet property="delegate" destination="Qfu-zP-ueh" id="7A2-5y-FLS"/>
+                                    </connections>
+                                </collectionView>
+                            </subviews>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="hdy-br-ub9">
+                            <rect key="frame" x="1" y="144" width="233" height="15"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="rHi-1h-Pl1">
+                            <rect key="frame" x="234" y="1" width="15" height="143"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                    <connections>
+                        <outlet property="clipView" destination="3wy-sq-axZ" id="Gnm-Pw-UHX"/>
+                        <outlet property="collectionView" destination="jlC-Yd-tGD" id="mmZ-FT-smM"/>
+                        <outlet property="iconPopUpButton" destination="OCF-9K-TNJ" id="9IF-Og-e49"/>
+                        <outlet property="scrollView" destination="NsT-D8-7wW" id="d5t-as-hGX"/>
+                    </connections>
+                </viewController>
+                <customObject id="lNb-Qw-sBB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <box hidden="YES" boxType="custom" cornerRadius="4" title="Box" id="WH3-XS-ngX" userLabel="Icon Selector">
+                    <rect key="frame" x="0.0" y="0.0" width="215" height="114"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <view key="contentView" id="jMB-wV-jiE">
+                        <rect key="frame" x="1" y="1" width="213" height="112"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="823-yZ-XPd">
+                                <rect key="frame" x="20" y="20" width="173" height="72"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="K27-nW-gmd" userLabel="Icon">
+                                        <rect key="frame" x="18" y="28" width="58" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Bar Icon:" id="9De-Zj-PKV">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OCF-9K-TNJ" userLabel="Icon Dropdown">
+                                        <rect key="frame" x="80" y="23" width="76" height="26"/>
+                                        <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="g3X-q2-yFI" id="6JM-KD-Lcd">
+                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="menu"/>
+                                            <menu key="menu" id="AFs-95-6Ir">
+                                                <items>
+                                                    <menuItem title="Item 1" state="on" id="g3X-q2-yFI"/>
+                                                    <menuItem title="Item 2" id="WOf-qj-htM"/>
+                                                    <menuItem title="Item 3" id="IuR-Tu-60i"/>
+                                                </items>
+                                            </menu>
+                                        </popUpButtonCell>
+                                    </popUpButton>
+                                </subviews>
+                                <edgeInsets key="edgeInsets" left="20" right="20" top="20" bottom="20"/>
+                                <constraints>
+                                    <constraint firstItem="K27-nW-gmd" firstAttribute="centerY" secondItem="OCF-9K-TNJ" secondAttribute="centerY" id="80i-SK-krC"/>
+                                    <constraint firstItem="K27-nW-gmd" firstAttribute="centerY" secondItem="823-yZ-XPd" secondAttribute="centerY" id="e4Z-MG-UHc"/>
+                                    <constraint firstItem="OCF-9K-TNJ" firstAttribute="top" secondItem="823-yZ-XPd" secondAttribute="top" constant="25" id="pYa-xI-PUM"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="823-yZ-XPd" secondAttribute="bottom" constant="20" symbolic="YES" id="LnJ-3A-5h0"/>
+                            <constraint firstItem="823-yZ-XPd" firstAttribute="top" secondItem="jMB-wV-jiE" secondAttribute="top" constant="20" symbolic="YES" id="P9R-oS-z3b"/>
+                            <constraint firstAttribute="trailing" secondItem="823-yZ-XPd" secondAttribute="trailing" constant="20" symbolic="YES" id="mOG-ba-ylG"/>
+                            <constraint firstItem="823-yZ-XPd" firstAttribute="leading" secondItem="jMB-wV-jiE" secondAttribute="leading" constant="20" symbolic="YES" id="w9b-rG-LLm"/>
+                        </constraints>
+                    </view>
+                </box>
+            </objects>
+            <point key="canvasLocation" x="765" y="1280"/>
         </scene>
     </scenes>
 </document>

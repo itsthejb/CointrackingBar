@@ -1,3 +1,8 @@
+[![master](https://travis-ci.org/itsthejb/CointrackingBar.svg?branch=master)](https://travis-ci.org/itsthejb/CointrackingBar)
+[![develop](https://travis-ci.org/itsthejb/CointrackingBar.svg?branch=develop)](https://travis-ci.org/itsthejb/CointrackingBar)
+
+---
+
 # CointrackingBar
 
 MacOS Menu Bar client for cointracking.info

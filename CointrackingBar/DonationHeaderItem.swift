@@ -8,8 +8,8 @@
 
 import Cocoa
 
-final class DonationHeaderItemController: NSCollectionViewItem {
-    static let nibName = NSNib.Name(String(describing: DonationHeaderItemController.self))
+final class DonationHeaderItem: NSCollectionViewItem {
+    static let nibName = NSNib.Name(String(describing: DonationHeaderItem.self))
     static let nib = NSNib(nibNamed: nibName, bundle: Bundle.appBundle)
 
     @IBOutlet weak var titleLabel: TransparentTextField!

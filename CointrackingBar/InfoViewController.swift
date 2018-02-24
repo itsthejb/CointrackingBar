@@ -26,8 +26,8 @@ final class InfoViewController: NSViewController, StoryboardViewController {
         iconPopUpButton.addItems(withTitles: BarIcon.icons.map { $0.name })
         collectionView.register(QRCodeViewItem.self,
                                 forItemWithIdentifier: QRCodeViewItem.userInterfaceIdentifier)
-        collectionView.register(DonationHeaderItemController.nib,
-                                forItemWithIdentifier: DonationHeaderItemController.userInterfaceIdentifier)
+        collectionView.register(DonationHeaderItem.nib,
+                                forItemWithIdentifier: DonationHeaderItem.userInterfaceIdentifier)
     }
 
     override func viewWillLayout() {
@@ -59,7 +59,7 @@ extension InfoViewController: NSCollectionViewDataSource {
 
         switch section {
         case .header:
-            return collectionView.makeItem(withIdentifier: DonationHeaderItemController.userInterfaceIdentifier,
+            return collectionView.makeItem(withIdentifier: DonationHeaderItem.userInterfaceIdentifier,
                                            for: indexPath)
         case .codes:
             guard

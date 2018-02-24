@@ -11,8 +11,8 @@
 		492BF2A11FE53E0400CAB5C5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492BF2A01FE53E0400CAB5C5 /* MainViewController.swift */; };
 		492BF2A31FE53E0400CAB5C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 492BF2A21FE53E0400CAB5C5 /* Assets.xcassets */; };
 		492BF2A61FE53E0400CAB5C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 492BF2A41FE53E0400CAB5C5 /* Main.storyboard */; };
-		497B808320344AC5007AE706 /* DonationHeaderItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B808120344AC5007AE706 /* DonationHeaderItemController.swift */; };
-		497B808420344AC5007AE706 /* DonationHeaderItemController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497B808220344AC5007AE706 /* DonationHeaderItemController.xib */; };
+		497B808320344AC5007AE706 /* DonationHeaderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B808120344AC5007AE706 /* DonationHeaderItem.swift */; };
+		497B808420344AC5007AE706 /* DonationHeaderItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497B808220344AC5007AE706 /* DonationHeaderItem.xib */; };
 		497BD06C1FE6CC9400589FDD /* Font Awesome 5 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 497BD0691FE6CC9300589FDD /* Font Awesome 5 Brands-Regular-400.otf */; };
 		497BD06D1FE6CC9400589FDD /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 497BD06A1FE6CC9300589FDD /* Font Awesome 5 Free-Regular-400.otf */; };
 		497BD06E1FE6CC9400589FDD /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 497BD06B1FE6CC9300589FDD /* Font Awesome 5 Free-Solid-900.otf */; };
@@ -41,6 +41,8 @@
 		495EBFDC20FA249C00CB1A48 /* Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		497B808120344AC5007AE706 /* DonationHeaderItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationHeaderItemController.swift; sourceTree = "<group>"; };
 		497B808220344AC5007AE706 /* DonationHeaderItemController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DonationHeaderItemController.xib; sourceTree = "<group>"; };
+		497B808120344AC5007AE706 /* DonationHeaderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationHeaderItem.swift; sourceTree = "<group>"; };
+		497B808220344AC5007AE706 /* DonationHeaderItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DonationHeaderItem.xib; sourceTree = "<group>"; };
 		497BD0691FE6CC9300589FDD /* Font Awesome 5 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Brands-Regular-400.otf"; sourceTree = "<group>"; };
 		497BD06A1FE6CC9300589FDD /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
 		497BD06B1FE6CC9300589FDD /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
@@ -160,7 +162,7 @@
 				497BD0681FE6CC8A00589FDD /* Fonts */,
 				492BF2A21FE53E0400CAB5C5 /* Assets.xcassets */,
 				492BF2A41FE53E0400CAB5C5 /* Main.storyboard */,
-				497B808220344AC5007AE706 /* DonationHeaderItemController.xib */,
+				497B808220344AC5007AE706 /* DonationHeaderItem.xib */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -184,7 +186,7 @@
 				49C0D59D20165E1800CC3EB7 /* WebViewController.swift */,
 				49C0D5A12017D7BB00CC3EB7 /* InfoViewController.swift */,
 				49C0D59F2017D21C00CC3EB7 /* DetachedWindowController.swift */,
-				497B808120344AC5007AE706 /* DonationHeaderItemController.swift */,
+				497B808120344AC5007AE706 /* DonationHeaderItem.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -257,7 +259,7 @@
 			files = (
 				492BF2A31FE53E0400CAB5C5 /* Assets.xcassets in Resources */,
 				497BD06D1FE6CC9400589FDD /* Font Awesome 5 Free-Regular-400.otf in Resources */,
-				497B808420344AC5007AE706 /* DonationHeaderItemController.xib in Resources */,
+				497B808420344AC5007AE706 /* DonationHeaderItem.xib in Resources */,
 				49AAA27D20309D49005CAED3 /* Resources in Resources */,
 				497BD06C1FE6CC9400589FDD /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
 				492BF2A61FE53E0400CAB5C5 /* Main.storyboard in Resources */,
@@ -315,7 +317,7 @@
 				49C0D59E20165E1800CC3EB7 /* WebViewController.swift in Sources */,
 				49995B9C203089D7007088D1 /* QRCode.swift in Sources */,
 				492BF2A11FE53E0400CAB5C5 /* MainViewController.swift in Sources */,
-				497B808320344AC5007AE706 /* DonationHeaderItemController.swift in Sources */,
+				497B808320344AC5007AE706 /* DonationHeaderItem.swift in Sources */,
 				49C0D5A22017D7BB00CC3EB7 /* InfoViewController.swift in Sources */,
 				492BF29F1FE53E0400CAB5C5 /* AppDelegate.swift in Sources */,
 				49C0D5A02017D21C00CC3EB7 /* DetachedWindowController.swift in Sources */,

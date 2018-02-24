@@ -9,4 +9,4 @@ before_install:
   - bundle install
   
 script: 
-  - xcodebuild -project CointrackingBar.xcodeproj -target CointrackingBar build | xcpretty 
+  - xcodebuild -project CointrackingBar.xcodeproj -target CointrackingBar build | xcpretty && exit ${PIPESTATUS[0]}

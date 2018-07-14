@@ -11,4 +11,5 @@ before_install:
   - bundle install
   
 script: 
+	- git-crypt unlock <(echo "$GIT_CRYPT" | base64 -D)
   - xcodebuild -project CointrackingBar.xcodeproj -target CointrackingBar build | xcpretty && exit ${PIPESTATUS[0]}

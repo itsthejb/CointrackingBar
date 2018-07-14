@@ -4,8 +4,10 @@ osx_image: xcode9.2
 
 cache:
   - bundler
+	- cocoapods
   
 before_install:
+	- brew install git-crypt
   - bundle install
   
 script: 

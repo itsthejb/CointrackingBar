@@ -26,6 +26,7 @@
 		49C0D59E20165E1800CC3EB7 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0D59D20165E1800CC3EB7 /* WebViewController.swift */; };
 		49C0D5A02017D21C00CC3EB7 /* DetachedWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0D59F2017D21C00CC3EB7 /* DetachedWindowController.swift */; };
 		49C0D5A22017D7BB00CC3EB7 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0D5A12017D7BB00CC3EB7 /* InfoViewController.swift */; };
+		AA3964EAFD042461DC78AD72 /* Pods_CointrackingBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D4A22A30DA45A2437C1201B /* Pods_CointrackingBar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		492BF2A51FE53E0400CAB5C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		492BF2A71FE53E0400CAB5C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		492BF2A81FE53E0400CAB5C5 /* CointrackingBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CointrackingBar.entitlements; sourceTree = "<group>"; };
+		495EBFDA20FA240E00CB1A48 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		495EBFDC20FA249C00CB1A48 /* Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		497B808120344AC5007AE706 /* DonationHeaderItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationHeaderItemController.swift; sourceTree = "<group>"; };
 		497B808220344AC5007AE706 /* DonationHeaderItemController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DonationHeaderItemController.xib; sourceTree = "<group>"; };
 		497BD0691FE6CC9300589FDD /* Font Awesome 5 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Brands-Regular-400.otf"; sourceTree = "<group>"; };
@@ -44,7 +47,6 @@
 		4981568D2014BCBF004AE737 /* CustomViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViews.swift; sourceTree = "<group>"; };
 		498156912014C501004AE737 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		498EBC922030CFC6006BAA3C /* Docs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Docs; sourceTree = SOURCE_ROOT; };
-		498EBC932030CFEF006BAA3C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4993969F202721D70020EF27 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		49995B9520308655007088D1 /* QRCodeViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewItem.swift; sourceTree = "<group>"; };
 		49995B9B203089D7007088D1 /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
@@ -53,6 +55,9 @@
 		49C0D59D20165E1800CC3EB7 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		49C0D59F2017D21C00CC3EB7 /* DetachedWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetachedWindowController.swift; sourceTree = "<group>"; };
 		49C0D5A12017D7BB00CC3EB7 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		4D4A22A30DA45A2437C1201B /* Pods_CointrackingBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CointrackingBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		611287315B03A7BB08540A61 /* Pods-CointrackingBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CointrackingBar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CointrackingBar/Pods-CointrackingBar.debug.xcconfig"; sourceTree = "<group>"; };
+		F21027AB89E33274CE6D9821 /* Pods-CointrackingBar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CointrackingBar.release.xcconfig"; path = "Pods/Target Support Files/Pods-CointrackingBar/Pods-CointrackingBar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,18 +65,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA3964EAFD042461DC78AD72 /* Pods_CointrackingBar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		051000068809B9ED6DDB8C19 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				495EBFDA20FA240E00CB1A48 /* Podfile */,
+				611287315B03A7BB08540A61 /* Pods-CointrackingBar.debug.xcconfig */,
+				F21027AB89E33274CE6D9821 /* Pods-CointrackingBar.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		47F28C674A0F8BCEDDBA753F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D4A22A30DA45A2437C1201B /* Pods_CointrackingBar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		492BF2921FE53E0400CAB5C5 = {
 			isa = PBXGroup;
 			children = (
-				498EBC932030CFEF006BAA3C /* README.md */,
 				492BF29D1FE53E0400CAB5C5 /* CointrackingBar */,
 				492BF29C1FE53E0400CAB5C5 /* Products */,
+				051000068809B9ED6DDB8C19 /* Pods */,
+				47F28C674A0F8BCEDDBA753F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				492BF2A71FE53E0400CAB5C5 /* Info.plist */,
+				495EBFDC20FA249C00CB1A48 /* Shared.xcconfig */,
 				492BF2A81FE53E0400CAB5C5 /* CointrackingBar.entitlements */,
 			);
 			name = Supporting;
@@ -168,9 +194,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 492BF2AB1FE53E0400CAB5C5 /* Build configuration list for PBXNativeTarget "CointrackingBar" */;
 			buildPhases = (
+				4369BB7DD15A2F8937343891 /* [CP] Check Pods Manifest.lock */,
 				492BF2971FE53E0400CAB5C5 /* Sources */,
 				492BF2981FE53E0400CAB5C5 /* Frameworks */,
 				492BF2991FE53E0400CAB5C5 /* Resources */,
+				495EBFDB20FA243000CB1A48 /* Fabric */,
 			);
 			buildRules = (
 			);
@@ -237,6 +265,42 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4369BB7DD15A2F8937343891 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CointrackingBar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		495EBFDB20FA243000CB1A48 /* Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = Fabric;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" abc4bcdc42573ef014c102a73d374eb01e7992bb 4124f9134f96309bfd45d75e01c42e27b5f9f781b31dd1a1681fd08aca55f35f";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		492BF2971FE53E0400CAB5C5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -273,6 +337,7 @@
 /* Begin XCBuildConfiguration section */
 		492BF2A91FE53E0400CAB5C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 495EBFDC20FA249C00CB1A48 /* Shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -330,6 +395,7 @@
 		};
 		492BF2AA1FE53E0400CAB5C5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 495EBFDC20FA249C00CB1A48 /* Shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -379,6 +445,7 @@
 		};
 		492BF2AC1FE53E0400CAB5C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 611287315B03A7BB08540A61 /* Pods-CointrackingBar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CointrackingBar/CointrackingBar.entitlements;
@@ -395,6 +462,7 @@
 		};
 		492BF2AD1FE53E0400CAB5C5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F21027AB89E33274CE6D9821 /* Pods-CointrackingBar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CointrackingBar/CointrackingBar.entitlements;

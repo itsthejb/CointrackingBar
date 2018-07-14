@@ -7,12 +7,23 @@
 //
 
 import Cocoa
+import Fabric
+import Crashlytics
 
 @NSApplicationMain
 final class AppDelegate: NSObject, NSApplicationDelegate {
+
     var statusItem: NSStatusItem?
     weak var dettachedWindow: NSWindow?
     let popover = Popover()
+
+    override init() {
+        super.init()
+        UserDefaults.standard.register(defaults: [
+            "NSApplicationCrashOnExceptions": true
+            ])
+        Fabric.with([Crashlytics.self, Answers.self]).debug = true
+    }
 }
 
 extension AppDelegate {

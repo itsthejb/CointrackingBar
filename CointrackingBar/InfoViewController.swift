@@ -15,17 +15,23 @@ final class InfoViewController: NSViewController, StoryboardViewController {
     @IBOutlet weak var clipView: NSClipView!
     @IBOutlet weak var iconPopUpButton: NSPopUpButton!
 
-    lazy var layoutHeader: NSViewController = { return DonationHeaderItemController.controller() }()
-    
+    @IBAction func iconSelectionChanged(_ sender: NSPopUpButton) {
+        UserDefaults.standard.barIcon = BarIcon.icons[sender.indexOfSelectedItem]
+    }
+
+    static func controller() -> Self {
+        return NSStoryboard.with(class: self, storyboardNamed: "Info")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         iconPopUpButton.removeAllItems()
+        guard
+            let barIcon = UserDefaults.standard.barIcon,
+            let index = BarIcon.icons.index(of: barIcon)
+            else { return }
         iconPopUpButton.addItems(withTitles: BarIcon.icons.map { $0.name })
-        collectionView.register(QRCodeViewItem.self,
-                                forItemWithIdentifier: QRCodeViewItem.userInterfaceIdentifier)
-        collectionView.register(DonationHeaderItemController.nib,
-                                forSupplementaryViewOfKind: DonationHeaderItemController.elementKind,
-                                withIdentifier: DonationHeaderItemController.userInterfaceIdentifier)
+        iconPopUpButton.selectItem(at: index)
     }
 
     override func viewWillLayout() {

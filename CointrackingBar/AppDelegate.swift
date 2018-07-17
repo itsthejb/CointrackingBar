@@ -28,23 +28,24 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
 extension AppDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
-        UserDefaults.standard.set(false, forKey: "NSConstraintBasedLayoutVisualizeMutuallyExclusiveConstraints")
-        statusItem = NSStatusItem.statusItem(target: self,
-                                             action: #selector(menuItemClicked(item:)))
-        windowNotifications.forEach {
-                NotificationCenter.default.addObserver(self, selector: $0.1, name: $0.0, object: nil)
-        }
+        updateBarIcon(UserDefaults.standard.barIcon)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(barIconPreferenceDidChange(_:)),
+                                               name: BarIcon.barIconPreferenceDidChange,
+                                               object: nil)
     }
 
-    private var windowNotifications: [Notification.Name: Selector] {
-        return [
-            NSWindow.didBecomeMainNotification: #selector(windowDidBecomeMainNotification(_:))
-        ]
+    @objc private func barIconPreferenceDidChange(_ notification: Notification) {
+        guard let icon = notification.object as? BarIcon else { return }
+        updateBarIcon(icon)
     }
 
-    @objc private func windowDidBecomeMainNotification(_ notification: Notification) {
-        guard let window = notification.object as? NSWindow else { return }
-        dettachedWindow = window
+    private func updateBarIcon(_ icon: BarIcon?) {
+        guard let icon = icon else { return }
+        statusItem = NSStatusItem.statusItem(
+            icon: icon,
+            target: self,
+            action: #selector(menuItemClicked(item:)))
     }
 }
 

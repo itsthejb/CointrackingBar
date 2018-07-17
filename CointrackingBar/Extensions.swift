@@ -13,9 +13,9 @@ extension NSAppearance {
 }
 
 extension NSStatusItem {
-    static func statusItem(target: NSObject, action: Selector) -> NSStatusItem {
+    static func statusItem(icon: BarIcon, target: NSObject, action: Selector) -> NSStatusItem {
         let item = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
-        item.image = BarIcon.icons[0].image?.barItemImage()
+        item.image = icon.image?.barItemImage()
         item.action = action
         item.target = target
         return item

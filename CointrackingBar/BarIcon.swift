@@ -22,7 +22,7 @@ struct BarIcon {
     static let icons: [BarIcon] = {
         return Bundle.resources(with: "png", type: "Bar Icons")
             .filter { !$0.lastPathComponent.hasSuffix("@2x.png") }
-            .flatMap { BarIcon(url: $0) }
+            .compactMap { BarIcon(url: $0) }
             .sorted { $0.name < $1.name }
     }()
 

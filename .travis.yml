@@ -4,12 +4,11 @@ osx_image: xcode9.2
 
 cache:
   - bundler
-	- cocoapods
-  
+  - cocoapods
+
 before_install:
-	- brew install git-crypt
+  - brew install git-crypt
   - bundle install
-  
-script: 
-	- git-crypt unlock <(echo "$GIT_CRYPT" | base64 -D)
-  - xcodebuild -project CointrackingBar.xcodeproj -target CointrackingBar build | xcpretty && exit ${PIPESTATUS[0]}
+
+script:
+  - Scripts/build.sh

@@ -37,7 +37,7 @@ struct QRCode {
     static let codes: [QRCode] = {
         return codeMap
             .sorted { $0.0 < $1.0 }
-            .flatMap { QRCode(url: $0.1) }
+            .compactMap { QRCode(url: $0.1) }
     }()
 
     static let codeMap: [String: URL] = {

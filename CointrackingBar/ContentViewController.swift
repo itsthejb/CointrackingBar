@@ -14,7 +14,7 @@ final class ContentViewController: NSViewController {
     weak var infoViewController: InfoViewController?
 
     var visibleControllers: [NSViewController] {
-        return ([webViewController, infoViewController] as [NSViewController?]).flatMap { $0 }
+        return ([webViewController, infoViewController] as [NSViewController?]).compactMap { $0 }
     }
 
     weak var delegate: ContentViewControllerDelegate?

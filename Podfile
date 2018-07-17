@@ -13,5 +13,11 @@ target 'CointrackingBar' do
   pod 'Crashlytics'
 end
 
+post_install do |installer|
+    installer.pods_project.build_configuration_list.build_configurations.each do |c|
+        c.build_settings["DEBUG_INFORMATION_FORMAT"] = "dwarf-with-dsym"
+    end
+end
+
 use_frameworks!
 inhibit_all_warnings!

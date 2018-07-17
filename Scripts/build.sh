@@ -1,6 +1,7 @@
 #!/bin/bash
 
 if [ "$1" == "travis" ]; then
+  : ${GIT_CRYPT?"GIT_CRYPT key not set"}
   git-crypt unlock <(echo "$GIT_CRYPT" | base64 -D)
 fi
 

@@ -44,6 +44,7 @@
 		497BD0691FE6CC9300589FDD /* Font Awesome 5 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Brands-Regular-400.otf"; sourceTree = "<group>"; };
 		497BD06A1FE6CC9300589FDD /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
 		497BD06B1FE6CC9300589FDD /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
+		49804F4420FE7B3500D1F5D5 /* Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Scripts; sourceTree = "<group>"; };
 		4981568D2014BCBF004AE737 /* CustomViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViews.swift; sourceTree = "<group>"; };
 		498156912014C501004AE737 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		498EBC922030CFC6006BAA3C /* Docs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Docs; sourceTree = SOURCE_ROOT; };
@@ -94,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				492BF29D1FE53E0400CAB5C5 /* CointrackingBar */,
+				49804F4420FE7B3500D1F5D5 /* Scripts */,
 				492BF29C1FE53E0400CAB5C5 /* Products */,
 				051000068809B9ED6DDB8C19 /* Pods */,
 				47F28C674A0F8BCEDDBA753F /* Frameworks */,
